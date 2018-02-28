@@ -41,5 +41,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AVENGERS.ttf</string>
+		<string>Cookie.tff</string>
+		<string>udaanRegular.ttf</string>
+	</array>
 </dict>
 </plist>
