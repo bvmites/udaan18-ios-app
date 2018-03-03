@@ -46,7 +46,7 @@ class EventTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventDepartment", for: indexPath) as! EventDepartmentTableViewCell
-        cell.sizeThatFits(CGSize(width: self.view.frame.width, height: self.view.frame.width*3/4))
+        cell.sizeThatFits(CGSize(width: self.view.frame.width, height: self.view.frame.width*2))
         cell.BackImage.contentMode = UIViewContentMode.scaleToFill
         cell.BackImage.image =  UIImage(named: eventTypeList[indexPath.row])
         cell.BackImage.layer.cornerRadius = 10

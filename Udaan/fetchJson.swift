@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import JavaScriptCore
 class fetchJson
 {
     static var data : Dictionary<String,Any>?
@@ -19,8 +21,52 @@ class fetchJson
     
     // fetch data from github and stores in data variable
     static func fetch()->Dictionary<String,Any>? {
+        
+        
+        let ur = Bundle.main.bundleURL
+        let urs = ur.appendingPathComponent("event-data.json")
+    
+        if let dt =  try? Data(contentsOf: urs)
+        {
+            print( NSData(data: dt).length )
+            let js = try? JSONSerialization.jsonObject(with: dt, options: []) as! Dictionary<String,Any>
+            
+
+        return js
+        }
+        else{
+            return nil
+        }
+        
+        
+   
+        
+        let fileManager = FileManager.default
+        do {
+            let documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+            let fileURL = documentDirectory.appendingPathComponent("datajson")
+            
+            if let dts:Data? = try Data(contentsOf: fileURL){
+            print(dts)
+                let json = try? JSONSerialization.jsonObject(with: dts!,options: []) as! Dictionary<String,Any>
+            return json
+            }
+            else{
+                print("in else")
+                return nil
+            }
+            
+        } catch {
+            print(error)
+            return  nil
+        }
+ 
+        
+
+        
         if let  datas = try? Data(contentsOf: urls!)
         {
+            storeJson(dt: datas,filename: "event-data.json")
             let json = try? JSONSerialization.jsonObject(with: datas,options: []) as! Dictionary<String,Any>
             return json
         }
@@ -28,9 +74,24 @@ class fetchJson
             print("error in json fetching")
             return nil
         }
+
+    
     }
-    
-    
+ static func storeJson(dt:Data,filename:String){
+        let fileManager = FileManager.default
+        do {
+            let documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+            let fileURL = documentDirectory.appendingPathComponent(filename)
+            
+                try dt.write(to: fileURL)
+               
+            
+        } catch {
+            print(error)
+        }
+        
+        
+    }
     
     //Parse from json to objects
     static func parseData(){
