@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import JavaScriptCore
 class fetchJson
 {
     static var data : Dictionary<String,Any>?
@@ -17,12 +16,33 @@ class fetchJson
     static var Tech : tech!
     static var Nontech:nonTech!
     static var Cultural:cultural!
+    static var teamUdaan:[Category] = []
     
     // fetch data from github and stores in data variable
     static func dataFromBundle()->Data?{
         let baseUrl = Bundle.main.bundleURL
         let url = baseUrl.appendingPathComponent("event-data.json")
         return  try? Data(contentsOf: url)
+    }
+    
+    static func setTeamUdaan(){
+        let baseUrl = Bundle.main.bundleURL
+        let url = baseUrl.appendingPathComponent("team-udaan.json")
+        if let data = try? Data(contentsOf: url)
+        {
+            if let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as! [Dictionary<String,Any>]{
+                for dict in jsonData {
+                    let members = dict["members"] as! [Dictionary<String,String>]
+                    let category = dict["category"] as! String
+                    var memberss:[Member] = []
+                    for memberDict in members{
+                        memberss.append(Member(name: memberDict["name"]!, title: memberDict["title"]!))
+                    }
+                    teamUdaan.append(Category(name: category, members: memberss))
+                }
+            }
+        }
+
     }
     
     static func dataFromFiles()->Data?{

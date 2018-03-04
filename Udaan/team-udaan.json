@@ -1,0 +1,150 @@
+[
+  {
+    "category": "Student Representatives",
+    "members": [
+      {
+        "name": "Alay Patel",
+        "title": "General Secretary"
+      },
+      {
+        "name": "Shweta Thacker",
+        "title": "Ladies Representative"
+      }
+    ]
+  },
+  {
+    "category": "Tech Heads",
+    "members": [
+      {
+        "name": "Krushal Kakadiya",
+        "title": ""
+      },
+      {
+        "name": "Pratik Patel",
+        "title": ""
+      },
+      {
+        "name": "Parth Joshi",
+        "title": ""
+      }
+    ]
+  },
+  {
+    "category": "Publicity",
+    "members": [
+      {
+        "name": "Shyam Govani",
+        "title": "Head"
+      },
+      {
+        "name": "Aksh Sharma",
+        "title": "Co-Head"
+      }
+    ]
+  },
+  {
+    "category": "Documentation",
+    "members": [
+      {
+        "name": "Sarvesh Shukla",
+        "title": "Head"
+      }
+    ]
+  },
+  {
+    "category": "Logistics",
+    "members": [
+      {
+        "name": "Jatan Patel",
+        "title": "Head"
+      },
+      {
+        "name": "Dhruvit Kardani",
+        "title": "Co-Head"
+      }
+    ]
+  },
+  {
+    "category": "Decoration",
+    "members": [
+      {
+        "name": "Nikhil Gohel",
+        "title": "Head"
+      },
+      {
+        "name": "Shrey Vaidya",
+        "title": "Co-Head"
+      }
+    ]
+  },
+  {
+    "category": "Developers",
+    "members": [
+      {
+        "name": "Dhruvin Gandhi",
+        "title": "Head"
+      },
+      {
+        "name": "Maunil Swadas",
+        "title": "Co-Head"
+      }
+    ]
+  },
+  {
+    "category": "Graphics",
+    "members": [
+      {
+        "name": "Kevin Harkhani",
+        "title": "Head"
+      }
+    ]
+  },
+  {
+    "category": "Discipline",
+    "members": [
+      {
+        "name": "Nikunj Rathod",
+        "title": "Head"
+      }
+    ]
+  },
+  {
+    "category": "Developers",
+    "members": [
+      {
+        "name": "Dhruvin Gandhi",
+        "title": "Head"
+      },
+      {
+        "name": "Maunil Swadas",
+        "title": "Co-Head"
+      }
+    ]
+  },
+  {
+    "category": "Photography",
+    "members": [
+      {
+        "name": "Subham Chauhan",
+        "title": "Head"
+      },
+      {
+        "name": "Keval Mandaliya",
+        "title": "Co-Head"
+      }
+    ]
+  },
+  {
+    "category": "Cultural",
+    "members": [
+      {
+        "name": "Varun Dave",
+        "title": "Head"
+      },
+      {
+        "name": "Dhvanit Mehta",
+        "title": "Co-Head"
+      }
+    ]
+  }
+]

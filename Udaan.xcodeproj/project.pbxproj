@@ -22,6 +22,9 @@
 		848D2F962045CFD7004CE313 /* udaanRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848D2F952045CFD7004CE313 /* udaanRegular.ttf */; };
 		848D2F992045E599004CE313 /* DepartmentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D2F982045E599004CE313 /* DepartmentListTableViewController.swift */; };
 		84C2B5AF2045BB0B00DC27DF /* EventDepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2B5AE2045BB0B00DC27DF /* EventDepartmentTableViewCell.swift */; };
+		84EFFC60204BE45C002AF71C /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFC5F204BE45C002AF71C /* TeamTableViewController.swift */; };
+		84EFFC62204BE4DD002AF71C /* team-udaan.json in Resources */ = {isa = PBXBuildFile; fileRef = 84EFFC61204BE4DC002AF71C /* team-udaan.json */; };
+		84EFFC64204BEFC8002AF71C /* teamUdaanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFC63204BEFC8002AF71C /* teamUdaanCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		848D2F952045CFD7004CE313 /* udaanRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = udaanRegular.ttf; sourceTree = "<group>"; };
 		848D2F982045E599004CE313 /* DepartmentListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentListTableViewController.swift; sourceTree = "<group>"; };
 		84C2B5AE2045BB0B00DC27DF /* EventDepartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDepartmentTableViewCell.swift; sourceTree = "<group>"; };
+		84EFFC5F204BE45C002AF71C /* TeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
+		84EFFC61204BE4DC002AF71C /* team-udaan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "team-udaan.json"; sourceTree = "<group>"; };
+		84EFFC63204BEFC8002AF71C /* teamUdaanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teamUdaanCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				84442383204B26DD00EBC722 /* event-data.json */,
+				84EFFC61204BE4DC002AF71C /* team-udaan.json */,
 				842DB242204567F1004BDB3E /* AppDelegate.swift */,
 				842DB25A204568C7004BDB3E /* Views */,
 				842DB25B204568E2004BDB3E /* Controllers */,
@@ -109,9 +116,11 @@
 			children = (
 				842DB25E20456979004BDB3E /* MainTabBarController.swift */,
 				842DB25C20456941004BDB3E /* EventNavigationController.swift */,
-				848D2F982045E599004CE313 /* DepartmentListTableViewController.swift */,
-				84C2B5AE2045BB0B00DC27DF /* EventDepartmentTableViewCell.swift */,
 				842DB2602045699A004BDB3E /* EventTableViewController.swift */,
+				84C2B5AE2045BB0B00DC27DF /* EventDepartmentTableViewCell.swift */,
+				848D2F982045E599004CE313 /* DepartmentListTableViewController.swift */,
+				84EFFC5F204BE45C002AF71C /* TeamTableViewController.swift */,
+				84EFFC63204BEFC8002AF71C /* teamUdaanCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -190,6 +199,7 @@
 				848D2F942045CFD2004CE313 /* Cookie.ttf in Resources */,
 				842DB24D204567F1004BDB3E /* LaunchScreen.storyboard in Resources */,
 				842DB24A204567F1004BDB3E /* Assets.xcassets in Resources */,
+				84EFFC62204BE4DD002AF71C /* team-udaan.json in Resources */,
 				842DB248204567F1004BDB3E /* Main.storyboard in Resources */,
 				848D2F922045CFC8004CE313 /* AVENGERS.ttf in Resources */,
 				848D2F962045CFD7004CE313 /* udaanRegular.ttf in Resources */,
@@ -208,8 +218,10 @@
 				84C2B5AF2045BB0B00DC27DF /* EventDepartmentTableViewCell.swift in Sources */,
 				842DB25520456895004BDB3E /* model.swift in Sources */,
 				842DB25F20456979004BDB3E /* MainTabBarController.swift in Sources */,
+				84EFFC60204BE45C002AF71C /* TeamTableViewController.swift in Sources */,
 				842DB2572045689A004BDB3E /* fetchJson.swift in Sources */,
 				842DB2612045699A004BDB3E /* EventTableViewController.swift in Sources */,
+				84EFFC64204BEFC8002AF71C /* teamUdaanCell.swift in Sources */,
 				842DB243204567F1004BDB3E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

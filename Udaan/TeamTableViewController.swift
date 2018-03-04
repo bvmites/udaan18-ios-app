@@ -1,32 +1,27 @@
 //
-//  EventTableViewController.swift
+//  TeamTableViewController.swift
 //  Udaan
 //
-//  Created by Admin on 08/12/1939 .
-//  Copyright © 1939 BVM. All rights reserved.
+//  Created by Admin on 04/03/2018 .
+//  Copyright © 2018 BVM. All rights reserved.
 //
 
 import UIKit
 
-class EventTableViewController: UITableViewController {
-    var eventTypeList:[String] = []
-    var lableFontSize:CGFloat = 60
-    var font = "Cookie"
+class TeamTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for (key,_) in fetchJson.data! {
-            eventTypeList.append(key)
+        if fetchJson.teamUdaan.count == 0{
+            fetchJson.setTeamUdaan()
         }
-        lableFontSize = self.view.frame.width/7
-        tableView.autoresizesSubviews = true
-        tableView.separatorColor = tableView.backgroundColor
-        // Uncomment the following line to preserve selection between presentations
+                // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -36,47 +31,27 @@ class EventTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return fetchJson.teamUdaan.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (fetchJson.data?.count)!
+        return fetchJson.teamUdaan[section].members.count
     }
-   
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return fetchJson.teamUdaan[section].name
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EventDepartment", for: indexPath) as! EventDepartmentTableViewCell
-        cell.sizeThatFits(CGSize(width: self.view.frame.width, height:self.view.frame.width*2))
-        /*
-        cell.BackImage.contentMode = UIViewContentMode.scaleToFill
-        cell.BackImage.image =  UIImage(named: eventTypeList[indexPath.row])
- 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "teamUdaan", for: indexPath) as! teamUdaanCell
+        cell.title.text = fetchJson.teamUdaan[indexPath.section].members[indexPath.row].title
+        cell.name.text = fetchJson.teamUdaan[indexPath.section].members[indexPath.row].name
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
-        */
-        
-        let lab = UILabel(frame: CGRect(x: cell.bounds.minX+8, y: cell.bounds.minY+8, width: cell.bounds.width-16, height: cell.bounds.height-8))
-        lab.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.9)
-        lab.text = "  " + eventTypeList[indexPath.row]
-        lab.textColor = UIColor.white
-        lab.layer.cornerRadius = 10
-        lab.layer.masksToBounds = true
-        
-       lab.font = UIFont(descriptor:UIFontDescriptor.init(name: font, size: lableFontSize),size:lableFontSize)
-        //lab.font = UIFont.init(name: font, size: lableFontSize)
-        cell.addSubview(lab)
-        print(lab.font)
-        
+        //cell.layer.backgroundColor = UIColor.lightGray as! CGColor
         // Configure the cell...
-        
 
         return cell
-    }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = UITableViewController()
-        vc.title = eventTypeList[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true)
     }
 
     /*

@@ -7,14 +7,14 @@
 //
 
 import Foundation
-//public struct Member {
-//    var name:String
-//    var title:String
-//}
-//public struct Category{
-//    var name:String
-//    var members:[Member]
-//}
+public struct Member {
+    var name:String
+    var title:String
+}
+public struct Category{
+    var name:String
+    var members:[Member]
+}
 struct Manager{
     var name:String
     var mobile:String
