@@ -1,27 +1,48 @@
 //
-//  TeamTableViewController.swift
+//  developerTableViewController.swift
 //  Udaan
 //
-//  Created by Admin on 04/03/2018 .
+//  Created by Admin on 05/03/2018 .
 //  Copyright © 2018 BVM. All rights reserved.
 //
 
 import UIKit
 
-class TeamTableViewController: UITableViewController {
+class developerTableViewController: UITableViewController {
+   
+    var developers:[developer] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if fetchJson.teamUdaan.count == 0 {
-            fetchJson.setTeamUdaan()
+        tableView.cellLayoutMarginsFollowReadableWidth = true
+        tableView.separatorColor = UIColor.black
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        if developers.count == 0 {
+            setDevelopers()
         }
-
+       
+    }
+    
+    func setDevelopers(){
+        let baseUrl = Bundle.main.bundleURL
+        let url = baseUrl.appendingPathComponent("developers.json")
+        if let data = try? Data(contentsOf: url)
+        {
+            if let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as! [Dictionary<String,String>]{
+                for dict in jsonData {
+                    let developerr = developer(name: dict["name"]!, title: dict["title"]!, mobile: dict["mobile"]!, email: dict["email"]!, github: dict["github"]!)
+                        developers.append(developerr)
+                }
+                    
+            }
+        }
+    }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,28 +53,25 @@ class TeamTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return fetchJson.teamUdaan.count
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return fetchJson.teamUdaan[section].members.count
+        return developers.count
     }
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return fetchJson.teamUdaan[section].name
-    }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "teamUdaan", for: indexPath) as! teamUdaanCell
-        cell.title.text = fetchJson.teamUdaan[indexPath.section].members[indexPath.row].title
-        cell.name.text = fetchJson.teamUdaan[indexPath.section].members[indexPath.row].name
-        //cell.layer.cornerRadius = 10
-        //cell.layer.masksToBounds = true
-        //cell.layer.backgroundColor = UIColor.lightGray as! CGColor
+        let cell = tableView.dequeueReusableCell(withIdentifier: "developerCell", for: indexPath) as! developerCell
+        cell.developr = developers[indexPath.row]
         // Configure the cell...
-
+        cell.name.text = "  " + developers[indexPath.row].name
+        cell.title.text = "  " + developers[indexPath.row].title
         return cell
     }
+    
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

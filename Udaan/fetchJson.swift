@@ -11,11 +11,10 @@ import UIKit
 class fetchJson
 {
     static var data : Dictionary<String,Any>?
-    static let DataUrl = "https://raw.githubusercontent.com/bvmites/udaan17-android-app/master/mock-api/event-data.json"
+    static let DataUrl = "https://raw.githubusercontent.com/bvmites/udaan18-ios-app/master/Udaan/event-data.json"
     static let urls = URL(string: DataUrl)
     static var Tech : tech!
-    static var Nontech:nonTech!
-    static var Cultural:cultural!
+    static var nontechs = [String:nonTech]()
     static var teamUdaan:[Category] = []
     
     // fetch data from github and stores in data variable
@@ -111,41 +110,71 @@ class fetchJson
             setData()
         }
         
-        //Tech Parsing
-        if let techs:[Dictionary<String,Any>] = data?["tech"] as? [Dictionary<String,Any>]{
-            for dicts in techs{
-                if Tech==nil {
-                    Tech = tech(departments: [Department]())
+        for (key,value) in data!
+        {
+            if key=="tech"{
+                if let techs:[Dictionary<String,Any>] = value as? [Dictionary<String,Any>]{
+                    for dicts in techs{
+                        if Tech==nil {
+                            Tech = tech(departments: [Department]())
+                        }
+                        Tech.departments.append(Department(name: dicts["name"] as! String, alias: dicts["alias"] as! String, heads: toManagers(rawData: dicts["heads"] as! [Dictionary<String,String>]), coHeads: toManagers(rawData: dicts["coHeads"] as! [Dictionary<String,String>]), events: toEvents(rawData: dicts["events"] as! [Dictionary<String,Any>])))
+                    }
                 }
-                Tech.departments.append(Department(name: dicts["name"] as! String, alias: dicts["alias"] as! String, heads: toManagers(rawData: dicts["heads"] as! [Dictionary<String,String>]), coHeads: toManagers(rawData: dicts["coHeads"] as! [Dictionary<String,String>]), events: toEvents(rawData: dicts["events"] as! [Dictionary<String,Any>])))
+                else {
+                    print("error in parsing tech")
+                }
             }
-        }
-        else {
-        print("error in parsing tech")
-        }
-        
-        //Nontech Parsing
-        if let nontechs = data?["nonTech"] as? [Dictionary<String,Any>]{
-            if Nontech==nil {
-                Nontech = nonTech(events: [Event]())
+            else{
+                if let nontech = value as? [Dictionary<String,Any>]{
+                        nontechs.updateValue(nonTech(events: toEvents(rawData: nontech)), forKey: key) 
+                }
+                else{
+                    print("error in parsing \(key)")
+                }
             }
-            Nontech.events = toEvents(rawData: nontechs)
-        }
-        else{
-            print("error in parsing nontech")
-        }
-        
-        //Cultural Parsing
-        if let culturals = data?["cultural"] as? [Dictionary<String,Any>]{
-            if Cultural==nil {
-                Cultural = cultural(events: [Event]())
-            }
-            Cultural.events = toEvents(rawData: culturals)
-        }
-        else{
-            print("error in parsing cultural")
         }
     }
+//    static func parseData(){
+//        if data == nil {
+//            setData()
+//        }
+//
+//        //Tech Parsing
+//        if let techs:[Dictionary<String,Any>] = data?["tech"] as? [Dictionary<String,Any>]{
+//            for dicts in techs{
+//                if Tech==nil {
+//                    Tech = tech(departments: [Department]())
+//                }
+//                Tech.departments.append(Department(name: dicts["name"] as! String, alias: dicts["alias"] as! String, heads: toManagers(rawData: dicts["heads"] as! [Dictionary<String,String>]), coHeads: toManagers(rawData: dicts["coHeads"] as! [Dictionary<String,String>]), events: toEvents(rawData: dicts["events"] as! [Dictionary<String,Any>])))
+//            }
+//        }
+//        else {
+//        print("error in parsing tech")
+//        }
+//
+//        //Nontech Parsing
+//        if let nontechs = data?["nonTech"] as? [Dictionary<String,Any>]{
+//            if Nontech==nil {
+//                Nontech = nonTech(events: [Event]())
+//            }
+//            Nontech.events = toEvents(rawData: nontechs)
+//        }
+//        else{
+//            print("error in parsing nontech")
+//        }
+//
+//        //Cultural Parsing
+//        if let culturals = data?["cultural"] as? [Dictionary<String,Any>]{
+//            if Cultural==nil {
+//                Cultural = cultural(events: [Event]())
+//            }
+//            Cultural.events = toEvents(rawData: culturals)
+//        }
+//        else{
+//            print("error in parsing cultural")
+//        }
+//    }
     
     
     

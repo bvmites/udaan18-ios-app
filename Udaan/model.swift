@@ -7,10 +7,18 @@
 //
 
 import Foundation
+struct developer{
+    var name: String
+    var title:String
+    var mobile:String
+    var email:String
+    var github:String
+}
 public struct Member {
     var name:String
     var title:String
 }
+
 public struct Category{
     var name:String
     var members:[Member]
@@ -40,9 +48,6 @@ struct tech{
     var departments:[Department]
 }
 struct nonTech{
-    var events:[Event]
-}
-struct cultural{
     var events:[Event]
 }
 func toManagers(rawData:[Dictionary<String,String>])->[Manager]{

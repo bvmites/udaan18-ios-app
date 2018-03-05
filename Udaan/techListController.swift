@@ -1,31 +1,25 @@
 //
-//  EventTableViewController.swift
+//  techListController.swift
 //  Udaan
 //
-//  Created by Admin on 08/12/1939 .
-//  Copyright © 1939 BVM. All rights reserved.
+//  Created by Admin on 05/03/2018 .
+//  Copyright © 2018 BVM. All rights reserved.
 //
 
 import UIKit
 
-class EventTableViewController: UITableViewController {
-    var eventTypeList:[String] = []
-    var lableFontSize:CGFloat = 60
-    
+class techListController: UITableViewController {
+    var lableFontSize  = CGFloat(35)
     override func viewDidLoad() {
         super.viewDidLoad()
-        for (key,_) in fetchJson.data! {
-            eventTypeList.append(key)
-        }
-        lableFontSize = self.view.frame.width/7
-        tableView.autoresizesSubviews = true
-        tableView.separatorColor = tableView.backgroundColor
+        lableFontSize = self.view.bounds.width/7
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -37,32 +31,35 @@ class EventTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (fetchJson.data?.count)!
+        return fetchJson.Tech.departments.count
     }
-   
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EventDepartment", for: indexPath) as! EventDepartmentTableViewCell
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "techCell", for: indexPath) as! techCell
         cell.sizeThatFits(CGSize(width: self.view.frame.width, height:self.view.frame.width*2))
         /*
-        cell.BackImage.contentMode = UIViewContentMode.scaleToFill
-        cell.BackImage.image =  UIImage(named: eventTypeList[indexPath.row])
- 
-        cell.layer.cornerRadius = 10
-        cell.layer.masksToBounds = true
-        */
+         cell.BackImage.contentMode = UIViewContentMode.scaleToFill
+         cell.BackImage.image =  UIImage(named: eventTypeList[indexPath.row])
+         
+         cell.layer.cornerRadius = 10
+         cell.layer.masksToBounds = true
+         */
         
         let lab = UILabel(frame: CGRect(x: cell.bounds.minX+8, y: cell.bounds.minY+8, width: cell.bounds.width-16, height: cell.bounds.height-8))
         lab.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.9)
-        lab.text = "  " + eventTypeList[indexPath.row]
+        lab.text = "  " + fetchJson.Tech.departments[indexPath.row].alias
         lab.textColor = UIColor.white
+        lab.font = UIFont.boldSystemFont(ofSize: lableFontSize)
         lab.layer.cornerRadius = 10
         lab.layer.masksToBounds = true
         
-       lab.font = UIFont.systemFont(ofSize: lableFontSize)
+        //lab.font = UIFont(descriptor:UIFontDescriptor.init(name: font, size: lableFontSize),size:lableFontSize)
         //lab.font = UIFont.init(name: font, size: lableFontSize)
         cell.addSubview(lab)
         print(lab.font)
@@ -71,26 +68,10 @@ class EventTableViewController: UITableViewController {
         
         // Configure the cell...
         
-
+        
         return cell
     }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = UITableViewController()
-//        vc.title = eventTypeList[indexPath.row]
-//        navigationController?.pushViewController(vc, animated: true)
-        if eventTypeList[indexPath.row] == "tech" {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "techlist") as! techListController
-            vc.title = eventTypeList[indexPath.row]
-            navigationController?.pushViewController(vc, animated: true)
-        }
-        else{
-            let vc = storyboard?.instantiateViewController(withIdentifier: "eventslist") as! EventsController
-            vc.title = eventTypeList[indexPath.row]
-            vc.events = fetchJson.nontechs[eventTypeList[indexPath.row]]?.events
-            navigationController?.pushViewController(vc, animated: true)
-            
-        }
-    }
+    
 
     /*
     // Override to support conditional editing of the table view.

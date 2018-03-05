@@ -1,15 +1,16 @@
 //
-//  DepartmentListTableViewController.swift
+//  EventsController.swift
 //  Udaan
 //
-//  Created by Admin on 09/12/1939 .
-//  Copyright © 1939 BVM. All rights reserved.
+//  Created by Admin on 05/03/2018 .
+//  Copyright © 2018 BVM. All rights reserved.
 //
 
 import UIKit
 
-class DepartmentListTableViewController: UITableViewController {
-
+class EventsController: UITableViewController {
+   
+    var events:[Event]?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,7 +18,7 @@ class DepartmentListTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //self.navigationItem.rightBarButtonItem=self.editButtonItem()
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +30,26 @@ class DepartmentListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return (events?.count)! //?? 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+     let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventCell
+    
+     cell.back.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.9)
+        cell.back.layer.cornerRadius = 10
+        cell.back.layer.masksToBounds = true
+        cell.name.text = events?[indexPath.row].name
+        cell.descript.text = events?[indexPath.row].description
+     return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
