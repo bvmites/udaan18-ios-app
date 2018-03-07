@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841154EE20506C59002ADD02 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841154ED20506C59002ADD02 /* EventController.swift */; };
 		842DB243204567F1004BDB3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DB242204567F1004BDB3E /* AppDelegate.swift */; };
 		842DB248204567F1004BDB3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DB246204567F1004BDB3E /* Main.storyboard */; };
 		842DB24A204567F1004BDB3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842DB249204567F1004BDB3E /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		841154ED20506C59002ADD02 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		842DB23F204567F1004BDB3E /* Udaan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Udaan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842DB242204567F1004BDB3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		842DB247204567F1004BDB3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,7 +56,7 @@
 		849E7143204D4744002CEEB1 /* developers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = developers.json; sourceTree = "<group>"; };
 		849E7147204D7B6A002CEEB1 /* EventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsController.swift; sourceTree = "<group>"; };
 		84A32DC2204DA80D006394E6 /* techCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = techCell.swift; sourceTree = "<group>"; };
-		84A32DC4204DA822006394E6 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		84A32DC4204DA822006394E6 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; tabWidth = 4; };
 		84A32DCA204DAFFF006394E6 /* techListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = techListController.swift; sourceTree = "<group>"; };
 		84C2B5AE2045BB0B00DC27DF /* EventDepartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDepartmentTableViewCell.swift; sourceTree = "<group>"; };
 		84EFFC5F204BE45C002AF71C /* TeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				842DB25E20456979004BDB3E /* MainTabBarController.swift */,
 				842DB2602045699A004BDB3E /* EventTableViewController.swift */,
 				84A32DCA204DAFFF006394E6 /* techListController.swift */,
+				841154ED20506C59002ADD02 /* EventController.swift */,
 				849E7147204D7B6A002CEEB1 /* EventsController.swift */,
 				84EFFC5F204BE45C002AF71C /* TeamTableViewController.swift */,
 				849E713F204D45E8002CEEB1 /* developerTableViewController.swift */,
@@ -262,6 +265,7 @@
 				849E7148204D7B6A002CEEB1 /* EventsController.swift in Sources */,
 				84EFFC60204BE45C002AF71C /* TeamTableViewController.swift in Sources */,
 				849E7140204D45E8002CEEB1 /* developerTableViewController.swift in Sources */,
+				841154EE20506C59002ADD02 /* EventController.swift in Sources */,
 				84A32DC5204DA822006394E6 /* EventCell.swift in Sources */,
 				849E7142204D4610002CEEB1 /* developerCell.swift in Sources */,
 				842DB2572045689A004BDB3E /* fetchJson.swift in Sources */,
@@ -324,8 +328,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: jvaghani971@gmail.com (CBYMAD3F8D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos11.2]" = "iPhone Developer: jvaghani971@gmail.com (CBYMAD3F8D)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -382,8 +386,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: jvaghani971@gmail.com (CBYMAD3F8D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos11.2]" = "iPhone Developer: jvaghani971@gmail.com (CBYMAD3F8D)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;

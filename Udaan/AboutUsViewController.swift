@@ -10,6 +10,7 @@ import UIKit
 
 class AboutUsViewController: UIViewController {
     
+    @IBOutlet var sclView: UIScrollView!
     @IBAction func rateUs(_ sender: UIBarButtonItem) {
         let appID = "959379869"
         let urlStr = "itms-apps://itunes.apple.com/app/id\(appID)"
@@ -57,10 +58,9 @@ class AboutUsViewController: UIViewController {
             }
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
 
@@ -70,11 +70,11 @@ class AboutUsViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

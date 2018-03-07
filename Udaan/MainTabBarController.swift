@@ -13,8 +13,8 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchJson.parseData()
-        tabBar.isTranslucent = true
-                // Do any additional setup after loading the view.
+        //tabBar.isTranslucent = true
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

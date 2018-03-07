@@ -8,11 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AVENGERS.ttf">
-            <string>AvengeanceHeroicAvengerNormal</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -26,15 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Udaan-18" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="X1m-ns-oq9">
-                                <rect key="frame" x="16" y="280" width="343" height="108"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvengeanceHeroicAvengerNormal" family="Avengeance Heroic Avenger" pointSize="44"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cultural" translatesAutoresizingMaskIntoConstraints="NO" id="82B-I2-qIg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="82B-I2-qIg" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="1dg-Nf-39P"/>
+                            <constraint firstAttribute="trailing" secondItem="82B-I2-qIg" secondAttribute="trailing" id="4CN-qA-6DR"/>
+                            <constraint firstItem="82B-I2-qIg" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="d0d-1o-LrI"/>
+                            <constraint firstItem="82B-I2-qIg" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="tbd-Q6-b4M"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -42,4 +39,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cultural" width="720" height="1280"/>
+    </resources>
 </document>

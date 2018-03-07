@@ -71,7 +71,12 @@ class techListController: UITableViewController {
         
         return cell
     }
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "events") as! EventsController
+        vc.title = fetchJson.Tech.departments[indexPath.row].alias
+        vc.events = fetchJson.Tech.departments[indexPath.row].events
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.

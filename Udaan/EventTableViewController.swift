@@ -84,7 +84,7 @@ class EventTableViewController: UITableViewController {
             navigationController?.pushViewController(vc, animated: true)
         }
         else{
-            let vc = storyboard?.instantiateViewController(withIdentifier: "eventslist") as! EventsController
+            let vc = storyboard?.instantiateViewController(withIdentifier: "events") as! EventsController
             vc.title = eventTypeList[indexPath.row]
             vc.events = fetchJson.nontechs[eventTypeList[indexPath.row]]?.events
             navigationController?.pushViewController(vc, animated: true)

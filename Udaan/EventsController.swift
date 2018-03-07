@@ -13,7 +13,8 @@ class EventsController: UITableViewController {
     var events:[Event]?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.rowHeight = 150
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -42,14 +43,24 @@ class EventsController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventCell
     
-     cell.back.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.9)
-        cell.back.layer.cornerRadius = 10
-        cell.back.layer.masksToBounds = true
+     cell.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.9)
+        
         cell.name.text = events?[indexPath.row].name
         cell.descript.text = events?[indexPath.row].description
+        cell.layoutMargins.bottom = 8
+        cell.layoutMargins.top = 8
+        cell.layoutMargins.left = 8
+        cell.layoutMargins.right = 8
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
      return cell
     }
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "event") as! EventController
+        vc.title = events![indexPath.row].name
+        vc.event = events![indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.

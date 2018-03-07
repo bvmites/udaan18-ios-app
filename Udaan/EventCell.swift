@@ -10,11 +10,12 @@ import UIKit
 
 class EventCell: UITableViewCell {
 
-    @IBOutlet var back: UIView!
+    
     @IBOutlet var name: UILabel!
     @IBOutlet var descript: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.reloadInputViews()
         // Initialization code
     }
 

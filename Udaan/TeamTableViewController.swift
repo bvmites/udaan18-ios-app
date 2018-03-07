@@ -14,6 +14,7 @@ class TeamTableViewController: UITableViewController {
         super.viewDidLoad()
         if fetchJson.teamUdaan.count == 0 {
             fetchJson.setTeamUdaan()
+            tableView.sectionHeaderHeight = 50
         }
 
         // Uncomment the following line to preserve selection between presentations
@@ -42,6 +43,7 @@ class TeamTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return fetchJson.teamUdaan[section].name
     }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "teamUdaan", for: indexPath) as! teamUdaanCell
