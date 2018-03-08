@@ -14,6 +14,9 @@ class EventTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         for (key,_) in fetchJson.data! {
             eventTypeList.append(key)
         }
@@ -56,9 +59,9 @@ class EventTableViewController: UITableViewController {
         */
         
         let lab = UILabel(frame: CGRect(x: cell.bounds.minX+8, y: cell.bounds.minY+8, width: cell.bounds.width-16, height: cell.bounds.height-8))
-        lab.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.9)
+        lab.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5)
         lab.text = "  " + eventTypeList[indexPath.row]
-        lab.textColor = UIColor.white
+        lab.textColor = UIColor.black
         lab.layer.cornerRadius = 10
         lab.layer.masksToBounds = true
         
@@ -78,9 +81,13 @@ class EventTableViewController: UITableViewController {
 //        let vc = UITableViewController()
 //        vc.title = eventTypeList[indexPath.row]
 //        navigationController?.pushViewController(vc, animated: true)
-        if eventTypeList[indexPath.row] == "tech" {
+        if eventTypeList[indexPath.row] == "technical" {
             let vc = storyboard?.instantiateViewController(withIdentifier: "techlist") as! techListController
             vc.title = eventTypeList[indexPath.row]
+            
+            
+           
+            
             navigationController?.pushViewController(vc, animated: true)
         }
         else{

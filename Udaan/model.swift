@@ -53,7 +53,7 @@ struct nonTech{
 func toManagers(rawData:[Dictionary<String,String>])->[Manager]{
     var managers = [Manager]()
     for dicts in rawData{
-        managers.append(Manager(name: dicts["name"]!, mobile: dicts["mobile"]!))
+        managers.append(Manager(name: dicts["name"]!, mobile: dicts["phone"]!))
     }
     return managers
     
@@ -61,7 +61,7 @@ func toManagers(rawData:[Dictionary<String,String>])->[Manager]{
 func toEvents(rawData:[Dictionary<String,Any>])->[Event]{
     var events = [Event]()
     for dicts in rawData{
-        events.append(Event(name: dicts["name"] as! String, participants: dicts["participants"] as! String, fees: dicts["fees"] as! String, description: dicts["description"] as! String, prizes: dicts["prizes"] as! [String], rounds: dicts["rounds"] as! [String], managers: toManagers(rawData: dicts["managers"] as! [Dictionary<String,String>])))
+        events.append(Event(name: dicts["name"] as! String, participants: dicts["participants"] as! String, fees: dicts["fees"] as! String, description: dicts["tagline"] as! String, prizes: dicts["prizes"] as! [String], rounds: dicts["rounds"] as! [String], managers: toManagers(rawData: dicts["managers"] as! [Dictionary<String,String>])))
     }
     return events
 }

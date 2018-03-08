@@ -12,6 +12,7 @@ class fetchJson
 {
     static var data : Dictionary<String,Any>?
     static let DataUrl = "https://raw.githubusercontent.com/bvmites/udaan18-ios-app/master/Udaan/event-data.json"
+    //static let DataUrl = "https://raw.githubusercontent.com/bvmites/udaan18-website/master/data.js"
     static let urls = URL(string: DataUrl)
     static var Tech : tech!
     static var nontechs = [String:nonTech]()
@@ -112,7 +113,7 @@ class fetchJson
         
         for (key,value) in data!
         {
-            if key=="tech"{
+            if key=="technical"{
                 if let techs:[Dictionary<String,Any>] = value as? [Dictionary<String,Any>]{
                     for dicts in techs{
                         if Tech==nil {

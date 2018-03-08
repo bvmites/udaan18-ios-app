@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventsController: UITableViewController {
+class EventsController: UITableViewController,UINavigationControllerDelegate {
    
     var events:[Event]?
     override func viewDidLoad() {
@@ -21,7 +21,6 @@ class EventsController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -59,6 +58,21 @@ class EventsController: UITableViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "event") as! EventController
         vc.title = events![indexPath.row].name
         vc.event = events![indexPath.row]
+        
+        /*
+        let transition = CATransition()
+        transition.duration = 2
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionFade
+        self.navigationController?.view.layer.add(transition, forKey: nil)
+        */
+        let transition:CATransition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionMoveIn
+        transition.subtype = kCATransitionFromTop
+        self.navigationController!.view.layer.add(transition, forKey: kCATransition)
+        
         navigationController?.pushViewController(vc, animated: true)
     }
 
