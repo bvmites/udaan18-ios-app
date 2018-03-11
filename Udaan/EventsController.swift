@@ -45,20 +45,14 @@ class EventsController: UITableViewController,UINavigationControllerDelegate {
      cell.name.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.9)
         
         cell.name.text = events?[indexPath.row].name
-        cell.layoutMargins.bottom = 8
-        cell.layoutMargins.top = 8
-        cell.layoutMargins.left = 8
-        cell.layoutMargins.right = 8
-        cell.name.layoutMargins.bottom = 8
-        cell.name.layoutMargins.top = 8
-        cell.name.layoutMargins.left = 8
-        cell.name.layoutMargins.right = 8
+    
         
-        cell.layer.cornerRadius = 10
-        cell.layer.masksToBounds = true
+        cell.name.layer.cornerRadius = 10
+        cell.name.layer.masksToBounds = true
      return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let vc = storyboard?.instantiateViewController(withIdentifier: "event") as! EventController
         vc.title = events![indexPath.row].name
         vc.event = events![indexPath.row]

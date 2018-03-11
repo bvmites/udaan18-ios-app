@@ -48,14 +48,15 @@ class EventTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventDepartment", for: indexPath) as! EventDepartmentTableViewCell
-        cell.sizeThatFits(CGSize(width: self.view.frame.width, height:self.view.frame.width*2))
+        
         /*
         cell.BackImage.contentMode = UIViewContentMode.scaleToFill
         cell.BackImage.image =  UIImage(named: eventTypeList[indexPath.row])
  
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
-        */
+ 
+        
         if cell.subviews.count >= 3 {
             (cell.subviews[2] as! UILabel).text = "  " + eventTypeList[indexPath.row]
             print(cell.subviews[3])
@@ -76,10 +77,15 @@ class EventTableViewController: UITableViewController {
         //lab.font = UIFont.init(name: font, size: lableFontSize)
         // Configure the cell...
         //print()
-
+ */
+        cell.name.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5)
+        cell.name.text = eventTypeList[indexPath.row]
+        cell.name.layer.cornerRadius = 10
+        cell.name.layer.masksToBounds = true
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
 //        let vc = UITableViewController()
 //        vc.title = eventTypeList[indexPath.row]
 //        navigationController?.pushViewController(vc, animated: true)
@@ -99,6 +105,7 @@ class EventTableViewController: UITableViewController {
             navigationController?.pushViewController(vc, animated: true)
             
         }
+        
     }
 
     /*

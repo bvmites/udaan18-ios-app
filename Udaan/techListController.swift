@@ -42,7 +42,7 @@ class techListController: UITableViewController {
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "techCell", for: indexPath) as! techCell
-        cell.sizeThatFits(CGSize(width: self.view.frame.width, height:self.view.frame.width*2))
+        
         /*
          cell.BackImage.contentMode = UIViewContentMode.scaleToFill
          cell.BackImage.image =  UIImage(named: eventTypeList[indexPath.row])
@@ -50,7 +50,7 @@ class techListController: UITableViewController {
          cell.layer.cornerRadius = 10
          cell.layer.masksToBounds = true
          */
-        
+        /*
         let lab = UILabel(frame: CGRect(x: cell.bounds.minX+8, y: cell.bounds.minY+8, width: cell.bounds.width-16, height: cell.bounds.height-8))
         lab.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5)
         lab.text = "  " + fetchJson.Tech.departments[indexPath.row].name
@@ -62,13 +62,19 @@ class techListController: UITableViewController {
         //lab.font = UIFont.init(name: font, size: lableFontSize)
         lab.font = UIFont.boldSystemFont(ofSize: lableFontSize)
         cell.addSubview(lab)
+        */
+        cell.name.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5)
         
+        cell.name.text = fetchJson.Tech.departments[indexPath.row].name
+        cell.name.layer.cornerRadius = 10
+        cell.name.layer.masksToBounds = true
         // Configure the cell...
         
         
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       tableView.deselectRow(at: indexPath, animated: true)
         let vc = storyboard?.instantiateViewController(withIdentifier: "events") as! EventsController
         vc.title = fetchJson.Tech.departments[indexPath.row].name
         vc.events = fetchJson.Tech.departments[indexPath.row].events
