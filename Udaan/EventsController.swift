@@ -42,14 +42,18 @@ class EventsController: UITableViewController,UINavigationControllerDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventCell
     
-     cell.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.9)
+     cell.name.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.9)
         
         cell.name.text = events?[indexPath.row].name
-        cell.descript.text = events?[indexPath.row].description
         cell.layoutMargins.bottom = 8
         cell.layoutMargins.top = 8
         cell.layoutMargins.left = 8
         cell.layoutMargins.right = 8
+        cell.name.layoutMargins.bottom = 8
+        cell.name.layoutMargins.top = 8
+        cell.name.layoutMargins.left = 8
+        cell.name.layoutMargins.right = 8
+        
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
      return cell

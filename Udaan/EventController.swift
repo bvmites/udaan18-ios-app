@@ -32,7 +32,7 @@ class EventController: UIViewController {
             Prizes.text = Prizes.text! + "Prize \(c+1):-\(prize)\n\n"
             c = c+1
         }
-        
+ 
 
         // Do any additional setup after loading the view.
     }

@@ -17,6 +17,22 @@ class fetchJson
     static var Tech : tech!
     static var nontechs = [String:nonTech]()
     static var teamUdaan:[Category] = []
+    static let url = ["http://www.youtube.com/watch?v=N__oFtLbHQ0",
+               
+               "instagram://user?username=teamudaan",
+               "fb://profile/teamudaan18",
+               "mailto:jvaghani971@gmail.com",
+               "tel:91-999-999-9999",
+               "sms:91-999-999-9999",
+               "http://maps.apple.com/?q=Birla+Vishvakarma+Mahavidyalaya+Anand+Gujarat+india"]
+    static let optionalUrl = ["http://www.youtube.com/v/N__oFtLbHQ0",
+                       "https://www.instagram.com/teamudaan/",
+                       "https://www.facebook.com/teamudaan18/",
+                       "mailto:jvaghani971@gmail.com",
+                       "tel:1-999-999-9999",
+                       "sms:1-999-999-9999",
+                       "http://maps.apple.com/?ll=22.5525703,72.9238183"
+    ]
     
     // fetch data from github and stores in data variable
     static func dataFromBundle()->Data?{
@@ -119,7 +135,7 @@ class fetchJson
                         if Tech==nil {
                             Tech = tech(departments: [Department]())
                         }
-                        Tech.departments.append(Department(name: dicts["name"] as! String, alias: dicts["alias"] as! String, heads: toManagers(rawData: dicts["heads"] as! [Dictionary<String,String>]), coHeads: toManagers(rawData: dicts["coHeads"] as! [Dictionary<String,String>]), events: toEvents(rawData: dicts["events"] as! [Dictionary<String,Any>])))
+                        Tech.departments.append(Department(name: dicts["name"] as! String, heads: toManagers(rawData: dicts["heads"] as! [Dictionary<String,String>]), coHeads: toManagers(rawData: dicts["coHeads"] as! [Dictionary<String,String>]), events: toEvents(rawData: dicts["events"] as! [Dictionary<String,Any>])))
                     }
                 }
                 else {

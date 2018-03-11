@@ -52,19 +52,16 @@ class techListController: UITableViewController {
          */
         
         let lab = UILabel(frame: CGRect(x: cell.bounds.minX+8, y: cell.bounds.minY+8, width: cell.bounds.width-16, height: cell.bounds.height-8))
-        lab.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.9)
-        lab.text = "  " + fetchJson.Tech.departments[indexPath.row].alias
-        lab.textColor = UIColor.white
-        lab.font = UIFont.boldSystemFont(ofSize: lableFontSize)
+        lab.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5)
+        lab.text = "  " + fetchJson.Tech.departments[indexPath.row].name
+        lab.textColor = UIColor.black
+        
         lab.layer.cornerRadius = 10
         lab.layer.masksToBounds = true
-        
         //lab.font = UIFont(descriptor:UIFontDescriptor.init(name: font, size: lableFontSize),size:lableFontSize)
         //lab.font = UIFont.init(name: font, size: lableFontSize)
+        lab.font = UIFont.boldSystemFont(ofSize: lableFontSize)
         cell.addSubview(lab)
-        print(lab.font)
-        print(cell.bounds)
-        print(cell.frame)
         
         // Configure the cell...
         
@@ -73,7 +70,7 @@ class techListController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "events") as! EventsController
-        vc.title = fetchJson.Tech.departments[indexPath.row].alias
+        vc.title = fetchJson.Tech.departments[indexPath.row].name
         vc.events = fetchJson.Tech.departments[indexPath.row].events
         navigationController?.pushViewController(vc, animated: true)
     }

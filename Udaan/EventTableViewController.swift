@@ -45,7 +45,6 @@ class EventTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return (fetchJson.data?.count)!
     }
-   
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventDepartment", for: indexPath) as! EventDepartmentTableViewCell
@@ -57,23 +56,26 @@ class EventTableViewController: UITableViewController {
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
         */
-        
+        if cell.subviews.count >= 3 {
+            (cell.subviews[2] as! UILabel).text = "  " + eventTypeList[indexPath.row]
+            print(cell.subviews[3])
+        }
+        else{
+            print(cell.subviews.count)
         let lab = UILabel(frame: CGRect(x: cell.bounds.minX+8, y: cell.bounds.minY+8, width: cell.bounds.width-16, height: cell.bounds.height-8))
         lab.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5)
         lab.text = "  " + eventTypeList[indexPath.row]
         lab.textColor = UIColor.black
-        lab.layer.cornerRadius = 10
-        lab.layer.masksToBounds = true
+        //lab.layer.cornerRadius = 10
+        //lab.layer.masksToBounds = true
         
-       lab.font = UIFont.systemFont(ofSize: lableFontSize)
-        //lab.font = UIFont.init(name: font, size: lableFontSize)
+            lab.font = UIFont.systemFont(ofSize: lableFontSize)
         cell.addSubview(lab)
-        print(lab.font)
-        print(cell.bounds)
-        print(cell.frame)
-        
+            
+        }
+        //lab.font = UIFont.init(name: font, size: lableFontSize)
         // Configure the cell...
-        
+        //print()
 
         return cell
     }

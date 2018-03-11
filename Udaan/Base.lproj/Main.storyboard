@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -421,6 +422,7 @@
                                         <rect key="frame" x="51" y="8" width="240" height="240"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="240" id="8C3-h4-Pmc"/>
+                                            <constraint firstAttribute="width" secondItem="0j6-Pq-1e3" secondAttribute="height" multiplier="1:1" id="csL-f6-KXB"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Udaan - 18" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVN-UV-uoj">
@@ -452,7 +454,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WbQ-xx-JCW">
-                                        <rect key="frame" x="59" y="388" width="212" height="138"/>
+                                        <rect key="frame" x="65.5" y="388" width="212" height="138"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pvn-ar-OkC">
                                                 <rect key="frame" x="0.0" y="0.0" width="212" height="64"/>
@@ -587,9 +589,9 @@
                                     <constraint firstItem="viS-HZ-tIf" firstAttribute="trailing" secondItem="qPP-WA-Jnc" secondAttribute="trailingMargin" id="QXJ-Tb-u7l"/>
                                     <constraint firstItem="GVN-UV-uoj" firstAttribute="top" secondItem="0j6-Pq-1e3" secondAttribute="bottom" constant="8" symbolic="YES" id="R4d-JD-QLT"/>
                                     <constraint firstItem="0j6-Pq-1e3" firstAttribute="leading" secondItem="GVN-UV-uoj" secondAttribute="leading" id="TIi-jb-uCS"/>
-                                    <constraint firstItem="WbQ-xx-JCW" firstAttribute="leading" secondItem="qPP-WA-Jnc" secondAttribute="leading" constant="59" id="Wqn-ZH-QDO"/>
                                     <constraint firstItem="GVN-UV-uoj" firstAttribute="centerX" secondItem="viS-HZ-tIf" secondAttribute="centerX" id="Wyb-Sm-YyI"/>
                                     <constraint firstItem="i70-PD-Lwg" firstAttribute="leading" secondItem="JTH-Ka-x6P" secondAttribute="leading" id="XZe-5I-aO5"/>
+                                    <constraint firstItem="WbQ-xx-JCW" firstAttribute="centerX" secondItem="qPP-WA-Jnc" secondAttribute="centerX" id="ZeF-DV-afg"/>
                                     <constraint firstItem="GbC-Fy-D3Z" firstAttribute="leading" secondItem="qPP-WA-Jnc" secondAttribute="leading" constant="21" id="dBf-bk-Gqw"/>
                                     <constraint firstItem="0j6-Pq-1e3" firstAttribute="top" secondItem="qPP-WA-Jnc" secondAttribute="topMargin" id="daD-dt-OYQ"/>
                                     <constraint firstItem="viS-HZ-tIf" firstAttribute="trailing" secondItem="wEC-bR-Kw1" secondAttribute="trailing" id="f53-3x-nOQ"/>

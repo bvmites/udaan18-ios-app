@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import StoreKit
 
 class AboutUsViewController: UIViewController {
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     @IBOutlet var sclView: UIScrollView!
     @IBAction func rateUs(_ sender: UIBarButtonItem) {
-        let appID = "959379869"
+       /* custom rate review
+         let appID = "959379869"
         let urlStr = "itms-apps://itunes.apple.com/app/id\(appID)"
         //let urlStr = "http://appstore.com/udaan"
         // (Option 1) Open App Page
@@ -27,47 +41,27 @@ class AboutUsViewController: UIViewController {
                 //UIApplication.shared.openURL(url)
             }
         }
+        */
+        SKStoreReviewController.requestReview()
+    
     }
 
-    let url = ["http://www.youtube.com/watch?v=N__oFtLbHQ0",
-               
-               "instagram://user?username=teamudaan",
-               "fb://profile/teamudaan18",
-               "mailto:jvaghani971@gmail.com",
-               "tel:91-999-999-9999",
-               "sms:91-999-999-9999",
-               "http://maps.apple.com/?q=Birla+Vishvakarma+Mahavidyalaya+Anand+Gujarat+india"]
-    let optionalUrl = ["http://www.youtube.com/v/N__oFtLbHQ0",
-                       "https://www.instagram.com/teamudaan/",
-                       "https://www.facebook.com/teamudaan18/",
-                        "mailto:jvaghani971@gmail.com",
-                        "tel:1-999-999-9999",
-                        "sms:1-999-999-9999",
-                        "http://maps.apple.com/?ll=22.5525703,72.9238183"
-    ]
+    
 
     @IBAction func connect(_ sender: UIButton) {
-        UIApplication.shared.open(URL(string:url[sender.tag])! , options: [:]) { (poss) in
+        UIApplication.shared.open(URL(string:fetchJson.url[sender.tag])! , options: [:]) { (poss) in
             if poss{
                 print("done")
             }
             else{
                     print("error")
-                print(self.url[sender.tag])
-                UIApplication.shared.open(URL(string: self.optionalUrl[sender.tag])! , options: [:],completionHandler: nil)
+                print(fetchJson.url[sender.tag])
+                UIApplication.shared.open(URL(string: fetchJson.optionalUrl[sender.tag])! , options: [:],completionHandler: nil)
             }
         }
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
     
 
     

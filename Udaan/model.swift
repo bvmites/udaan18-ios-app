@@ -29,7 +29,7 @@ struct Manager{
 }
 struct Department {
     var name:String
-    var alias:String
+    //var alias:String
     var heads:[Manager]
     var coHeads:[Manager]
     var events:[Event]
@@ -61,7 +61,8 @@ func toManagers(rawData:[Dictionary<String,String>])->[Manager]{
 func toEvents(rawData:[Dictionary<String,Any>])->[Event]{
     var events = [Event]()
     for dicts in rawData{
-        events.append(Event(name: dicts["name"] as! String, participants: dicts["participants"] as! String, fees: dicts["fees"] as! String, description: dicts["tagline"] as! String, prizes: dicts["prizes"] as! [String], rounds: dicts["rounds"] as! [String], managers: toManagers(rawData: dicts["managers"] as! [Dictionary<String,String>])))
+        events.append(Event(name: dicts["name"] as! String, participants: String(dicts["participants"] as! Int), fees: String(dicts["fees"] as! Int), description: dicts["tagline"] as! String, prizes: (dicts["prizes"] as! [Int]).map{String($0)}, rounds: dicts["rounds"] as! [String], managers: toManagers(rawData: dicts["managers"] as! [Dictionary<String,String>])))
     }
+    //dicts["prizes"] as! [Int32]
     return events
 }
