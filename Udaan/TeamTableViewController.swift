@@ -16,7 +16,8 @@ class TeamTableViewController: UITableViewController {
             fetchJson.setTeamUdaan()
             tableView.sectionHeaderHeight = 50
         }
-
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

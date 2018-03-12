@@ -14,13 +14,14 @@ class EventTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       // tableView.estimatedRowHeight = tableView.rowHeight
+        //tableView.rowHeight = UITableViewAutomaticDimension
         
         
         for (key,_) in fetchJson.data! {
             eventTypeList.append(key)
         }
-        lableFontSize = self.view.frame.width/7
+       // lableFontSize = self.view.frame.width/2
         tableView.autoresizesSubviews = true
         tableView.separatorColor = tableView.backgroundColor
         // Uncomment the following line to preserve selection between presentations

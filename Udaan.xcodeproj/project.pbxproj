@@ -19,6 +19,8 @@
 		842DB2612045699A004BDB3E /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DB2602045699A004BDB3E /* EventTableViewController.swift */; };
 		843E40C8204C4B4600F25E2C /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E40C7204C4B4600F25E2C /* AboutUsViewController.swift */; };
 		84442384204B26DE00EBC722 /* event-data-old.json in Resources */ = {isa = PBXBuildFile; fileRef = 84442383204B26DD00EBC722 /* event-data-old.json */; };
+		8456A0202056BA4800EF2647 /* headsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8456A01F2056BA4800EF2647 /* headsController.swift */; };
+		8456A0222056BDE900EF2647 /* headsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8456A0212056BDE900EF2647 /* headsCell.swift */; };
 		848D2F922045CFC8004CE313 /* AVENGERS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848D2F912045CFC8004CE313 /* AVENGERS.ttf */; };
 		848D2F942045CFD2004CE313 /* Cookie.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848D2F932045CFD2004CE313 /* Cookie.ttf */; };
 		848D2F962045CFD7004CE313 /* udaanRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848D2F952045CFD7004CE313 /* udaanRegular.ttf */; };
@@ -51,6 +53,8 @@
 		842DB2602045699A004BDB3E /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		843E40C7204C4B4600F25E2C /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		84442383204B26DD00EBC722 /* event-data-old.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "event-data-old.json"; sourceTree = "<group>"; };
+		8456A01F2056BA4800EF2647 /* headsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headsController.swift; sourceTree = "<group>"; };
+		8456A0212056BDE900EF2647 /* headsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headsCell.swift; sourceTree = "<group>"; };
 		848D2F912045CFC8004CE313 /* AVENGERS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AVENGERS.ttf; sourceTree = "<group>"; };
 		848D2F932045CFD2004CE313 /* Cookie.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cookie.ttf; sourceTree = "<group>"; };
 		848D2F952045CFD7004CE313 /* udaanRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = udaanRegular.ttf; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 				842DB25E20456979004BDB3E /* MainTabBarController.swift */,
 				842DB2602045699A004BDB3E /* EventTableViewController.swift */,
 				84A32DCA204DAFFF006394E6 /* techListController.swift */,
+				8456A01F2056BA4800EF2647 /* headsController.swift */,
 				841154ED20506C59002ADD02 /* EventController.swift */,
 				849E7147204D7B6A002CEEB1 /* EventsController.swift */,
 				84EFFC5F204BE45C002AF71C /* TeamTableViewController.swift */,
@@ -179,6 +184,7 @@
 			children = (
 				84C2B5AE2045BB0B00DC27DF /* EventDepartmentTableViewCell.swift */,
 				84A32DC2204DA80D006394E6 /* techCell.swift */,
+				8456A0212056BDE900EF2647 /* headsCell.swift */,
 				84A32DC4204DA822006394E6 /* EventCell.swift */,
 				84EFFC63204BEFC8002AF71C /* teamUdaanCell.swift */,
 				849E7141204D4610002CEEB1 /* developerCell.swift */,
@@ -277,7 +283,9 @@
 				849E7140204D45E8002CEEB1 /* developerTableViewController.swift in Sources */,
 				841154EE20506C59002ADD02 /* EventController.swift in Sources */,
 				84A32DC5204DA822006394E6 /* EventCell.swift in Sources */,
+				8456A0202056BA4800EF2647 /* headsController.swift in Sources */,
 				849E7142204D4610002CEEB1 /* developerCell.swift in Sources */,
+				8456A0222056BDE900EF2647 /* headsCell.swift in Sources */,
 				842DB2572045689A004BDB3E /* fetchJson.swift in Sources */,
 				842DB2612045699A004BDB3E /* EventTableViewController.swift in Sources */,
 				84EFFC64204BEFC8002AF71C /* teamUdaanCell.swift in Sources */,

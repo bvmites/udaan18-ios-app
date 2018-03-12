@@ -1,42 +1,25 @@
 //
-//  EventsController.swift
+//  headsController.swift
 //  Udaan
 //
-//  Created by Admin on 05/03/2018 .
+//  Created by Admin on 12/03/2018 .
 //  Copyright © 2018 BVM. All rights reserved.
 //
 
 import UIKit
 
-class EventsController: UITableViewController {
-   
-    var department:Department? = nil
-    var events:[Event]? = nil
-    
+class headsController: UITableViewController {
+    var heads:Dictionary<Int,[Manager]?> = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 150
-        //navigationItem.rightBarButtonItem!.title = "tails"
-        if department != nil {
-        let item = UIBarButtonItem(title: "head", style: UIBarButtonItemStyle.plain, target: self, action: #selector(displayHead))
-            item.tintColor = UIColor.black
-            self.navigationItem.rightBarButtonItem = item
-            events = department?.events
-        }
-        //navigationController?.navigationItem.setRightBarButton(item, animated: false)
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    @objc func displayHead(){
-    let vc = storyboard?.instantiateViewController(withIdentifier: "heads") as! headsController
-    vc.title = "heads"
-    vc.heads[0] = department?.heads
-    vc.heads[1] = department?.coHeads
-    self.navigationController?.pushViewController(vc, animated: true)
-    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,50 +29,36 @@ class EventsController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return heads.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (events?.count)! //?? 0
+        return heads[section]??.count ?? 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "heads", for: indexPath) as! headsCell
+        cell.manager.text = "\((heads[indexPath.section]?![indexPath.row].name)!)\n\((heads[indexPath.section]?![indexPath.row].mobile)!)"
+        // Configure the cell...
+
+        return cell
+    }
     
-     cell.name.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.9)
-        
-        cell.name.text = events?[indexPath.row].name
-    
-        
-        cell.name.layer.cornerRadius = 10
-        cell.name.layer.masksToBounds = true
-     return cell
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section==0{
+            return "heads"
+        }
+        else {
+            return "coHeads"
+        }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let vc = storyboard?.instantiateViewController(withIdentifier: "event") as! EventController
-        vc.title = events![indexPath.row].name
-        vc.event = events![indexPath.row]
-        
-        /*
-        let transition = CATransition()
-        transition.duration = 2
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = kCATransitionFade
-        self.navigationController?.view.layer.add(transition, forKey: nil)
-        */
-        let transition:CATransition = CATransition()
-        transition.duration = 0.5
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = kCATransitionMoveIn
-        transition.subtype = kCATransitionFromTop
-        self.navigationController!.view.layer.add(transition, forKey: kCATransition)
-        
-        navigationController?.pushViewController(vc, animated: true)
+     let   url = URL(string: "tel:"+(heads[indexPath.section]?![indexPath.row].mobile)! )
+    UIApplication.shared.open(url!, options: [:], completionHandler: {print($0)})
+        print(url)
     }
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

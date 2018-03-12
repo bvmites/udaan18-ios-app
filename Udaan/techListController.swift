@@ -77,7 +77,7 @@ class techListController: UITableViewController {
        tableView.deselectRow(at: indexPath, animated: true)
         let vc = storyboard?.instantiateViewController(withIdentifier: "events") as! EventsController
         vc.title = fetchJson.Tech.departments[indexPath.row].name
-        vc.events = fetchJson.Tech.departments[indexPath.row].events
+        vc.department = fetchJson.Tech.departments[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 
