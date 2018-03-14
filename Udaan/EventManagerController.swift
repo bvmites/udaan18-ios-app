@@ -20,9 +20,7 @@ class EventManagerController: UIViewController,UITableViewDataSource,UITableView
             return 0
         }
     }
-    @IBAction func touchOutside(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
+   
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! contactCell
@@ -40,9 +38,12 @@ class EventManagerController: UIViewController,UITableViewDataSource,UITableView
         return nil
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let   url = URL(string: "tel:"+(managers![indexPath.row].mobile) )
-        print(url)
-        UIApplication.shared.open(url!, options: [:], completionHandler: {print($0)})
+        print("poping")
+        
+        self.dismiss(animated: true, completion: nil)
+//        let   url = URL(string: "tel:"+(managers![indexPath.row].mobile) )
+//        print(url)
+//        UIApplication.shared.open(url!, options: [:], completionHandler: {print($0)})
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         print("section")

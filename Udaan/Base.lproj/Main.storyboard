@@ -388,6 +388,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="presentcontacts:" destination="DQD-rI-JPx" eventType="touchUpInside" id="Ygh-JT-gmc"/>
                                             <segue destination="Fg3-MW-ONz" kind="presentation" identifier="segues" modalPresentationStyle="overCurrentContext" id="PbJ-Cu-B2P"/>
                                         </connections>
                                     </button>
@@ -487,23 +488,13 @@
                                     <outlet property="delegate" destination="Fg3-MW-ONz" id="7tY-xJ-4Ir"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1n3-Uh-HV9">
-                                <rect key="frame" x="67" y="269" width="55" height="33"/>
-                                <connections>
-                                    <action selector="touchOutside:" destination="Fg3-MW-ONz" eventType="touchUpOutside" id="3vc-QG-ZYk"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="elJ-TS-AGn" firstAttribute="leading" secondItem="Xct-Ry-8OA" secondAttribute="leadingMargin" constant="51" id="8ly-Yn-TbJ"/>
                             <constraint firstItem="elJ-TS-AGn" firstAttribute="centerY" secondItem="Xct-Ry-8OA" secondAttribute="centerY" id="Coi-5s-Mfi"/>
                             <constraint firstItem="elJ-TS-AGn" firstAttribute="top" secondItem="dIJ-rq-YAC" secondAttribute="bottom" constant="249" id="GWG-ka-3Ap"/>
-                            <constraint firstItem="1n3-Uh-HV9" firstAttribute="top" secondItem="elJ-TS-AGn" secondAttribute="top" id="JPO-0o-i4Y"/>
-                            <constraint firstItem="1n3-Uh-HV9" firstAttribute="leading" secondItem="elJ-TS-AGn" secondAttribute="leading" id="eEg-dP-smZ"/>
-                            <constraint firstItem="1n3-Uh-HV9" firstAttribute="height" secondItem="elJ-TS-AGn" secondAttribute="height" id="gOH-w9-blH"/>
                             <constraint firstItem="elJ-TS-AGn" firstAttribute="centerX" secondItem="Xct-Ry-8OA" secondAttribute="centerX" id="klb-TH-mEe"/>
-                            <constraint firstItem="1n3-Uh-HV9" firstAttribute="width" secondItem="elJ-TS-AGn" secondAttribute="width" id="rcv-K7-op4"/>
                         </constraints>
                     </view>
                     <connections>

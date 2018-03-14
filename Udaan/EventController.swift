@@ -16,6 +16,11 @@ class EventController: UIViewController {
     @IBOutlet var Fees: UILabel!
     @IBOutlet var Rounds: UILabel!
     @IBOutlet var Prizes: UILabel!
+    @IBAction func presentcontacts(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "contactManager") as! EventManagerController
+        vc.managers = event?.managers
+        navigationController?.present(vc, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         name.text = event?.name
