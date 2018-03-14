@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84031DBE20598FF400672A80 /* EventManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84031DBD20598FF400672A80 /* EventManagerController.swift */; };
+		84031DC020599D2F00672A80 /* contactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84031DBF20599D2F00672A80 /* contactCell.swift */; };
 		84105A412051369300ED2095 /* event-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 84105A402051369000ED2095 /* event-data.json */; };
 		841154EE20506C59002ADD02 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841154ED20506C59002ADD02 /* EventController.swift */; };
 		842DB243204567F1004BDB3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DB242204567F1004BDB3E /* AppDelegate.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84031DBD20598FF400672A80 /* EventManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManagerController.swift; sourceTree = "<group>"; };
+		84031DBF20599D2F00672A80 /* contactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactCell.swift; sourceTree = "<group>"; };
 		84105A402051369000ED2095 /* event-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "event-data.json"; path = "../../../event-data.json"; sourceTree = "<group>"; };
 		841154ED20506C59002ADD02 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		842DB23F204567F1004BDB3E /* Udaan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Udaan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +143,7 @@
 				84A32DCA204DAFFF006394E6 /* techListController.swift */,
 				8456A01F2056BA4800EF2647 /* headsController.swift */,
 				841154ED20506C59002ADD02 /* EventController.swift */,
+				84031DBD20598FF400672A80 /* EventManagerController.swift */,
 				849E7147204D7B6A002CEEB1 /* EventsController.swift */,
 				84EFFC5F204BE45C002AF71C /* TeamTableViewController.swift */,
 				849E713F204D45E8002CEEB1 /* developerTableViewController.swift */,
@@ -185,6 +190,7 @@
 				84C2B5AE2045BB0B00DC27DF /* EventDepartmentTableViewCell.swift */,
 				84A32DC2204DA80D006394E6 /* techCell.swift */,
 				8456A0212056BDE900EF2647 /* headsCell.swift */,
+				84031DBF20599D2F00672A80 /* contactCell.swift */,
 				84A32DC4204DA822006394E6 /* EventCell.swift */,
 				84EFFC63204BEFC8002AF71C /* teamUdaanCell.swift */,
 				849E7141204D4610002CEEB1 /* developerCell.swift */,
@@ -281,6 +287,7 @@
 				849E7148204D7B6A002CEEB1 /* EventsController.swift in Sources */,
 				84EFFC60204BE45C002AF71C /* TeamTableViewController.swift in Sources */,
 				849E7140204D45E8002CEEB1 /* developerTableViewController.swift in Sources */,
+				84031DC020599D2F00672A80 /* contactCell.swift in Sources */,
 				841154EE20506C59002ADD02 /* EventController.swift in Sources */,
 				84A32DC5204DA822006394E6 /* EventCell.swift in Sources */,
 				8456A0202056BA4800EF2647 /* headsController.swift in Sources */,
@@ -290,6 +297,7 @@
 				842DB2612045699A004BDB3E /* EventTableViewController.swift in Sources */,
 				84EFFC64204BEFC8002AF71C /* teamUdaanCell.swift in Sources */,
 				843E40C8204C4B4600F25E2C /* AboutUsViewController.swift in Sources */,
+				84031DBE20598FF400672A80 /* EventManagerController.swift in Sources */,
 				842DB243204567F1004BDB3E /* AppDelegate.swift in Sources */,
 				84A32DCB204DAFFF006394E6 /* techListController.swift in Sources */,
 				84A32DC3204DA80D006394E6 /* techCell.swift in Sources */,

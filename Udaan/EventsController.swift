@@ -18,8 +18,9 @@ class EventsController: UITableViewController {
         tableView.rowHeight = 150
         //navigationItem.rightBarButtonItem!.title = "tails"
         if department != nil {
-        let item = UIBarButtonItem(title: "head", style: UIBarButtonItemStyle.plain, target: self, action: #selector(displayHead))
-            item.tintColor = UIColor.black
+        let item = UIBarButtonItem(title: "Heads", style: UIBarButtonItemStyle.plain, target: self, action: #selector(displayHead))
+            
+            //item.tintColor = UIColor.black
             self.navigationItem.rightBarButtonItem = item
             events = department?.events
         }

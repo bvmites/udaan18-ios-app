@@ -42,7 +42,9 @@ class headsController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "heads", for: indexPath) as! headsCell
         cell.manager.text = "\((heads[indexPath.section]?![indexPath.row].name)!)\n\((heads[indexPath.section]?![indexPath.row].mobile)!)"
         // Configure the cell...
-
+        cell.manager.backgroundColor = UIColor.yellow
+        cell.manager.layer.cornerRadius = 10
+        cell.manager.layer.masksToBounds = true
         return cell
     }
     
@@ -57,7 +59,6 @@ class headsController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
      let   url = URL(string: "tel:"+(heads[indexPath.section]?![indexPath.row].mobile)! )
     UIApplication.shared.open(url!, options: [:], completionHandler: {print($0)})
-        print(url)
     }
     /*
     // Override to support conditional editing of the table view.

@@ -7,14 +7,12 @@
 //
 
 import UIKit
-
+import Contacts
 class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchJson.parseData()
-        print("testing")
-        print(String(describing: [1,2,3]))
         //tabBar.isTranslucent = true
         // Do any additional setup after loading the view.
     }
