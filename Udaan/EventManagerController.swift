@@ -31,6 +31,9 @@ class EventManagerController: UIViewController,UITableViewDataSource,UITableView
         print("cell for row at")
         return cell
     }
+    @IBAction func removePopup(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section==0{
             return "Event Managers"
@@ -40,10 +43,10 @@ class EventManagerController: UIViewController,UITableViewDataSource,UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("poping")
         
-        self.dismiss(animated: true, completion: nil)
-//        let   url = URL(string: "tel:"+(managers![indexPath.row].mobile) )
-//        print(url)
-//        UIApplication.shared.open(url!, options: [:], completionHandler: {print($0)})
+        
+        let   url = URL(string: "tel:"+(managers![indexPath.row].mobile) )
+        print(url)
+        UIApplication.shared.open(url!, options: [:], completionHandler: {print($0)})
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         print("section")
@@ -56,7 +59,9 @@ class EventManagerController: UIViewController,UITableViewDataSource,UITableView
         Contacts.layer.masksToBounds = true
         Contacts.bounces = false
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.dismiss(animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
