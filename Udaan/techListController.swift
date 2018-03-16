@@ -12,6 +12,8 @@ class techListController: UITableViewController {
     var lableFontSize  = CGFloat(35)
     override func viewDidLoad() {
         super.viewDidLoad()
+//        view.gradientLayer.colors = [UIColor.black.cgColor, UIColor.white.cgColor]
+//        view.gradientLayer.gradient = GradientPoint.rightLeft.draw()
         lableFontSize = self.view.bounds.width/7
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -63,11 +65,29 @@ class techListController: UITableViewController {
         lab.font = UIFont.boldSystemFont(ofSize: lableFontSize)
         cell.addSubview(lab)
         */
-        cell.name.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5)
+        let gradient = CAGradientLayer()
+        
+        gradient.frame = cell.name.frame
+        gradient.cornerRadius = 10
+        gradient.masksToBounds = true
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 1, y: 1)
+        let color1 = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5).cgColor
+        let color2 = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5).cgColor
+        gradient.colors = [color1,color2]
+        cell.layer.insertSublayer(gradient, at:0 )
+        
+        //cell.name.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5)
         
         cell.name.text = fetchJson.Tech.departments[indexPath.row].name
         cell.name.layer.cornerRadius = 10
         cell.name.layer.masksToBounds = true
+        
+        
+        
+        
+
+        
         // Configure the cell...
         
         

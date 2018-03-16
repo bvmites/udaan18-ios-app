@@ -21,16 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cultural" translatesAutoresizingMaskIntoConstraints="NO" id="82B-I2-qIg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skyscrapers" translatesAutoresizingMaskIntoConstraints="NO" id="wCY-JQ-hd0">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="82B-I2-qIg" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="1dg-Nf-39P"/>
-                            <constraint firstAttribute="trailing" secondItem="82B-I2-qIg" secondAttribute="trailing" id="4CN-qA-6DR"/>
-                            <constraint firstItem="82B-I2-qIg" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="d0d-1o-LrI"/>
-                            <constraint firstItem="82B-I2-qIg" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="tbd-Q6-b4M"/>
+                            <constraint firstAttribute="trailing" secondItem="wCY-JQ-hd0" secondAttribute="trailing" id="0If-xU-ian"/>
+                            <constraint firstItem="wCY-JQ-hd0" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="GCC-hE-gvN"/>
+                            <constraint firstItem="wCY-JQ-hd0" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Kg8-ne-IWi"/>
+                            <constraint firstItem="wCY-JQ-hd0" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="U2g-EW-KMr"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cultural" width="720" height="1280"/>
+        <image name="skyscrapers" width="1080" height="1920"/>
     </resources>
 </document>

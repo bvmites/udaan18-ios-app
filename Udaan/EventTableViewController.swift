@@ -46,10 +46,20 @@ class EventTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return (fetchJson.data?.count)!
     }
-    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        tableView.reloadData()
+    }
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        tableView.reloadData()
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventDepartment", for: indexPath) as! EventDepartmentTableViewCell
         
+        
+        print("before sublayers\n")
+        print(cell.layer.sublayers?.count)
+        print(cell.layer.sublayers!)
+        print("end")
         /*
         cell.BackImage.contentMode = UIViewContentMode.scaleToFill
         cell.BackImage.image =  UIImage(named: eventTypeList[indexPath.row])
@@ -78,11 +88,38 @@ class EventTableViewController: UITableViewController {
         //lab.font = UIFont.init(name: font, size: lableFontSize)
         // Configure the cell...
         //print()
- */
-        cell.name.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5)
+         */     if cell.layer.sublayers?.count == 2{
+        let gradient = CAGradientLayer()
+        
+        gradient.frame = cell.name.frame
+        gradient.cornerRadius = 10
+        gradient.masksToBounds = true
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 1, y: 1)
+        
+        gradient.colors = [color.getcolor1(alph: 1.0).cgColor,color.getcolor2(alph: 1.0).cgColor]
+        //gradient.colors = [color.getcolor1(alph: 1.0),color.getcolor2(alph: 1.0)]
+        
+        cell.layer.insertSublayer(gradient, at:0 )
+        }
+         else{
+            cell.layer.sublayers![0].frame = cell.name.frame
+        }
+        
+        //cell.name.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5)
         cell.name.text = eventTypeList[indexPath.row]
         cell.name.layer.cornerRadius = 10
         cell.name.layer.masksToBounds = true
+        cell.name.textColor = UIColor.white
+
+        print("after sublayers\n")
+        print(cell.layer.sublayers?.count)
+        print(cell.layer.sublayers!)
+        print("end")
+        
+       
+        
+        
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

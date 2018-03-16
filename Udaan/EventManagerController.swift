@@ -27,7 +27,19 @@ class EventManagerController: UIViewController,UITableViewDataSource,UITableView
         cell.contactlable.text = managers![indexPath.row].name + "\n" + managers![indexPath.row].mobile
         cell.contactlable.layer.cornerRadius = 10
         cell.contactlable.layer.masksToBounds = true
-        cell.contactlable.backgroundColor = UIColor.red
+        
+        let gradient = CAGradientLayer()
+        
+        gradient.frame = cell.contactlable.frame
+        gradient.cornerRadius = 10
+        gradient.masksToBounds = true
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 1, y: 1)
+        let color1 = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5).cgColor
+        let color2 = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5).cgColor
+        gradient.colors = [color1,color2]
+        cell.layer.insertSublayer(gradient, at:0 )
+
         print("cell for row at")
         return cell
     }
