@@ -65,6 +65,7 @@ class techListController: UITableViewController {
         lab.font = UIFont.boldSystemFont(ofSize: lableFontSize)
         cell.addSubview(lab)
         */
+        if cell.layer.sublayers?.count == 2 {
         let gradient = CAGradientLayer()
         
         gradient.frame = cell.name.frame
@@ -72,11 +73,13 @@ class techListController: UITableViewController {
         gradient.masksToBounds = true
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 1, y: 1)
-        let color1 = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5).cgColor
-        let color2 = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5).cgColor
-        gradient.colors = [color1,color2]
+        gradient.colors = [color.getcolor1(index: indexPath.row+5 ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.row+5,alph: 1.0).cgColor]
         cell.layer.insertSublayer(gradient, at:0 )
-        
+    }
+    else{
+    cell.layer.sublayers![0].frame = cell.name.frame
+    (cell.layer.sublayers![0] as! CAGradientLayer).colors = [color.getcolor1(index: indexPath.row+5 ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.row+5,alph: 1.0).cgColor]
+    }
         //cell.name.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5)
         
         cell.name.text = fetchJson.Tech.departments[indexPath.row].name
@@ -92,6 +95,12 @@ class techListController: UITableViewController {
         
         
         return cell
+    }
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        tableView.reloadData()
+    }
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        tableView.reloadData()
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        tableView.deselectRow(at: indexPath, animated: true)
