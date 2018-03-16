@@ -185,7 +185,7 @@
         <scene sceneID="7eN-i0-H01">
             <objects>
                 <navigationController id="0b9-Vr-Aqs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Developer" image="udaan_wing" id="Y1A-XM-gJb"/>
+                    <tabBarItem key="tabBarItem" title="Developer" image="developer" landscapeImage="developer-land" id="Y1A-XM-gJb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pOa-Tr-kWR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -612,7 +612,7 @@
         <scene sceneID="FnZ-rZ-PI8">
             <objects>
                 <navigationController id="E7Z-i5-RB4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="About us" image="udaan_wing" id="uVy-yg-RoU"/>
+                    <tabBarItem key="tabBarItem" title="About us" image="aboutus" landscapeImage="aboutus-land" id="uVy-yg-RoU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ex2-nG-ZKD">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -860,7 +860,7 @@
         <scene sceneID="14i-S4-Hwd">
             <objects>
                 <navigationController id="gud-BF-wN1" customClass="EventNavigationController" customModule="Udaan" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" image="udaan_wing" id="k3K-9x-pvt"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="event" landscapeImage="event-land" id="k3K-9x-pvt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mLb-gG-2sp">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -877,7 +877,7 @@
         <scene sceneID="xln-cd-LoD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x39-h1-2PU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Team" image="udaan_wing" id="W5F-Di-s2O"/>
+                    <tabBarItem key="tabBarItem" title="Team" image="team" landscapeImage="team-land" id="W5F-Di-s2O"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Nfy-bO-h1h">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -894,7 +894,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="udaan_wing" width="30" height="30"/>
+        <image name="aboutus" width="25" height="25"/>
+        <image name="aboutus-land" width="18" height="18"/>
+        <image name="developer" width="25" height="25"/>
+        <image name="developer-land" width="18" height="18"/>
+        <image name="event" width="25" height="25"/>
+        <image name="event-land" width="18" height="18"/>
+        <image name="team" width="25" height="25"/>
+        <image name="team-land" width="18" height="18"/>
         <image name="udaan_wing-1" width="512" height="512"/>
     </resources>
 </document>
