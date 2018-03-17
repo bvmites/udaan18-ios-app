@@ -1,150 +1,162 @@
-[
+ [
   {
-    "category": "Student Representatives",
-    "members": [
-      {
-        "name": "Alay Patel",
-        "title": "General Secretary"
-      },
-      {
-        "name": "Shweta Thacker",
-        "title": "Ladies Representative"
-      }
-    ]
+  "category": "Student Represantatives",
+  "members": [
+              {
+              "name": "Jatan Patel",
+              "title": "General Secretary"
+              },
+              {
+              "name": "Megha Patel",
+              "title": "Ladies Representative"
+              }
+              ]
   },
   {
-    "category": "Tech Heads",
-    "members": [
-      {
-        "name": "Krushal Kakadiya",
-        "title": ""
-      },
-      {
-        "name": "Pratik Patel",
-        "title": ""
-      },
-      {
-        "name": "Parth Joshi",
-        "title": ""
-      }
-    ]
+  "category": "Tech",
+  "members": [
+              {
+              "name": "Harshil Jani",
+              "title": "Head"
+              },
+              {
+              "name": "Umang Patel",
+              "title": "Head"
+              },
+              {
+              "name": "Pradeep Dodiya",
+              "title": "Head"
+              },
+              {
+              "name": "Megh Shah",
+              "title": "Head"
+              }
+              ]
   },
   {
-    "category": "Publicity",
-    "members": [
-      {
-        "name": "Shyam Govani",
-        "title": "Head"
-      },
-      {
-        "name": "Aksh Sharma",
-        "title": "Co-Head"
-      }
-    ]
+  "category": "Publicity",
+  "members": [
+              {
+              "name": "Anshul Thacker",
+              "title": "Head"
+              },
+              {
+              "name": "Rejoice Paracal",
+              "title": "Head"
+              }
+              ]
   },
   {
-    "category": "Documentation",
-    "members": [
-      {
-        "name": "Sarvesh Shukla",
-        "title": "Head"
-      }
-    ]
+  "category": "Documentation",
+  "members": [
+              {
+              "name": "Shreyansh Aghera",
+              "title": "Head"
+              },
+              {
+              "name": "Udit Patel",
+              "title": "Head"
+              }
+              ]
   },
   {
-    "category": "Logistics",
-    "members": [
-      {
-        "name": "Jatan Patel",
-        "title": "Head"
-      },
-      {
-        "name": "Dhruvit Kardani",
-        "title": "Co-Head"
-      }
-    ]
+  "category": "Logistics",
+  "members": [
+              {
+              "name": "Harsh Vora",
+              "title": "Head"
+              },
+              {
+              "name": "Hiren Thakkar",
+              "title": "Head"
+              }
+              ]
   },
   {
-    "category": "Decoration",
-    "members": [
-      {
-        "name": "Nikhil Gohel",
-        "title": "Head"
-      },
-      {
-        "name": "Shrey Vaidya",
-        "title": "Co-Head"
-      }
-    ]
+  "category": "Decoration",
+  "members": [
+              {
+              "name": "Hardik Shilu",
+              "title": "Head"
+              }
+              ]
   },
   {
-    "category": "Developers",
-    "members": [
-      {
-        "name": "Dhruvin Gandhi",
-        "title": "Head"
-      },
-      {
-        "name": "Maunil Swadas",
-        "title": "Co-Head"
-      }
-    ]
+  "category": "Developers",
+  "members": [
+              {
+              "name": "Vatsal Trivedi",
+              "title": "Head"
+              },
+              {
+              "name": "Chintan Acharya",
+              "title": "Head"
+              }
+              ]
   },
   {
-    "category": "Graphics",
-    "members": [
-      {
-        "name": "Kevin Harkhani",
-        "title": "Head"
-      }
-    ]
+  "category": "Graphics",
+  "members": [
+              {
+              "name": "Tushar Gonavala",
+              "title": "Head"
+              }
+              ]
   },
   {
-    "category": "Discipline",
-    "members": [
-      {
-        "name": "Nikunj Rathod",
-        "title": "Head"
-      }
-    ]
+  "category": "Discipline",
+  "members": [
+              {
+              "name": "King Tandel",
+              "title": "Head"
+              },
+              {
+              "name": "Manan Shah",
+              "title": "Head"
+              },
+              {
+              "name": "Dharam Patel",
+              "title": "Head"
+              }
+              ]
   },
   {
-    "category": "Developers",
-    "members": [
-      {
-        "name": "Dhruvin Gandhi",
-        "title": "Head"
-      },
-      {
-        "name": "Maunil Swadas",
-        "title": "Co-Head"
-      }
-    ]
+  "category": "Photography",
+  "members": [
+              {
+              "name": "Punit Suthar",
+              "title": "Head"
+              },
+              {
+              "name": "Vivek Bariya",
+              "title": "Head"
+              }
+              ]
   },
   {
-    "category": "Photography",
-    "members": [
-      {
-        "name": "Subham Chauhan",
-        "title": "Head"
-      },
-      {
-        "name": "Keval Mandaliya",
-        "title": "Co-Head"
-      }
-    ]
+  "category": "Cultural",
+  "members": [
+              {
+              "name": "Kishan Patel",
+              "title": "Head"
+              },
+              {
+              "name": "Meet Pachchigar",
+              "title": "Head"
+              }
+              ]
   },
   {
-    "category": "Cultural",
-    "members": [
-      {
-        "name": "Varun Dave",
-        "title": "Head"
-      },
-      {
-        "name": "Dhvanit Mehta",
-        "title": "Co-Head"
-      }
-    ]
+  "category": "Hospitality",
+  "members": [
+              {
+              "name": "Deep Lakkad",
+              "title": "Head"
+              },
+              {
+              "name": "Vatsal Rami",
+              "title": "Head"
+              }
+              ]
   }
-]
+  ]

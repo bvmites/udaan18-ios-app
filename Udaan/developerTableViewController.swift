@@ -14,8 +14,8 @@ class developerTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.cellLayoutMarginsFollowReadableWidth = true
-        tableView.separatorColor = UIColor.black
+        //tableView.cellLayoutMarginsFollowReadableWidth = true
+        tableView.separatorColor = UIColor.white
         tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
         if developers.count == 0 {
             setDevelopers()
@@ -68,6 +68,29 @@ class developerTableViewController: UITableViewController {
         // Configure the cell...
         cell.name.text = "  " + developers[indexPath.row].name
         cell.title.text = "  " + developers[indexPath.row].title
+        print(cell.subviews.count)
+        print(cell.subviews)
+        
+        if cell.subviews.count == 2 {
+            let gradient = CAGradientLayer()
+            
+            gradient.frame = CGRect(x: cell.subviews[0].frame.minX+8 , y: cell.subviews[0].frame.minY+8, width: cell.subviews[0].frame.width-16, height: cell.frame.height-16 ) // -90
+            
+//            gradient.cornerRadius = 10
+//            gradient.masksToBounds = true
+            gradient.startPoint = CGPoint(x: 0, y: 0)
+            gradient.endPoint = CGPoint(x: 1, y: 1)
+            
+            gradient.colors = [color.getcolor1(index: indexPath.row ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.row,alph: 1.0).cgColor]
+            //gradient.colors = [color.getcolor1(alph: 1.0),color.getcolor2(alph: 1.0)]
+            let v = UIView(frame: cell.subviews[0].frame)
+            v.layer.insertSublayer(gradient, at: 0)
+            cell.insertSubview(v, at: 0)
+        }
+        else{
+            (cell.subviews[0].layer.sublayers![0] as! CAGradientLayer).colors = [color.getcolor1(index: indexPath.row ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.row,alph: 1.0).cgColor]
+        }
+        
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

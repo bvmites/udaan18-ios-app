@@ -50,6 +50,26 @@ class TeamTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "teamUdaan", for: indexPath) as! teamUdaanCell
         cell.title.text = fetchJson.teamUdaan[indexPath.section].members[indexPath.row].title
         cell.name.text = fetchJson.teamUdaan[indexPath.section].members[indexPath.row].name
+        
+        if cell.subviews.count == 2 {
+            let gradient = CAGradientLayer()
+            
+            gradient.frame = CGRect(x: cell.subviews[0].frame.minX+8 , y: cell.subviews[0].frame.minY+8, width: cell.subviews[0].frame.width-16, height: cell.frame.height-16 ) // -90
+            
+            //            gradient.cornerRadius = 10
+            //            gradient.masksToBounds = true
+            gradient.startPoint = CGPoint(x: 0, y: 0)
+            gradient.endPoint = CGPoint(x: 1, y: 1)
+            
+            gradient.colors = [color.getcolor1(index: indexPath.section ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.section,alph: 1.0).cgColor]
+            //gradient.colors = [color.getcolor1(alph: 1.0),color.getcolor2(alph: 1.0)]
+            let v = UIView(frame: cell.subviews[0].frame)
+            v.layer.insertSublayer(gradient, at: 0)
+            cell.insertSubview(v, at: 0)
+        }
+        else{
+            (cell.subviews[0].layer.sublayers![0] as! CAGradientLayer).colors = [color.getcolor1(index: indexPath.section ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.section,alph: 1.0).cgColor]
+        }
         //cell.layer.cornerRadius = 10
         //cell.layer.masksToBounds = true
         //cell.layer.backgroundColor = UIColor.lightGray as! CGColor
