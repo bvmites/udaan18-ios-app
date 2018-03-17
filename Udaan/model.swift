@@ -29,7 +29,7 @@ struct Manager{
 }
 struct Department {
     var name:String
-    //var alias:String
+    var alis:String
     var heads:[Manager]
     var coHeads:[Manager]
     var events:[Event]

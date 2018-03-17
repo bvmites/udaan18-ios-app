@@ -52,7 +52,8 @@ class EventsController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (events?.count)! //?? 0
+        print(department)
+        return (events?.count)! ?? 0
     }
 
     

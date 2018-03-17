@@ -167,6 +167,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="call" destination="BzT-e6-ntj" id="hMg-lP-8Sw"/>
+                                    <outlet property="git" destination="5gr-iY-7f6" id="GRX-e3-y3E"/>
+                                    <outlet property="mail" destination="DRD-EN-iQ9" id="Q2v-FB-K6P"/>
                                     <outlet property="name" destination="v9a-6y-Qp9" id="miv-Ff-6sA"/>
                                     <outlet property="title" destination="eem-do-AAq" id="Hkg-cs-4Aq"/>
                                 </connections>

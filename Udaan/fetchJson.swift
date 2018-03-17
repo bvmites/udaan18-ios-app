@@ -135,7 +135,7 @@ class fetchJson
                         if Tech==nil {
                             Tech = tech(departments: [Department]())
                         }
-                        Tech.departments.append(Department(name: dicts["name"] as! String, heads: toManagers(rawData: dicts["heads"] as! [Dictionary<String,String>]), coHeads: toManagers(rawData: dicts["coHeads"] as! [Dictionary<String,String>]), events: toEvents(rawData: dicts["events"] as! [Dictionary<String,Any>])))
+                        Tech.departments.append(Department(name: dicts["name"] as! String,alis:dicts["alis"] as! String, heads: toManagers(rawData: dicts["heads"] as! [Dictionary<String,String>]), coHeads: toManagers(rawData: dicts["coHeads"] as! [Dictionary<String,String>]), events: toEvents(rawData: dicts["events"] as! [Dictionary<String,Any>])))
                     }
                 }
                 else {

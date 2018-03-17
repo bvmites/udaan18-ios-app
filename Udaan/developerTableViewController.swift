@@ -90,7 +90,12 @@ class developerTableViewController: UITableViewController {
         else{
             (cell.subviews[0].layer.sublayers![0] as! CAGradientLayer).colors = [color.getcolor1(index: indexPath.row ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.row,alph: 1.0).cgColor]
         }
-        
+        cell.call.layer.cornerRadius = 32
+        cell.call.layer.masksToBounds = true
+        cell.mail.layer.cornerRadius = 32
+        cell.mail.layer.masksToBounds = true
+        cell.git.layer.cornerRadius = 32
+        cell.git.layer.masksToBounds = true
         return cell
     }
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {

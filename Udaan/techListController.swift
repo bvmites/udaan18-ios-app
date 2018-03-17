@@ -82,7 +82,7 @@ class techListController: UITableViewController {
     }
         //cell.name.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5)
         
-        cell.name.text = fetchJson.Tech.departments[indexPath.row].name
+        cell.name.text = fetchJson.Tech.departments[indexPath.row].alis
         cell.name.layer.cornerRadius = 10
         cell.name.layer.masksToBounds = true
         

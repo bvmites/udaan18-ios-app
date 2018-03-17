@@ -124,7 +124,7 @@ class EventTableViewController: UITableViewController {
 //        let vc = UITableViewController()
 //        vc.title = eventTypeList[indexPath.row]
 //        navigationController?.pushViewController(vc, animated: true)
-        if eventTypeList[indexPath.row] == "technical" {
+        if eventTypeList[indexPath.row] == "Technical" {
             let vc = storyboard?.instantiateViewController(withIdentifier: "techlist") as! techListController
             vc.title = eventTypeList[indexPath.row]
             

@@ -13,6 +13,9 @@ class developerCell: UITableViewCell {
     
     @IBOutlet var name: UILabel!
     @IBOutlet var title: UILabel!
+    @IBOutlet var call: UIButton!
+    @IBOutlet var mail: UIButton!
+    @IBOutlet var git: UIButton!
     
     
     override func awakeFromNib() {
