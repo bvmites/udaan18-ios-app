@@ -67,22 +67,34 @@ class EventsController: UITableViewController {
         cell.name.layer.cornerRadius = 10
         cell.name.layer.masksToBounds = true
         
-        
+        if cell.layer.sublayers?.count == 2 {
         let gradient = CAGradientLayer()
         
-        gradient.frame = cell.name.layer.bounds
+        gradient.frame = CGRect(x: cell.name.frame.minX, y: cell.name.frame.minY, width: cell.name.frame.width, height: cell.name.frame.height-55)
+        
+        
+        //gradient.bounds = cell.name.bounds
         gradient.cornerRadius = 10
         gradient.masksToBounds = true
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 1, y: 1)
-        let color1 = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5).cgColor
-        let color2 = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5).cgColor
-        gradient.colors = [color1,color2]
+            gradient.colors = [color.getcolor1(index: indexPath.row ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.row,alph: 1.0).cgColor]
         cell.layer.insertSublayer(gradient, at:0 )
+        }
+        else{
+            (cell.layer.sublayers![0] as! CAGradientLayer).colors = [color.getcolor1(index: indexPath.row ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.row,alph: 1.0).cgColor]
+            cell.layer.sublayers![0].frame = CGRect(x: cell.name.frame.minX, y: cell.name.frame.minY, width: cell.name.frame.width, height: cell.name.frame.height)
+        }
       
         
         
      return cell
+    }
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        tableView.reloadData()
+    }
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        tableView.reloadData()
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

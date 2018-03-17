@@ -1036,34 +1036,7 @@
                               ]
                   }
                   ],
-    "treasureHunt": [
-                     {
-                     "name": "Treasure Hunt",
-                     "participants": 2,
-                     "fees": 40,
-                     "notes": "-",
-                     "prizes": [
-                                1000,
-                                750
-                                ],
-                     "rounds": [
-                                "Quiz based on Location.",
-                                "Clue solving within campus (BVM Engineering college)",
-                                "Surprise Round!"
-                                ],
-                     "managers": [
-                                  {
-                                  "name": "Avinash Somjani",
-                                  "phone": "9426810901"
-                                  },
-                                  {
-                                  "name": "Tejas Chaudhary",
-                                  "phone": "9979516570"
-                                  }
-                                  ],
-                     "tagline": "Not all Treasure's silver and gold, Mate"
-                     }
-                     ],
+    
     "nonTechnical": [
                      {
                      "name": "Cricket Fantasy",
@@ -1800,36 +1773,61 @@
                                   }
                                   ],
                      "tagline": "Back to ESL!"
-                     }
+                     },
+                               {
+                               "name": "Fema Palooza",
+                               "participants": 1,
+                               "fees": 20,
+                               "notes": "-",
+                               "prizes": [
+                                          0,
+                                          0
+                                          ],
+                               "rounds": [
+                                          "Participants have to inflate and burst balloon and complete a hurdle within a given time.",
+                                          "Surprise Round",
+                                          "Finalists have to perform certain tasks and perform a treasure hunt."
+                                          ],
+                               "managers": [
+                                            {
+                                            "name": "Ayushi Upadhyay",
+                                            "phone": "7359911169"
+                                            },
+                                            {
+                                            "name": "Hima Khimani",
+                                            "phone": "9409328046"
+                                            }
+                                            ],
+                               "tagline": "Make it look pretty, but train it to kill."
+                               },
+                                      {
+                                      "name": "Treasure Hunt",
+                                      "participants": 2,
+                                      "fees": 40,
+                                      "notes": "-",
+                                      "prizes": [
+                                                 1000,
+                                                 750
+                                                 ],
+                                      "rounds": [
+                                                 "Quiz based on Location.",
+                                                 "Clue solving within campus (BVM Engineering college)",
+                                                 "Surprise Round!"
+                                                 ],
+                                      "managers": [
+                                                   {
+                                                   "name": "Avinash Somjani",
+                                                   "phone": "9426810901"
+                                                   },
+                                                   {
+                                                   "name": "Tejas Chaudhary",
+                                                   "phone": "9979516570"
+                                                   }
+                                                   ],
+                                      "tagline": "Not all Treasure's silver and gold, Mate"
+                                      }
                      ],
-    "girls": [
-              {
-              "name": "Fema Palooza",
-              "participants": 1,
-              "fees": 20,
-              "notes": "-",
-              "prizes": [
-                         0,
-                         0
-                         ],
-              "rounds": [
-                         "Participants have to inflate and burst balloon and complete a hurdle within a given time.",
-                         "Surprise Round",
-                         "Finalists have to perform certain tasks and perform a treasure hunt."
-                         ],
-              "managers": [
-                           {
-                           "name": "Ayushi Upadhyay",
-                           "phone": "7359911169"
-                           },
-                           {
-                           "name": "Hima Khimani",
-                           "phone": "9409328046"
-                           }
-                           ],
-              "tagline": "Make it look pretty, but train it to kill."
-              }
-              ],
+    
     "cultural": [
                  {
                  "name": "Bolly Mix Bolly",

@@ -68,6 +68,7 @@ class TeamTableViewController: UITableViewController {
             cell.insertSubview(v, at: 0)
         }
         else{
+            cell.subviews[0].layer.sublayers![0].frame = CGRect(x: cell.subviews[0].frame.minX+8 , y: cell.subviews[0].frame.minY+8, width: cell.subviews[0].frame.width-16, height: cell.frame.height-16 )
             (cell.subviews[0].layer.sublayers![0] as! CAGradientLayer).colors = [color.getcolor1(index: indexPath.section ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.section,alph: 1.0).cgColor]
         }
         //cell.layer.cornerRadius = 10

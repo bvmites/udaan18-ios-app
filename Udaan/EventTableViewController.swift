@@ -20,6 +20,8 @@ class EventTableViewController: UITableViewController {
         
         for (key,_) in fetchJson.data! {
             eventTypeList.append(key)
+            eventTypeList.sort()
+            eventTypeList.reverse()
         }
        // lableFontSize = self.view.frame.width/2
         tableView.autoresizesSubviews = true
@@ -56,10 +58,7 @@ class EventTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventDepartment", for: indexPath) as! EventDepartmentTableViewCell
         
         
-        print("before sublayers\n")
-        print(cell.layer.sublayers?.count)
-        print(cell.layer.sublayers!)
-        print("end")
+
         /*
         cell.BackImage.contentMode = UIViewContentMode.scaleToFill
         cell.BackImage.image =  UIImage(named: eventTypeList[indexPath.row])
@@ -113,10 +112,7 @@ class EventTableViewController: UITableViewController {
         cell.name.layer.masksToBounds = true
         cell.name.textColor = UIColor.white
 
-        print("after sublayers\n")
-        print(cell.layer.sublayers?.count)
-        print(cell.layer.sublayers!)
-        print("end")
+        
         
        
         
