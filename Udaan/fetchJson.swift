@@ -129,7 +129,7 @@ class fetchJson
         
         for (key,value) in data!
         {
-            if key=="technical"{
+            if key=="Technical"{
                 if let techs:[Dictionary<String,Any>] = value as? [Dictionary<String,Any>]{
                     for dicts in techs{
                         if Tech==nil {
