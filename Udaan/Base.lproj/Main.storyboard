@@ -114,38 +114,38 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HCb-me-U7B">
                                             <rect key="frame" x="81" y="160" width="212" height="64"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzT-e6-ntj">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzT-e6-ntj">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="64" id="kO7-DK-InO"/>
                                                         <constraint firstAttribute="height" constant="64" id="kfU-9J-DPe"/>
                                                     </constraints>
-                                                    <state key="normal" title="Call"/>
+                                                    <state key="normal" title="Call" image="phone128x128"/>
                                                     <connections>
                                                         <action selector="contact:" destination="ggO-ST-EFK" eventType="touchUpInside" id="flI-jZ-Z5y"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRD-EN-iQ9">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRD-EN-iQ9">
                                                     <rect key="frame" x="74" y="0.0" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="64" id="EaU-0b-mq3"/>
                                                         <constraint firstAttribute="width" constant="64" id="O9P-sd-Ivz"/>
                                                     </constraints>
-                                                    <state key="normal" title="Mail"/>
+                                                    <state key="normal" title="Mail" image="mail128x128"/>
                                                     <connections>
                                                         <action selector="contact:" destination="ggO-ST-EFK" eventType="touchUpInside" id="jk8-Kf-B8f"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gr-iY-7f6">
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gr-iY-7f6">
                                                     <rect key="frame" x="148" y="0.0" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="64" id="2hx-J4-Rgg"/>
                                                         <constraint firstAttribute="width" constant="64" id="AdV-nb-UA1"/>
                                                     </constraints>
-                                                    <state key="normal" title="Git"/>
+                                                    <state key="normal" title="Git" image="github128x128"/>
                                                     <connections>
                                                         <action selector="contact:" destination="ggO-ST-EFK" eventType="touchUpInside" id="7DP-hL-NFn"/>
                                                     </connections>
@@ -645,13 +645,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPP-WA-Jnc">
                                 <rect key="frame" x="16" y="64" width="343" height="739"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="udaan_wing-1" translatesAutoresizingMaskIntoConstraints="NO" id="0j6-Pq-1e3">
-                                        <rect key="frame" x="51" y="8" width="240" height="240"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="240" id="8C3-h4-Pmc"/>
-                                            <constraint firstAttribute="width" secondItem="0j6-Pq-1e3" secondAttribute="height" multiplier="1:1" id="csL-f6-KXB"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Udaan - 18" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVN-UV-uoj">
                                         <rect key="frame" x="51" y="256" width="240" height="52"/>
                                         <constraints>
@@ -692,7 +685,7 @@
                                                             <constraint firstAttribute="height" constant="64" id="0SY-aH-eIH"/>
                                                             <constraint firstAttribute="width" constant="64" id="eBS-yF-Qbp"/>
                                                         </constraints>
-                                                        <state key="normal" image="udaan_wing-1"/>
+                                                        <state key="normal" image="website128x128"/>
                                                         <connections>
                                                             <action selector="connect:" destination="kCa-e2-XYq" eventType="touchUpInside" id="Tcc-Oe-8Q3"/>
                                                         </connections>
@@ -703,7 +696,7 @@
                                                             <constraint firstAttribute="height" constant="64" id="LQt-mF-V76"/>
                                                             <constraint firstAttribute="width" constant="64" id="OZb-MG-35r"/>
                                                         </constraints>
-                                                        <state key="normal" image="udaan_wing-1"/>
+                                                        <state key="normal" image="facebook128x128"/>
                                                         <connections>
                                                             <action selector="connect:" destination="kCa-e2-XYq" eventType="touchUpInside" id="3Du-Rc-qPe"/>
                                                         </connections>
@@ -714,7 +707,7 @@
                                                             <constraint firstAttribute="height" constant="64" id="gMT-Ij-yhy"/>
                                                             <constraint firstAttribute="width" constant="64" id="koJ-UZ-sN5"/>
                                                         </constraints>
-                                                        <state key="normal" image="udaan_wing-1"/>
+                                                        <state key="normal" image="github128x128"/>
                                                         <connections>
                                                             <action selector="connect:" destination="kCa-e2-XYq" eventType="touchUpInside" id="Iia-1H-Ipv"/>
                                                         </connections>
@@ -724,13 +717,13 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="z6l-Pq-wOh">
                                                 <rect key="frame" x="0.0" y="74" width="212" height="64"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNW-7C-q04">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNW-7C-q04">
                                                         <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="64" id="9gD-NA-moE"/>
                                                             <constraint firstAttribute="height" constant="64" id="dAv-9k-y6r"/>
                                                         </constraints>
-                                                        <state key="normal" backgroundImage="udaan_wing-1"/>
+                                                        <state key="normal" image="mail128x128"/>
                                                         <connections>
                                                             <action selector="connect:" destination="kCa-e2-XYq" eventType="touchUpInside" id="ajB-Rv-ZK4"/>
                                                         </connections>
@@ -741,7 +734,7 @@
                                                             <constraint firstAttribute="height" constant="64" id="KWg-xf-evp"/>
                                                             <constraint firstAttribute="width" constant="64" id="UVK-ZZ-wcY"/>
                                                         </constraints>
-                                                        <state key="normal" image="udaan_wing-1"/>
+                                                        <state key="normal" image="instagram128x128"/>
                                                         <connections>
                                                             <action selector="connect:" destination="kCa-e2-XYq" eventType="touchUpInside" id="qiF-eS-fzw"/>
                                                         </connections>
@@ -752,7 +745,7 @@
                                                             <constraint firstAttribute="width" constant="64" id="JQa-Hj-44i"/>
                                                             <constraint firstAttribute="height" constant="64" id="y0i-kG-5sR"/>
                                                         </constraints>
-                                                        <state key="normal" image="udaan_wing-1"/>
+                                                        <state key="normal" image="youtube128x128"/>
                                                         <connections>
                                                             <action selector="connect:" destination="kCa-e2-XYq" eventType="touchUpInside" id="PGd-Lg-hV4"/>
                                                         </connections>
@@ -789,7 +782,7 @@
                                                     <constraint firstAttribute="width" constant="64" id="GZN-mz-6h4"/>
                                                     <constraint firstAttribute="height" constant="64" id="OT5-2N-7DI"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="udaan_wing-1"/>
+                                                <state key="normal" title="Button" image="location128x128"/>
                                                 <connections>
                                                     <action selector="connect:" destination="kCa-e2-XYq" eventType="touchUpInside" id="2h0-Ib-FDQ"/>
                                                 </connections>
@@ -807,6 +800,14 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wing-480x480" translatesAutoresizingMaskIntoConstraints="NO" id="0j6-Pq-1e3">
+                                        <rect key="frame" x="51" y="8" width="240" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="240" id="8C3-h4-Pmc"/>
+                                            <constraint firstAttribute="width" constant="240" id="bDu-cT-3hS"/>
+                                            <constraint firstAttribute="width" secondItem="0j6-Pq-1e3" secondAttribute="height" multiplier="1:1" id="csL-f6-KXB"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="viS-HZ-tIf" firstAttribute="leading" secondItem="qPP-WA-Jnc" secondAttribute="leadingMargin" id="FJR-bF-l31"/>
@@ -905,8 +906,16 @@
         <image name="developer-land" width="18" height="18"/>
         <image name="event" width="25" height="25"/>
         <image name="event-land" width="18" height="18"/>
+        <image name="facebook128x128" width="64" height="64"/>
+        <image name="github128x128" width="64" height="64"/>
+        <image name="instagram128x128" width="64" height="64"/>
+        <image name="location128x128" width="64" height="64"/>
+        <image name="mail128x128" width="64" height="64"/>
+        <image name="phone128x128" width="64" height="64"/>
         <image name="team" width="25" height="25"/>
         <image name="team-land" width="18" height="18"/>
-        <image name="udaan_wing-1" width="512" height="512"/>
+        <image name="website128x128" width="64" height="64"/>
+        <image name="wing-480x480" width="240" height="240"/>
+        <image name="youtube128x128" width="64" height="64"/>
     </resources>
 </document>
