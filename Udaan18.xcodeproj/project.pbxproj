@@ -19,12 +19,8 @@
 		842DB25F20456979004BDB3E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DB25E20456979004BDB3E /* MainTabBarController.swift */; };
 		842DB2612045699A004BDB3E /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DB2602045699A004BDB3E /* EventTableViewController.swift */; };
 		843E40C8204C4B4600F25E2C /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E40C7204C4B4600F25E2C /* AboutUsViewController.swift */; };
-		84442384204B26DE00EBC722 /* event-data-old.json in Resources */ = {isa = PBXBuildFile; fileRef = 84442383204B26DD00EBC722 /* event-data-old.json */; };
 		8456A0202056BA4800EF2647 /* headsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8456A01F2056BA4800EF2647 /* headsController.swift */; };
 		8456A0222056BDE900EF2647 /* headsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8456A0212056BDE900EF2647 /* headsCell.swift */; };
-		848D2F922045CFC8004CE313 /* AVENGERS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848D2F912045CFC8004CE313 /* AVENGERS.ttf */; };
-		848D2F942045CFD2004CE313 /* Cookie.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848D2F932045CFD2004CE313 /* Cookie.ttf */; };
-		848D2F962045CFD7004CE313 /* udaanRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848D2F952045CFD7004CE313 /* udaanRegular.ttf */; };
 		849E7140204D45E8002CEEB1 /* developerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E713F204D45E8002CEEB1 /* developerTableViewController.swift */; };
 		849E7142204D4610002CEEB1 /* developerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E7141204D4610002CEEB1 /* developerCell.swift */; };
 		849E7144204D4744002CEEB1 /* developers.json in Resources */ = {isa = PBXBuildFile; fileRef = 849E7143204D4744002CEEB1 /* developers.json */; };
@@ -44,7 +40,7 @@
 		84031DBD20598FF400672A80 /* EventManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManagerController.swift; sourceTree = "<group>"; };
 		84031DBF20599D2F00672A80 /* contactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactCell.swift; sourceTree = "<group>"; };
 		841154ED20506C59002ADD02 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
-		842DB23F204567F1004BDB3E /* Udaan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Udaan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		842DB23F204567F1004BDB3E /* Udaan18.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Udaan18.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842DB242204567F1004BDB3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		842DB247204567F1004BDB3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		842DB249204567F1004BDB3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,12 +51,8 @@
 		842DB25E20456979004BDB3E /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		842DB2602045699A004BDB3E /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		843E40C7204C4B4600F25E2C /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
-		84442383204B26DD00EBC722 /* event-data-old.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "event-data-old.json"; sourceTree = "<group>"; };
 		8456A01F2056BA4800EF2647 /* headsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headsController.swift; sourceTree = "<group>"; };
 		8456A0212056BDE900EF2647 /* headsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headsCell.swift; sourceTree = "<group>"; };
-		848D2F912045CFC8004CE313 /* AVENGERS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AVENGERS.ttf; sourceTree = "<group>"; };
-		848D2F932045CFD2004CE313 /* Cookie.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cookie.ttf; sourceTree = "<group>"; };
-		848D2F952045CFD7004CE313 /* udaanRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = udaanRegular.ttf; sourceTree = "<group>"; };
 		849E713F204D45E8002CEEB1 /* developerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = developerTableViewController.swift; sourceTree = "<group>"; };
 		849E7141204D4610002CEEB1 /* developerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = developerCell.swift; sourceTree = "<group>"; };
 		849E7143204D4744002CEEB1 /* developers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = developers.json; sourceTree = "<group>"; };
@@ -90,7 +82,7 @@
 		842DB236204567F1004BDB3E = {
 			isa = PBXGroup;
 			children = (
-				842DB241204567F1004BDB3E /* Udaan */,
+				842DB241204567F1004BDB3E /* Udaan18 */,
 				842DB240204567F1004BDB3E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,12 +90,12 @@
 		842DB240204567F1004BDB3E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				842DB23F204567F1004BDB3E /* Udaan.app */,
+				842DB23F204567F1004BDB3E /* Udaan18.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		842DB241204567F1004BDB3E /* Udaan */ = {
+		842DB241204567F1004BDB3E /* Udaan18 */ = {
 			isa = PBXGroup;
 			children = (
 				84F714A5204D168800183DB3 /* Supporting files */,
@@ -111,9 +103,8 @@
 				842DB25A204568C7004BDB3E /* Views */,
 				842DB25B204568E2004BDB3E /* Controllers */,
 				842DB259204568AF004BDB3E /* Models */,
-				848D2F972045CFEA004CE313 /* Fonts */,
 			);
-			path = Udaan;
+			path = Udaan18;
 			sourceTree = "<group>";
 		};
 		842DB259204568AF004BDB3E /* Models */ = {
@@ -153,20 +144,9 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		848D2F972045CFEA004CE313 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				848D2F912045CFC8004CE313 /* AVENGERS.ttf */,
-				848D2F932045CFD2004CE313 /* Cookie.ttf */,
-				848D2F952045CFD7004CE313 /* udaanRegular.ttf */,
-			);
-			name = Fonts;
-			sourceTree = "<group>";
-		};
 		84F714A4204D164900183DB3 /* Jsons */ = {
 			isa = PBXGroup;
 			children = (
-				84442383204B26DD00EBC722 /* event-data-old.json */,
 				84EC7B3C205CE23F002652D9 /* event-data.json */,
 				849E7143204D4744002CEEB1 /* developers.json */,
 				84EFFC61204BE4DC002AF71C /* team-udaan.json */,
@@ -201,9 +181,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		842DB23E204567F1004BDB3E /* Udaan */ = {
+		842DB23E204567F1004BDB3E /* Udaan18 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 842DB251204567F1004BDB3E /* Build configuration list for PBXNativeTarget "Udaan" */;
+			buildConfigurationList = 842DB251204567F1004BDB3E /* Build configuration list for PBXNativeTarget "Udaan18" */;
 			buildPhases = (
 				842DB23B204567F1004BDB3E /* Sources */,
 				842DB23C204567F1004BDB3E /* Frameworks */,
@@ -213,9 +193,9 @@
 			);
 			dependencies = (
 			);
-			name = Udaan;
+			name = Udaan18;
 			productName = Udaan;
-			productReference = 842DB23F204567F1004BDB3E /* Udaan.app */;
+			productReference = 842DB23F204567F1004BDB3E /* Udaan18.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -225,6 +205,9 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = com;
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = BVM;
@@ -237,7 +220,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 842DB23A204567F1004BDB3E /* Build configuration list for PBXProject "Udaan" */;
+			buildConfigurationList = 842DB23A204567F1004BDB3E /* Build configuration list for PBXProject "Udaan18" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -250,7 +233,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				842DB23E204567F1004BDB3E /* Udaan */,
+				842DB23E204567F1004BDB3E /* Udaan18 */,
 			);
 		};
 /* End PBXProject section */
@@ -260,16 +243,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84442384204B26DE00EBC722 /* event-data-old.json in Resources */,
-				848D2F942045CFD2004CE313 /* Cookie.ttf in Resources */,
 				842DB24D204567F1004BDB3E /* LaunchScreen.storyboard in Resources */,
 				849E7144204D4744002CEEB1 /* developers.json in Resources */,
 				84EC7B3D205CE23F002652D9 /* event-data.json in Resources */,
 				842DB24A204567F1004BDB3E /* Assets.xcassets in Resources */,
 				84EFFC62204BE4DD002AF71C /* team-udaan.json in Resources */,
 				842DB248204567F1004BDB3E /* Main.storyboard in Resources */,
-				848D2F922045CFC8004CE313 /* AVENGERS.ttf in Resources */,
-				848D2F962045CFD7004CE313 /* udaanRegular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,14 +420,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = D876C27B8A;
-				INFOPLIST_FILE = Udaan/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Udaan18/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = BVM.Udaan;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.developer-team.udaan18";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -457,21 +436,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = D876C27B8A;
-				INFOPLIST_FILE = Udaan/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Udaan18/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = BVM.Udaan;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.developer-team.udaan18";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		842DB23A204567F1004BDB3E /* Build configuration list for PBXProject "Udaan" */ = {
+		842DB23A204567F1004BDB3E /* Build configuration list for PBXProject "Udaan18" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				842DB24F204567F1004BDB3E /* Debug */,
@@ -480,7 +459,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		842DB251204567F1004BDB3E /* Build configuration list for PBXNativeTarget "Udaan" */ = {
+		842DB251204567F1004BDB3E /* Build configuration list for PBXNativeTarget "Udaan18" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				842DB252204567F1004BDB3E /* Debug */,

@@ -26,7 +26,7 @@ class developerCell: UITableViewCell {
         var url:URL?
         switch sender.tag {
         case 0:
-            var number = (developr?.mobile) ?? "+910000000000"
+            let number = (developr?.mobile) ?? "+910000000000"
 //            number.remove(at: number.startIndex)
 //            number.insert("-", at: number.index(number.startIndex, offsetBy: 2) )
 //            number.insert("-", at: number.index(number.startIndex, offsetBy: 6) )

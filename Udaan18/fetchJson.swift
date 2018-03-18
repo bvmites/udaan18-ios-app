@@ -17,23 +17,23 @@ class fetchJson
     static var Tech : tech!
     static var nontechs = [String:nonTech]()
     static var teamUdaan:[Category] = []
-    static let url = ["http://www.youtube.com/watch?v=N__oFtLbHQ0",
-               
-               "instagram://user?username=teamudaan",
-               "fb://profile/teamudaan18",
-               "mailto:jvaghani971@gmail.com",
-               "tel:91-999-999-9999",
-               "sms:91-999-999-9999",
-               "http://maps.apple.com/?q=Birla+Vishvakarma+Mahavidyalaya+Anand+Gujarat+india"]
-    static let optionalUrl = ["http://www.youtube.com/v/N__oFtLbHQ0",
-                       "https://www.instagram.com/teamudaan/",
-                       "https://www.facebook.com/teamudaan18/",
-                       "mailto:jvaghani971@gmail.com",
-                       "tel:1-999-999-9999",
-                       "sms:1-999-999-9999",
-                       "http://maps.apple.com/?ll=22.5525703,72.9238183"
+    static let url = ["https://udaan18.com/",
+                      "fb://profile/teamudaan18",
+                      "https://github.com/bvmites",
+                      "mailto:developer.team.udaan@gmail.com",
+                      "instagram://user?username=teamudaan",
+                      "https://www.youtube.com/channel/UCnqRgS6O0MGF8sTYb_fHjWA",
+                      "http://maps.apple.com/?q=Birla+Vishvakarma+Mahavidyalaya+Anand+Gujarat+india"]
+    static let optionalUrl = [
+        "https://udaan18.com/",
+        "https://www.facebook.com/teamudaan18/",
+        "https://github.com/bvmites",
+        "mailto:developer.team.udaan@gmail.com",
+        "https://www.instagram.com/teamudaan/",
+        "https://www.youtube.com/channel/UCnqRgS6O0MGF8sTYb_fHjWA",
+        "http://maps.apple.com/?ll=22.5525703,72.9238183"
     ]
-    
+    //http://www.youtube.com/v/N__oFtLbHQ0
     // fetch data from github and stores in data variable
     static func dataFromBundle()->Data?{
         let baseUrl = Bundle.main.bundleURL
@@ -58,7 +58,7 @@ class fetchJson
                 }
             }
         }
-
+        
     }
     
     static func dataFromFiles()->Data?{
@@ -67,7 +67,7 @@ class fetchJson
             let documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
             let fileURL = documentDirectory.appendingPathComponent("eventdata")
             return try? Data(contentsOf: fileURL)
-            }
+        }
         catch {
             print(error)
             return  nil
@@ -88,14 +88,14 @@ class fetchJson
     
     static func setData(){
         /*if let newData = dataFromFiles(){
-            data = jsonDataToDictionary(data: newData)
-            print("from files")
-        }
-        else if let newData = dataFromApi(){
-            data = jsonDataToDictionary(data: newData)
-            print("from api")
-        }
-        else */if let newData = dataFromBundle(){
+         data = jsonDataToDictionary(data: newData)
+         print("from files")
+         }
+         else if let newData = dataFromApi(){
+         data = jsonDataToDictionary(data: newData)
+         print("from api")
+         }
+         else */if let newData = dataFromBundle(){
             data = jsonDataToDictionary(data: newData)
             print("from bundle")
         }
@@ -144,7 +144,7 @@ class fetchJson
             }
             else{
                 if let nontech = value as? [Dictionary<String,Any>]{
-                        nontechs.updateValue(nonTech(events: toEvents(rawData: nontech)), forKey: key) 
+                    nontechs.updateValue(nonTech(events: toEvents(rawData: nontech)), forKey: key)
                 }
                 else{
                     print("error in parsing \(key)")
@@ -152,49 +152,49 @@ class fetchJson
             }
         }
     }
-//    static func parseData(){
-//        if data == nil {
-//            setData()
-//        }
-//
-//        //Tech Parsing
-//        if let techs:[Dictionary<String,Any>] = data?["tech"] as? [Dictionary<String,Any>]{
-//            for dicts in techs{
-//                if Tech==nil {
-//                    Tech = tech(departments: [Department]())
-//                }
-//                Tech.departments.append(Department(name: dicts["name"] as! String, alias: dicts["alias"] as! String, heads: toManagers(rawData: dicts["heads"] as! [Dictionary<String,String>]), coHeads: toManagers(rawData: dicts["coHeads"] as! [Dictionary<String,String>]), events: toEvents(rawData: dicts["events"] as! [Dictionary<String,Any>])))
-//            }
-//        }
-//        else {
-//        print("error in parsing tech")
-//        }
-//
-//        //Nontech Parsing
-//        if let nontechs = data?["nonTech"] as? [Dictionary<String,Any>]{
-//            if Nontech==nil {
-//                Nontech = nonTech(events: [Event]())
-//            }
-//            Nontech.events = toEvents(rawData: nontechs)
-//        }
-//        else{
-//            print("error in parsing nontech")
-//        }
-//
-//        //Cultural Parsing
-//        if let culturals = data?["cultural"] as? [Dictionary<String,Any>]{
-//            if Cultural==nil {
-//                Cultural = cultural(events: [Event]())
-//            }
-//            Cultural.events = toEvents(rawData: culturals)
-//        }
-//        else{
-//            print("error in parsing cultural")
-//        }
-//    }
+    //    static func parseData(){
+    //        if data == nil {
+    //            setData()
+    //        }
+    //
+    //        //Tech Parsing
+    //        if let techs:[Dictionary<String,Any>] = data?["tech"] as? [Dictionary<String,Any>]{
+    //            for dicts in techs{
+    //                if Tech==nil {
+    //                    Tech = tech(departments: [Department]())
+    //                }
+    //                Tech.departments.append(Department(name: dicts["name"] as! String, alias: dicts["alias"] as! String, heads: toManagers(rawData: dicts["heads"] as! [Dictionary<String,String>]), coHeads: toManagers(rawData: dicts["coHeads"] as! [Dictionary<String,String>]), events: toEvents(rawData: dicts["events"] as! [Dictionary<String,Any>])))
+    //            }
+    //        }
+    //        else {
+    //        print("error in parsing tech")
+    //        }
+    //
+    //        //Nontech Parsing
+    //        if let nontechs = data?["nonTech"] as? [Dictionary<String,Any>]{
+    //            if Nontech==nil {
+    //                Nontech = nonTech(events: [Event]())
+    //            }
+    //            Nontech.events = toEvents(rawData: nontechs)
+    //        }
+    //        else{
+    //            print("error in parsing nontech")
+    //        }
+    //
+    //        //Cultural Parsing
+    //        if let culturals = data?["cultural"] as? [Dictionary<String,Any>]{
+    //            if Cultural==nil {
+    //                Cultural = cultural(events: [Event]())
+    //            }
+    //            Cultural.events = toEvents(rawData: culturals)
+    //        }
+    //        else{
+    //            print("error in parsing cultural")
+    //        }
+    //    }
     
     
     
 }
-    
+
 

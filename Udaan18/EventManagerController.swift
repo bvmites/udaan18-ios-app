@@ -57,7 +57,6 @@ class EventManagerController: UIViewController,UITableViewDataSource,UITableView
         
         
         let   url = URL(string: "tel:"+(managers![indexPath.row].mobile) )
-        print(url)
         UIApplication.shared.open(url!, options: [:], completionHandler: {print($0)})
     }
     func numberOfSections(in tableView: UITableView) -> Int {

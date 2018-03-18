@@ -1,5 +1,5 @@
 //
-//  EventsController.swift
+//  techListController.swift
 //  Udaan
 //
 //  Created by Admin on 05/03/2018 .
@@ -8,36 +8,22 @@
 
 import UIKit
 
-class EventsController: UITableViewController {
-   
-    var department:Department? = nil
-    var events:[Event]? = nil
-    
+class techListController: UITableViewController {
+    var lableFontSize  = CGFloat(35)
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 150
-        //navigationItem.rightBarButtonItem!.title = "tails"
-        if department != nil {
-        let item = UIBarButtonItem(title: "Heads", style: UIBarButtonItemStyle.plain, target: self, action: #selector(displayHead))
-            
-            //item.tintColor = UIColor.black
-            self.navigationItem.rightBarButtonItem = item
-            events = department?.events
-        }
-        //navigationController?.navigationItem.setRightBarButton(item, animated: false)
+//        view.gradientLayer.colors = [UIColor.black.cgColor, UIColor.white.cgColor]
+//        view.gradientLayer.gradient = GradientPoint.rightLeft.draw()
+        lableFontSize = self.view.bounds.width/7
+        tableView.autoresizesSubviews = true
+        tableView.separatorColor = tableView.backgroundColor
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    @objc func displayHead(){
-    let vc = storyboard?.instantiateViewController(withIdentifier: "heads") as! headsController
-    vc.title = "heads"
-    vc.heads[0] = department?.heads
-    vc.heads[1] = department?.coHeads
-    self.navigationController?.pushViewController(vc, animated: true)
-    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -49,74 +35,80 @@ class EventsController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print(department)
-        return (events?.count)! ?? 0
+        return fetchJson.Tech.departments.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventCell
-
-     //cell.name.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.9)
         
-        cell.name.text = events?[indexPath.row].name
-    
         
-        cell.name.layer.cornerRadius = 10
-        cell.name.layer.masksToBounds = true
+        let cell = tableView.dequeueReusableCell(withIdentifier: "techCell", for: indexPath) as! techCell
         
+        /*
+         cell.BackImage.contentMode = UIViewContentMode.scaleToFill
+         cell.BackImage.image =  UIImage(named: eventTypeList[indexPath.row])
+         
+         cell.layer.cornerRadius = 10
+         cell.layer.masksToBounds = true
+         */
+        /*
+        let lab = UILabel(frame: CGRect(x: cell.bounds.minX+8, y: cell.bounds.minY+8, width: cell.bounds.width-16, height: cell.bounds.height-8))
+        lab.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5)
+        lab.text = "  " + fetchJson.Tech.departments[indexPath.row].name
+        lab.textColor = UIColor.black
+        
+        lab.layer.cornerRadius = 10
+        lab.layer.masksToBounds = true
+        //lab.font = UIFont(descriptor:UIFontDescriptor.init(name: font, size: lableFontSize),size:lableFontSize)
+        //lab.font = UIFont.init(name: font, size: lableFontSize)
+        lab.font = UIFont.boldSystemFont(ofSize: lableFontSize)
+        cell.addSubview(lab)
+        */
         if cell.layer.sublayers?.count == 2 {
         let gradient = CAGradientLayer()
         
-        gradient.frame = CGRect(x: cell.name.frame.minX, y: cell.name.frame.minY, width: cell.name.frame.width, height: cell.name.frame.height-55)
-        
-        
-        //gradient.bounds = cell.name.bounds
+        gradient.frame = cell.name.frame
         gradient.cornerRadius = 10
         gradient.masksToBounds = true
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 1, y: 1)
-            gradient.colors = [color.getcolor1(index: indexPath.row ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.row,alph: 1.0).cgColor]
+        gradient.colors = [color.getcolor1(index: indexPath.row+5 ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.row+5,alph: 1.0).cgColor]
         cell.layer.insertSublayer(gradient, at:0 )
-        }
-        else{
-            (cell.layer.sublayers![0] as! CAGradientLayer).colors = [color.getcolor1(index: indexPath.row ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.row,alph: 1.0).cgColor]
-            cell.layer.sublayers![0].frame = CGRect(x: cell.name.frame.minX, y: cell.name.frame.minY, width: cell.name.frame.width, height: cell.name.frame.height)
-        }
-      
-        
-        
-     return cell
     }
-    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
-        tableView.reloadData()
+    else{
+    cell.layer.sublayers![0].frame = cell.name.frame
+    (cell.layer.sublayers![0] as! CAGradientLayer).colors = [color.getcolor1(index: indexPath.row+5 ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.row+5,alph: 1.0).cgColor]
+    }
+        //cell.name.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5)
+        
+        cell.name.text = fetchJson.Tech.departments[indexPath.row].alis
+        cell.name.layer.cornerRadius = 10
+        cell.name.layer.masksToBounds = true
+        
+        
+        
+        
+
+        
+        // Configure the cell...
+        
+        
+        return cell
     }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         tableView.reloadData()
     }
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        tableView.reloadData()
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let vc = storyboard?.instantiateViewController(withIdentifier: "event") as! EventController
-        vc.title = events![indexPath.row].name
-        vc.event = events![indexPath.row]
-        
-        /*
-        let transition = CATransition()
-        transition.duration = 2
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = kCATransitionFade
-        self.navigationController?.view.layer.add(transition, forKey: nil)
-        */
-        let transition:CATransition = CATransition()
-        transition.duration = 0.5
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = kCATransitionMoveIn
-        transition.subtype = kCATransitionFromTop
-        self.navigationController!.view.layer.add(transition, forKey: kCATransition)
-        
+       tableView.deselectRow(at: indexPath, animated: true)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "events") as! EventsController
+        vc.title = fetchJson.Tech.departments[indexPath.row].alis
+        vc.department = fetchJson.Tech.departments[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 
