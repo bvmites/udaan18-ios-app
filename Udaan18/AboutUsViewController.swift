@@ -52,6 +52,7 @@ class AboutUsViewController: UIViewController {
         UIApplication.shared.open(URL(string:fetchJson.url[sender.tag])! , options: [:]) { (poss) in
             if poss{
                 print("done")
+                print(fetchJson.url[sender.tag])
             }
             else{
                     print("error")

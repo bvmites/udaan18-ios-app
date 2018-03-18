@@ -211,7 +211,7 @@
 				TargetAttributes = {
 					842DB23E204567F1004BDB3E = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = D876C27B8A;
+						DevelopmentTeam = CVUL86K9SV;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -415,7 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D876C27B8A;
+				DEVELOPMENT_TEAM = CVUL86K9SV;
 				INFOPLIST_FILE = "$(SRCROOT)/Udaan18/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -431,7 +431,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D876C27B8A;
+				DEVELOPMENT_TEAM = CVUL86K9SV;
 				INFOPLIST_FILE = "$(SRCROOT)/Udaan18/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

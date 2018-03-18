@@ -23,7 +23,9 @@ class fetchJson
                       "mailto:developer.team.udaan@gmail.com",
                       "instagram://user?username=teamudaan",
                       "https://www.youtube.com/channel/UCnqRgS6O0MGF8sTYb_fHjWA",
-                      "http://maps.apple.com/?q=Birla+Vishvakarma+Mahavidyalaya+Anand+Gujarat+india"]
+                      "http://maps.apple.com/?q=Birla+Vishvakarma+Mahavidyalaya+Anand+Gujarat+india",
+                      "https://www.flaticon.com/"
+    ]
     static let optionalUrl = [
         "https://udaan18.com/",
         "https://www.facebook.com/teamudaan18/",
@@ -31,7 +33,8 @@ class fetchJson
         "mailto:developer.team.udaan@gmail.com",
         "https://www.instagram.com/teamudaan/",
         "https://www.youtube.com/channel/UCnqRgS6O0MGF8sTYb_fHjWA",
-        "http://maps.apple.com/?ll=22.5525703,72.9238183"
+        "http://maps.apple.com/?ll=22.5525703,72.9238183",
+        "https://www.flaticon.com/"
     ]
     //http://www.youtube.com/v/N__oFtLbHQ0
     // fetch data from github and stores in data variable
