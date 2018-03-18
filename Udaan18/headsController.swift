@@ -12,7 +12,6 @@ class headsController: UITableViewController {
     var heads:Dictionary<Int,[Manager]?> = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -42,7 +41,7 @@ class headsController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "heads", for: indexPath) as! headsCell
         cell.manager.text = "\((heads[indexPath.section]?![indexPath.row].name)!)\n\((heads[indexPath.section]?![indexPath.row].mobile)!)"
         // Configure the cell...
-        cell.manager.backgroundColor = UIColor.yellow
+        cell.manager.backgroundColor = UIColor.white
         cell.manager.layer.cornerRadius = 10
         cell.manager.layer.masksToBounds = true
         return cell

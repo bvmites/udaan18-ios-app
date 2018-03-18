@@ -17,9 +17,36 @@ class EventController: UIViewController {
     @IBOutlet var Rounds: UILabel!
     @IBOutlet var Prizes: UILabel!
     @IBAction func presentcontacts(_ sender: UIButton) {
+        if event?.managers.count == 0{
+            let alert = UIAlertController(title: "No Managers", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Back", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else{
+        let alert = UIAlertController(title: "Call Managers", message: nil, preferredStyle: .alert)
+        
+        for i in (event?.managers)! {
+            let act = UIAlertAction(title: i.name, style: .default, handler: call)
+            alert.addAction(act)
+        }
+        alert.addAction(UIAlertAction(title: "Back", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        }
+        /*
         let vc = storyboard?.instantiateViewController(withIdentifier: "contactManager") as! EventManagerController
         vc.managers = event?.managers
         navigationController?.present(vc, animated: true, completion: nil)
+        */
+    }
+    
+    func call(action:UIAlertAction)->Void{
+         for i in (event?.managers)! {
+            if i.name==action.title{
+                let url = URL(string: "tel:" + i.mobile )
+                UIApplication.shared.open(url!, options: [:], completionHandler: {print($0)})
+            }
+        }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +85,7 @@ class EventController: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "segues"
@@ -66,6 +93,6 @@ class EventController: UIViewController {
             (segue.destination as! EventManagerController).managers = event?.managers
         }
     }
- 
+    */
 
 }

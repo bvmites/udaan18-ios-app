@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		84031DBE20598FF400672A80 /* EventManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84031DBD20598FF400672A80 /* EventManagerController.swift */; };
 		84031DC020599D2F00672A80 /* contactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84031DBF20599D2F00672A80 /* contactCell.swift */; };
 		841154EE20506C59002ADD02 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841154ED20506C59002ADD02 /* EventController.swift */; };
 		842DB243204567F1004BDB3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DB242204567F1004BDB3E /* AppDelegate.swift */; };
@@ -37,7 +36,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		84031DBD20598FF400672A80 /* EventManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManagerController.swift; sourceTree = "<group>"; };
 		84031DBF20599D2F00672A80 /* contactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactCell.swift; sourceTree = "<group>"; };
 		841154ED20506C59002ADD02 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		842DB23F204567F1004BDB3E /* Udaan18.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Udaan18.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +132,6 @@
 				84A32DCA204DAFFF006394E6 /* techListController.swift */,
 				8456A01F2056BA4800EF2647 /* headsController.swift */,
 				841154ED20506C59002ADD02 /* EventController.swift */,
-				84031DBD20598FF400672A80 /* EventManagerController.swift */,
 				849E7147204D7B6A002CEEB1 /* EventsController.swift */,
 				84EFFC5F204BE45C002AF71C /* TeamTableViewController.swift */,
 				849E713F204D45E8002CEEB1 /* developerTableViewController.swift */,
@@ -276,7 +273,6 @@
 				842DB2612045699A004BDB3E /* EventTableViewController.swift in Sources */,
 				84EFFC64204BEFC8002AF71C /* teamUdaanCell.swift in Sources */,
 				843E40C8204C4B4600F25E2C /* AboutUsViewController.swift in Sources */,
-				84031DBE20598FF400672A80 /* EventManagerController.swift in Sources */,
 				842DB243204567F1004BDB3E /* AppDelegate.swift in Sources */,
 				84A32DCB204DAFFF006394E6 /* techListController.swift in Sources */,
 				84A32DC3204DA80D006394E6 /* techCell.swift in Sources */,

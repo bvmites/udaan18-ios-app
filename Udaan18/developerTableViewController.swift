@@ -60,23 +60,23 @@ class developerTableViewController: UITableViewController {
         return developers.count
     }
 
-    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return view.bounds.width*2/3
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "developerCell", for: indexPath) as! developerCell
         cell.developr = developers[indexPath.row]
         // Configure the cell...
         cell.name.text = "  " + developers[indexPath.row].name
         cell.title.text = "  " + developers[indexPath.row].title
-        print(cell.subviews.count)
-        print(cell.subviews)
+        
         
         if cell.subviews.count == 2 {
             let gradient = CAGradientLayer()
             
-            gradient.frame = CGRect(x: cell.subviews[0].frame.minX+8 , y: cell.subviews[0].frame.minY+8, width: view.bounds.width-16, height: cell.frame.height-16 ) // -90
-            
-//            gradient.cornerRadius = 10
-//            gradient.masksToBounds = true
+            gradient.frame = CGRect(x: cell.subviews[0].frame.minX+16 , y: cell.subviews[0].frame.minY+8, width: view.bounds.width-32, height: cell.frame.height-16 ) // -90
+            gradient.cornerRadius = 10
+            gradient.masksToBounds = true
             gradient.startPoint = CGPoint(x: 0, y: 0)
             gradient.endPoint = CGPoint(x: 1, y: 1)
             
