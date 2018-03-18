@@ -19,7 +19,7 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="COL-0t-3bu">
             <objects>
-                <tabBarController id="BPx-PB-8PN" customClass="MainTabBarController" customModule="Udaan" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="BPx-PB-8PN" customClass="MainTabBarController" customModule="Udaan18" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="10g-6I-Boh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -39,16 +39,16 @@
         <!--Events-->
         <scene sceneID="A6j-do-6gq">
             <objects>
-                <tableViewController id="LFo-ca-d0d" customClass="EventTableViewController" customModule="Udaan" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="LFo-ca-d0d" customClass="EventTableViewController" customModule="Udaan18" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="221" sectionHeaderHeight="28" sectionFooterHeight="28" id="OOy-t0-kHw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="EventDeprtment" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventDepartment" rowHeight="221" id="9zw-4G-s4N" customClass="EventDepartmentTableViewCell" customModule="Udaan" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="EventDeprtment" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventDepartment" rowHeight="221" id="9zw-4G-s4N" customClass="EventDepartmentTableViewCell" customModule="Udaan18" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="221"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9zw-4G-s4N" id="w5v-0G-h1h" customClass="EventDepartmentTableViewCell" customModule="Udaan" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9zw-4G-s4N" id="w5v-0G-h1h" customClass="EventDepartmentTableViewCell" customModule="Udaan18" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="220.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -83,13 +83,13 @@
         <!--Developers-->
         <scene sceneID="f9L-YI-Vwb">
             <objects>
-                <tableViewController id="xc9-iL-4Ay" customClass="developerTableViewController" customModule="Udaan" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xc9-iL-4Ay" customClass="developerTableViewController" customModule="Udaan18" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="a0O-bI-5B4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="developerCell" rowHeight="233" id="ggO-ST-EFK" customClass="developerCell" customModule="Udaan" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="developerCell" rowHeight="233" id="ggO-ST-EFK" customClass="developerCell" customModule="Udaan18" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="233"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ggO-ST-EFK" id="sJk-4t-1GJ">
@@ -206,16 +206,16 @@
         <!--Tech List Controller-->
         <scene sceneID="jsm-hc-n8p">
             <objects>
-                <tableViewController storyboardIdentifier="techlist" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q8E-lK-Ih3" customClass="techListController" customModule="Udaan" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="techlist" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q8E-lK-Ih3" customClass="techListController" customModule="Udaan18" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="183" sectionHeaderHeight="28" sectionFooterHeight="28" id="GFF-jv-es6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="techCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="techCell" rowHeight="183" id="iwJ-7g-RJg" customClass="techCell" customModule="Udaan" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="techCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="techCell" rowHeight="183" id="iwJ-7g-RJg" customClass="techCell" customModule="Udaan18" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="183"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iwJ-7g-RJg" id="F1p-0C-uPx" customClass="techCell" customModule="Udaan" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iwJ-7g-RJg" id="F1p-0C-uPx" customClass="techCell" customModule="Udaan18" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="182.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -247,13 +247,13 @@
         <!--Events Controller-->
         <scene sceneID="wEd-I8-7m4">
             <objects>
-                <tableViewController storyboardIdentifier="events" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sYB-Y0-4ng" customClass="EventsController" customModule="Udaan" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="events" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sYB-Y0-4ng" customClass="EventsController" customModule="Udaan18" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FtV-Hv-QYx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="204" id="9XH-Og-P5i" customClass="EventCell" customModule="Udaan" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="204" id="9XH-Og-P5i" customClass="EventCell" customModule="Udaan18" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="204"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9XH-Og-P5i" id="doX-YW-hS5">
@@ -292,13 +292,13 @@
         <!--Heads Controller-->
         <scene sceneID="D2f-di-ARt">
             <objects>
-                <tableViewController storyboardIdentifier="heads" useStoryboardIdentifierAsRestorationIdentifier="YES" id="acD-p3-zrJ" customClass="headsController" customModule="Udaan" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="heads" useStoryboardIdentifierAsRestorationIdentifier="YES" id="acD-p3-zrJ" customClass="headsController" customModule="Udaan18" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lGN-hE-HiS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="heads" rowHeight="148" id="UuI-9k-6Vv" customClass="headsCell" customModule="Udaan" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="heads" rowHeight="148" id="UuI-9k-6Vv" customClass="headsCell" customModule="Udaan18" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="148"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UuI-9k-6Vv" id="mxy-Yj-w1y">
@@ -337,7 +337,7 @@
         <!--Event Controller-->
         <scene sceneID="zmu-Eb-51m">
             <objects>
-                <viewController storyboardIdentifier="event" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DQD-rI-JPx" customClass="EventController" customModule="Udaan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="event" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DQD-rI-JPx" customClass="EventController" customModule="Udaan18" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="A0k-R1-Kat"/>
                         <viewControllerLayoutGuide type="bottom" id="6p0-U3-cv0"/>
@@ -448,7 +448,7 @@
         <!--Event Manager Controller-->
         <scene sceneID="eui-Bf-Edf">
             <objects>
-                <viewController storyboardIdentifier="contactManager" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fg3-MW-ONz" customClass="EventManagerController" customModule="Udaan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="contactManager" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fg3-MW-ONz" customClass="EventManagerController" customModule="Udaan18" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dIJ-rq-YAC"/>
                         <viewControllerLayoutGuide type="bottom" id="g2r-xp-BZu"/>
@@ -461,7 +461,7 @@
                                 <rect key="frame" x="67" y="269" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="contactCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" rowHeight="70" id="8OS-1M-KUY" customClass="contactCell" customModule="Udaan" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="contactCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" rowHeight="70" id="8OS-1M-KUY" customClass="contactCell" customModule="Udaan18" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="240" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8OS-1M-KUY" id="cax-12-RHh">
@@ -557,43 +557,44 @@
         <!--TeamUdaan-->
         <scene sceneID="3g8-yR-7Mb">
             <objects>
-                <tableViewController id="gxx-NW-esT" customClass="TeamTableViewController" customModule="Udaan" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="gxx-NW-esT" customClass="TeamTableViewController" customModule="Udaan18" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="156" sectionHeaderHeight="28" sectionFooterHeight="28" id="ouE-YX-MAb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="teamUdaan" rowHeight="156" id="u0V-oI-XoS" customClass="teamUdaanCell" customModule="Udaan" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="teamUdaan" rowHeight="156" id="u0V-oI-XoS" customClass="teamUdaanCell" customModule="Udaan18" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="156"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u0V-oI-XoS" id="YyT-iH-0qw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="155.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rW-hc-I3j">
-                                            <rect key="frame" x="8" y="11" width="359" height="33.5"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gum-Bi-uyL">
-                                            <rect key="frame" x="8" y="44.5" width="359" height="20.5"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <color key="highlightedColor" red="0.5275878906" green="0.6313476562" blue="0.62483723960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Rc-Aj-GtK">
+                                            <rect key="frame" x="8" y="45" width="359" height="65.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rW-hc-I3j">
+                                                    <rect key="frame" x="146.5" y="0.0" width="66.5" height="33.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gum-Bi-uyL">
+                                                    <rect key="frame" x="155.5" y="41.5" width="48" height="24"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <color key="highlightedColor" red="0.5275878906" green="0.6313476562" blue="0.62483723960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="9rW-hc-I3j" firstAttribute="top" secondItem="YyT-iH-0qw" secondAttribute="top" constant="8" id="0hG-wg-SQG"/>
-                                        <constraint firstItem="Gum-Bi-uyL" firstAttribute="leading" secondItem="YyT-iH-0qw" secondAttribute="leading" constant="8" id="3jV-zm-p3d"/>
-                                        <constraint firstItem="Gum-Bi-uyL" firstAttribute="top" secondItem="9rW-hc-I3j" secondAttribute="bottom" id="LfE-3Z-TIl"/>
-                                        <constraint firstItem="9rW-hc-I3j" firstAttribute="leading" secondItem="YyT-iH-0qw" secondAttribute="leading" constant="8" id="Mmz-of-yw6"/>
-                                        <constraint firstAttribute="trailing" secondItem="9rW-hc-I3j" secondAttribute="trailing" constant="8" id="iYI-7G-rzJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="Gum-Bi-uyL" secondAttribute="trailing" constant="8" id="l0L-iR-qKA"/>
-                                        <constraint firstAttribute="bottom" secondItem="Gum-Bi-uyL" secondAttribute="bottom" constant="8" id="sVr-kH-IaJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="0Rc-Aj-GtK" secondAttribute="trailing" constant="8" id="Feb-B8-rU3"/>
+                                        <constraint firstItem="0Rc-Aj-GtK" firstAttribute="leading" secondItem="YyT-iH-0qw" secondAttribute="leading" constant="8" id="Mkk-J1-Ya3"/>
+                                        <constraint firstItem="0Rc-Aj-GtK" firstAttribute="centerY" secondItem="YyT-iH-0qw" secondAttribute="centerY" id="YPt-Py-oHc"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -633,7 +634,7 @@
         <!--About Us-->
         <scene sceneID="qbn-do-nuE">
             <objects>
-                <viewController id="kCa-e2-XYq" customClass="AboutUsViewController" customModule="Udaan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kCa-e2-XYq" customClass="AboutUsViewController" customModule="Udaan18" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zQZ-bl-3JR"/>
                         <viewControllerLayoutGuide type="bottom" id="1Ex-kH-Zby"/>
@@ -866,7 +867,7 @@
         <!--Events-->
         <scene sceneID="14i-S4-Hwd">
             <objects>
-                <navigationController id="gud-BF-wN1" customClass="EventNavigationController" customModule="Udaan" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="gud-BF-wN1" customClass="EventNavigationController" customModule="Udaan18" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Events" image="event" landscapeImage="event-land" id="k3K-9x-pvt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mLb-gG-2sp">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

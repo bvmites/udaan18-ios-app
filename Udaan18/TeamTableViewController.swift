@@ -28,7 +28,7 @@ class TeamTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return view.bounds.width/3
         
         
     }
@@ -63,8 +63,8 @@ class TeamTableViewController: UITableViewController {
             
             gradient.frame = CGRect(x: cell.subviews[0].frame.minX+8 , y: cell.subviews[0].frame.minY+8, width: view.bounds.width-16, height: cell.frame.height-16 ) // -90
             
-            //            gradient.cornerRadius = 10
-            //            gradient.masksToBounds = true
+            gradient.cornerRadius = 10
+            gradient.masksToBounds = true
             gradient.startPoint = CGPoint(x: 0, y: 0)
             gradient.endPoint = CGPoint(x: 1, y: 1)
             
@@ -75,7 +75,7 @@ class TeamTableViewController: UITableViewController {
             cell.insertSubview(v, at: 0)
         }
         else{
-            cell.subviews[0].layer.sublayers![0].frame = CGRect(x: cell.subviews[0].frame.minX+8 , y: cell.subviews[0].frame.minY+8, width: view.bounds.width-16, height: cell.frame.height-16 )
+           // cell.subviews[0].layer.sublayers![0].frame = CGRect(x: cell.subviews[0].frame.minX+8 , y: cell.subviews[0].frame.minY+8, width: view.bounds.width-16, height: cell.frame.height-16 )
             (cell.subviews[0].layer.sublayers![0] as! CAGradientLayer).colors = [color.getcolor1(index: indexPath.section ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.section,alph: 1.0).cgColor]
         }
         //cell.layer.cornerRadius = 10
