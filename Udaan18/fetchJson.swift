@@ -11,7 +11,7 @@ import UIKit
 class fetchJson
 {
     static var data : Dictionary<String,Any>?
-    static let DataUrl = "https://raw.githubusercontent.com/bvmites/udaan18-ios-app/master/Udaan/event-data.json"
+    static let DataUrl = "https://raw.githubusercontent.com/bvmites/udaan18-ios-app/master/Udaan18/event-data.json"
     //static let DataUrl = "https://raw.githubusercontent.com/bvmites/udaan18-website/master/data.js"
     static let urls = URL(string: DataUrl)
     static var Tech : tech!
@@ -90,14 +90,15 @@ class fetchJson
     }
     
     static func setData(){
-        /*if let newData = dataFromFiles(){
-         data = jsonDataToDictionary(data: newData)
-         print("from files")
-         }
-         else */if let newData = dataFromApi(){
-         data = jsonDataToDictionary(data: newData)
-         print("from api")
-         }
+        
+        if let newData = dataFromApi(){
+            data = jsonDataToDictionary(data: newData)
+            print("from api")
+        }
+        else if let newData = dataFromFiles(){
+            data = jsonDataToDictionary(data: newData)
+            print("from files")
+        }
          else if let newData = dataFromBundle(){
             data = jsonDataToDictionary(data: newData)
             print("from bundle")
