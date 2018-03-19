@@ -94,11 +94,11 @@ class fetchJson
          data = jsonDataToDictionary(data: newData)
          print("from files")
          }
-         else if let newData = dataFromApi(){
+         else */if let newData = dataFromApi(){
          data = jsonDataToDictionary(data: newData)
          print("from api")
          }
-         else */if let newData = dataFromBundle(){
+         else if let newData = dataFromBundle(){
             data = jsonDataToDictionary(data: newData)
             print("from bundle")
         }

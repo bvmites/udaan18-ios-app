@@ -96,14 +96,14 @@ class EventTableViewController: UITableViewController {
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 1, y: 1)
         
-            gradient.colors = [color.getcolor1(index: indexPath.row ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.row,alph: 1.0).cgColor]
+            gradient.colors = [color.getcolors1(index: indexPath.row ,alph: 1.0).cgColor,color.getcolors2(index: indexPath.row,alph: 1.0).cgColor]
         //gradient.colors = [color.getcolor1(alph: 1.0),color.getcolor2(alph: 1.0)]
         
         cell.layer.insertSublayer(gradient, at:0 )
         }
          else{
             cell.layer.sublayers![0].frame = cell.name.frame
-             (cell.layer.sublayers![0] as! CAGradientLayer).colors = [color.getcolor1(index: indexPath.row ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.row,alph: 1.0).cgColor]
+             (cell.layer.sublayers![0] as! CAGradientLayer).colors = [color.getcolors1(index: indexPath.row ,alph: 1.0).cgColor,color.getcolors2(index: indexPath.row,alph: 1.0).cgColor]
         }
         
         //cell.name.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.5)
