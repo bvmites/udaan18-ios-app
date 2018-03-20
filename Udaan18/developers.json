@@ -36,33 +36,6 @@
   "github": "https://github.com/sidx1024"
   },
   {
-  "title": "Back-End Developer",
-  "color": "",
-  "category": "backend",
-  "name": "Chintan Acharya",
-  "mobile": "+918140474055",
-  "email": "acharya.chintan96@gmail.com",
-  "github": "https://github.com/chintanacharya"
-  },
-  {
-  "title": "UWP Developer",
-  "color": "",
-  "category": "windows",
-  "name": "Darshan Dalal",
-  "mobile": "+918460157727",
-  "email": "darshandalal3@outlook.com",
-  "github": "https://github.com/darshan010"
-  },
-  {
-  "title": "Android Developer",
-  "color": "",
-  "category": "unity",
-  "name": "Jay Patel",
-  "mobile": "+919374883988",
-  "email": "jp9573@gmail.com",
-  "github": "https://github.com/jp9573"
-  },
-  {
   "title": "Web Developer",
   "color": "",
   "category": "web",
@@ -84,6 +57,15 @@
   "title": "Back-End Developer",
   "color": "",
   "category": "backend",
+  "name": "Chintan Acharya",
+  "mobile": "+918140474055",
+  "email": "acharya.chintan96@gmail.com",
+  "github": "https://github.com/chintanacharya"
+  },
+  {
+  "title": "Back-End Developer",
+  "color": "",
+  "category": "backend",
   "name": "Rushi Rami",
   "mobile": "+917069307537",
   "email": "",
@@ -99,7 +81,28 @@
   "github": "https://github.com/jaymovaliya"
   },
   {
-  "title": "Android Developer",
+  "title": "App Developer",
+  "color": "",
+  "category": "windows",
+  "name": "Darshan Dalal",
+  "mobile": "+918460157727",
+  "email": "darshandalal3@outlook.com",
+  "github": "https://github.com/darshan010"
+  },
+  {
+  "title": "App Developer",
+  "color": "",
+  "category": "unity",
+  "name": "Jay Patel",
+  "mobile": "+919374883988",
+  "email": "jp9573@gmail.com",
+  "github": "https://github.com/jp9573"
+  },
+  
+  
+  
+  {
+  "title": "App Developer",
   "color": "",
   "category": "android",
   "name": "Bhagyesh Radiya",
@@ -108,7 +111,7 @@
   "github": "https://github.com/BhagyeshRadiya2796"
   },
   {
-  "title": "Android Developer",
+  "title": "App Developer",
   "color": "",
   "category": "android",
   "name": "Abhi Akbari",
@@ -117,7 +120,7 @@
   "github": "https://github.com/abhi055"
   },
   {
-  "title": "Android Developer",
+  "title": "App Developer",
   "color": "",
   "category": "android",
   "name": "Pranav Gajera",

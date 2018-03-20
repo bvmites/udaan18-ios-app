@@ -51,17 +51,17 @@ class EventController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         name.text = event?.name
-        Description.text = (event?.description)!
+        Description.text = "Description:-\n\t"+(event?.description)!
         Participants.text = "Participants:-" + (event?.participants)!
         Fees.text = "Fees:-" + (event?.fees)!
         var c = 0
         for round in (event?.rounds)! {
-            Rounds.text = Rounds.text! + "Round \(c+1):-\(round)\n"
+            Rounds.text = Rounds.text! + "Round \(c+1):-\n\t\(round)\n\n"
             c = c+1
         }
         c = 0
         for prize in (event?.prizes)! {
-            Prizes.text = Prizes.text! + "Prize \(c+1):-\(prize)\n"
+            Prizes.text = Prizes.text! + "Prize \(c+1):-\t\(prize)\n"
             c = c+1
         }
  

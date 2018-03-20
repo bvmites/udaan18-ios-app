@@ -13,19 +13,22 @@ class EventsController: UITableViewController {
     var department:Department? = nil
     var events:[Event]? = nil
     
+    
+    
+    @objc func displayHead(){
+        let vc = storyboard?.instantiateViewController(withIdentifier: "heads") as! headsController
+        vc.title = "heads"
+        vc.heads[0] = department?.heads
+        vc.heads[1] = department?.coHeads
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.autoresizesSubviews = true
         tableView.separatorColor = tableView.backgroundColor
         //tableView.rowHeight = 150
         //navigationItem.rightBarButtonItem!.title = "tails"
-        if department != nil {
-        let item = UIBarButtonItem(title: "Heads", style: UIBarButtonItemStyle.plain, target: self, action: #selector(displayHead))
-            
-            //item.tintColor = UIColor.black
-            self.navigationItem.rightBarButtonItem = item
-            events = department?.events
-        }
+        //self.navigationItem.rightBarButtonItem?.tintColor = UIColor.blue
         //navigationController?.navigationItem.setRightBarButton(item, animated: false)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,12 +36,14 @@ class EventsController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    @objc func displayHead(){
-    let vc = storyboard?.instantiateViewController(withIdentifier: "heads") as! headsController
-    vc.title = "heads"
-    vc.heads[0] = department?.heads
-    vc.heads[1] = department?.coHeads
-    self.navigationController?.pushViewController(vc, animated: true)
+    override func viewWillAppear(_ animated: Bool) {
+        if department != nil {
+            let item = UIBarButtonItem(title: "Heads", style: UIBarButtonItemStyle.plain, target: self, action: #selector(displayHead))
+            //item.tintColor = UIColor.black
+            //item.tintColor = UIColor.blue
+            self.navigationItem.rightBarButtonItem = item
+            events = department?.events
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -58,7 +63,7 @@ class EventsController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.bounds.width*4/7
+        return view.bounds.width*3/7
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventCell
@@ -66,7 +71,7 @@ class EventsController: UITableViewController {
      //cell.name.backgroundColor = UIColor(displayP3Red: CGFloat(arc4random()) / CGFloat(UInt32.max), green: CGFloat(arc4random()) / CGFloat(UInt32.max), blue: CGFloat(arc4random()) / CGFloat(UInt32.max), alpha: 0.9)
         
         cell.name.text = events?[indexPath.row].name
-        cell.name.frame = CGRect(x: 16, y: 8, width: view.bounds.width-32, height: (view.bounds.width-32)*4/7)
+        cell.name.frame = CGRect(x: 16, y: 8, width: view.bounds.width-32, height: (view.bounds.width-32)*3/7)
         cell.name.layer.cornerRadius = 10
         cell.name.layer.masksToBounds = true
         
@@ -93,12 +98,14 @@ class EventsController: UITableViewController {
         
      return cell
     }
+    /*
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         tableView.reloadData()
     }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         tableView.reloadData()
     }
+ */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = storyboard?.instantiateViewController(withIdentifier: "event") as! EventController
@@ -113,7 +120,7 @@ class EventsController: UITableViewController {
         self.navigationController?.view.layer.add(transition, forKey: nil)
         */
         let transition:CATransition = CATransition()
-        transition.duration = 0.5
+        transition.duration = 0.3
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         transition.type = kCATransitionMoveIn
         transition.subtype = kCATransitionFromTop

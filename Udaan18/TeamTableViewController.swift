@@ -85,6 +85,12 @@ class TeamTableViewController: UITableViewController {
 
         return cell
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let number = fetchJson.teamUdaan[indexPath.section].members[indexPath.row].mobile
+        let url = URL(string: "tel:"+number )
+        print(url!)
+        UIApplication.shared.open(url!, options: [:], completionHandler: {print($0)})
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

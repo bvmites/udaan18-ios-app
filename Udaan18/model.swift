@@ -17,6 +17,7 @@ struct developer{
 public struct Member {
     var name:String
     var title:String
+    var mobile:String
 }
 
 public struct Category{

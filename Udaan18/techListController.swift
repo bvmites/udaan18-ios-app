@@ -14,7 +14,7 @@ class techListController: UITableViewController {
         super.viewDidLoad()
 //        view.gradientLayer.colors = [UIColor.black.cgColor, UIColor.white.cgColor]
 //        view.gradientLayer.gradient = GradientPoint.rightLeft.draw()
-        lableFontSize = self.view.bounds.width/7
+        //lableFontSize = self.view.bounds.width/7
         tableView.autoresizesSubviews = true
         tableView.separatorColor = tableView.backgroundColor
         // Uncomment the following line to preserve selection between presentations
@@ -46,7 +46,7 @@ class techListController: UITableViewController {
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "techCell", for: indexPath) as! techCell
-        
+        cell.name.frame = CGRect(x: 16, y: 8, width: view.bounds.width-32, height: (view.bounds.width-32)*3/7)
         /*
          cell.BackImage.contentMode = UIViewContentMode.scaleToFill
          cell.BackImage.image =  UIImage(named: eventTypeList[indexPath.row])
@@ -98,12 +98,14 @@ class techListController: UITableViewController {
         
         return cell
     }
+    /*
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         tableView.reloadData()
     }
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         tableView.reloadData()
     }
+ */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        tableView.deselectRow(at: indexPath, animated: true)
         let vc = storyboard?.instantiateViewController(withIdentifier: "events") as! EventsController
@@ -111,7 +113,9 @@ class techListController: UITableViewController {
         vc.department = fetchJson.Tech.departments[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
-
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return view.bounds.width*3/7
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

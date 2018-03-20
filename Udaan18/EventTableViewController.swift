@@ -10,7 +10,7 @@ import UIKit
 
 class EventTableViewController: UITableViewController {
     var eventTypeList:[String] = []
-    var lableFontSize:CGFloat = 60
+    //var lableFontSize:CGFloat = 60
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,10 @@ class EventTableViewController: UITableViewController {
             eventTypeList.sort()
             eventTypeList.reverse()
         }
+        self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
+        
+        
+        
        // lableFontSize = self.view.frame.width/2
         tableView.autoresizesSubviews = true
         tableView.separatorColor = tableView.backgroundColor
@@ -32,13 +36,24 @@ class EventTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    @objc func refresh(refreshControl: UIRefreshControl) {
+        
+        //your code here
+        fetchJson.setData()
+        fetchJson.parseData()
+        refreshControl.endRefreshing()
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
-
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return view.bounds.width*3/7
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -48,16 +63,18 @@ class EventTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return (fetchJson.data?.count)!
     }
+    /*
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         tableView.reloadData()
     }
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         tableView.reloadData()
     }
+ */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventDepartment", for: indexPath) as! EventDepartmentTableViewCell
         
-        
+        cell.name.frame = CGRect(x: 16, y: 8, width: view.bounds.width-32, height: (view.bounds.width-32)*3/7)
 
         /*
         cell.BackImage.contentMode = UIViewContentMode.scaleToFill

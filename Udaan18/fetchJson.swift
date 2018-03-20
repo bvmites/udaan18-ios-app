@@ -55,7 +55,7 @@ class fetchJson
                     let category = dict["category"] as! String
                     var memberss:[Member] = []
                     for memberDict in members{
-                        memberss.append(Member(name: memberDict["name"]!, title: memberDict["title"]!))
+                        memberss.append(Member(name: memberDict["name"]!, title: memberDict["title"]!, mobile: memberDict["mobile"]!))
                     }
                     teamUdaan.append(Category(name: category, members: memberss))
                 }

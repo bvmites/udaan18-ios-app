@@ -36,14 +36,39 @@ class headsController: UITableViewController {
         return heads[section]??.count ?? 0
     }
 
-    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return view.bounds.width/3
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "heads", for: indexPath) as! headsCell
-        cell.manager.text = "\((heads[indexPath.section]?![indexPath.row].name)!)\n\((heads[indexPath.section]?![indexPath.row].mobile)!)"
+        cell.manager.text = (heads[indexPath.section]?![indexPath.row].name)!//"\((heads[indexPath.section]?![indexPath.row].name)!)\n\((heads[indexPath.section]?![indexPath.row].mobile)!)"
         // Configure the cell...
-        cell.manager.backgroundColor = UIColor.white
-        cell.manager.layer.cornerRadius = 10
-        cell.manager.layer.masksToBounds = true
+        //cell.manager.backgroundColor = UIColor.white
+        //cell.manager.layer.cornerRadius = 10
+        //cell.manager.layer.masksToBounds = true
+        if cell.subviews.count == 2 {
+            let gradient = CAGradientLayer()
+            
+            gradient.frame = CGRect(x: cell.subviews[0].frame.minX+8 , y: cell.subviews[0].frame.minY+8, width: view.bounds.width-16, height: cell.frame.height-16 ) // -90
+            
+            gradient.cornerRadius = 10
+            gradient.masksToBounds = true
+            gradient.startPoint = CGPoint(x: 0, y: 0)
+            gradient.endPoint = CGPoint(x: 1, y: 1)
+            
+            gradient.colors = [color.getcolor1(index: indexPath.section ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.section,alph: 1.0).cgColor]
+            //gradient.colors = [color.getcolor1(alph: 1.0),color.getcolor2(alph: 1.0)]
+            let v = UIView(frame: cell.subviews[0].frame)
+            v.layer.insertSublayer(gradient, at: 0)
+            cell.insertSubview(v, at: 0)
+        }
+        else{
+            // cell.subviews[0].layer.sublayers![0].frame = CGRect(x: cell.subviews[0].frame.minX+8 , y: cell.subviews[0].frame.minY+8, width: view.bounds.width-16, height: cell.frame.height-16 )
+            (cell.subviews[0].layer.sublayers![0] as! CAGradientLayer).colors = [color.getcolor1(index: indexPath.section ,alph: 1.0).cgColor,color.getcolor2(index: indexPath.section,alph: 1.0).cgColor]
+        }
+        
+        
+        
         return cell
     }
     
