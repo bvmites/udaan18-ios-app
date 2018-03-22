@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5611F451D94D3782324518A0 /* Pods_Udaan18.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681184C5517ACEB758312841 /* Pods_Udaan18.framework */; };
 		84031DC020599D2F00672A80 /* contactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84031DBF20599D2F00672A80 /* contactCell.swift */; };
 		841154EE20506C59002ADD02 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841154ED20506C59002ADD02 /* EventController.swift */; };
 		8419BBB72063F9400094FAFB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8419BBB62063F93F0094FAFB /* GoogleService-Info.plist */; };
@@ -37,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A6340E650D3398CCE43FE9C /* Pods-Udaan18.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Udaan18.release.xcconfig"; path = "Pods/Target Support Files/Pods-Udaan18/Pods-Udaan18.release.xcconfig"; sourceTree = "<group>"; };
+		488D30D00859784BC76DBC1C /* Pods-Udaan18.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Udaan18.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Udaan18/Pods-Udaan18.debug.xcconfig"; sourceTree = "<group>"; };
+		681184C5517ACEB758312841 /* Pods_Udaan18.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Udaan18.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84031DBF20599D2F00672A80 /* contactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactCell.swift; sourceTree = "<group>"; };
 		841154ED20506C59002ADD02 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		8419BBB62063F93F0094FAFB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 		84C2B5AE2045BB0B00DC27DF /* EventDepartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDepartmentTableViewCell.swift; sourceTree = "<group>"; };
 		84E86576205598430082F583 /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		84EC7B3C205CE23F002652D9 /* event-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "event-data.json"; sourceTree = "<group>"; };
+		84EEF2602064450B00848FAA /* Udaan18.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Udaan18.entitlements; sourceTree = "<group>"; };
 		84EFFC5F204BE45C002AF71C /* TeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
 		84EFFC61204BE4DC002AF71C /* team-udaan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "team-udaan.json"; sourceTree = "<group>"; };
 		84EFFC63204BEFC8002AF71C /* teamUdaanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teamUdaanCell.swift; sourceTree = "<group>"; };
@@ -73,17 +78,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5611F451D94D3782324518A0 /* Pods_Udaan18.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00BF43EFF3B32777A433640E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				488D30D00859784BC76DBC1C /* Pods-Udaan18.debug.xcconfig */,
+				3A6340E650D3398CCE43FE9C /* Pods-Udaan18.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2C33D95E23AB3CB99FF8A58D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				681184C5517ACEB758312841 /* Pods_Udaan18.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		842DB236204567F1004BDB3E = {
 			isa = PBXGroup;
 			children = (
 				842DB241204567F1004BDB3E /* Udaan18 */,
 				842DB240204567F1004BDB3E /* Products */,
+				00BF43EFF3B32777A433640E /* Pods */,
+				2C33D95E23AB3CB99FF8A58D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +123,7 @@
 		842DB241204567F1004BDB3E /* Udaan18 */ = {
 			isa = PBXGroup;
 			children = (
+				84EEF2602064450B00848FAA /* Udaan18.entitlements */,
 				84F714A5204D168800183DB3 /* Supporting files */,
 				84F714A4204D164900183DB3 /* Jsons */,
 				842DB25A204568C7004BDB3E /* Views */,
@@ -185,9 +211,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 842DB251204567F1004BDB3E /* Build configuration list for PBXNativeTarget "Udaan18" */;
 			buildPhases = (
+				6C0D93D8137A393EED4C59D4 /* [CP] Check Pods Manifest.lock */,
 				842DB23B204567F1004BDB3E /* Sources */,
 				842DB23C204567F1004BDB3E /* Frameworks */,
 				842DB23D204567F1004BDB3E /* Resources */,
+				4CEDDAA8859166B582D93956 /* [CP] Embed Pods Frameworks */,
+				6180005EFD118487E3E6A0A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,6 +246,11 @@
 						DevelopmentTeam = CVUL86K9SV;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -254,6 +288,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CEDDAA8859166B582D93956 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Udaan18/Pods-Udaan18-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Udaan18/Pods-Udaan18-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6180005EFD118487E3E6A0A4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Udaan18/Pods-Udaan18-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C0D93D8137A393EED4C59D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Udaan18-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		842DB23B204567F1004BDB3E /* Sources */ = {
@@ -417,8 +507,10 @@
 		};
 		842DB252204567F1004BDB3E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 488D30D00859784BC76DBC1C /* Pods-Udaan18.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Udaan18/Udaan18.entitlements;
 				DEVELOPMENT_TEAM = CVUL86K9SV;
 				INFOPLIST_FILE = "$(SRCROOT)/Udaan18/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
@@ -433,8 +525,10 @@
 		};
 		842DB253204567F1004BDB3E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A6340E650D3398CCE43FE9C /* Pods-Udaan18.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Udaan18/Udaan18.entitlements;
 				DEVELOPMENT_TEAM = CVUL86K9SV;
 				INFOPLIST_FILE = "$(SRCROOT)/Udaan18/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
