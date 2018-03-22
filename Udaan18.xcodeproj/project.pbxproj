@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		84031DC020599D2F00672A80 /* contactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84031DBF20599D2F00672A80 /* contactCell.swift */; };
 		841154EE20506C59002ADD02 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841154ED20506C59002ADD02 /* EventController.swift */; };
+		8419BBB72063F9400094FAFB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8419BBB62063F93F0094FAFB /* GoogleService-Info.plist */; };
 		842DB243204567F1004BDB3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DB242204567F1004BDB3E /* AppDelegate.swift */; };
 		842DB248204567F1004BDB3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DB246204567F1004BDB3E /* Main.storyboard */; };
 		842DB24A204567F1004BDB3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842DB249204567F1004BDB3E /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		84031DBF20599D2F00672A80 /* contactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactCell.swift; sourceTree = "<group>"; };
 		841154ED20506C59002ADD02 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
+		8419BBB62063F93F0094FAFB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		842DB23F204567F1004BDB3E /* Udaan18.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Udaan18.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842DB242204567F1004BDB3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		842DB247204567F1004BDB3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				842DB242204567F1004BDB3E /* AppDelegate.swift */,
 				842DB249204567F1004BDB3E /* Assets.xcassets */,
 				842DB24E204567F1004BDB3E /* Info.plist */,
+				8419BBB62063F93F0094FAFB /* GoogleService-Info.plist */,
 			);
 			name = "Supporting files";
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				842DB24A204567F1004BDB3E /* Assets.xcassets in Resources */,
 				84EFFC62204BE4DD002AF71C /* team-udaan.json in Resources */,
 				842DB248204567F1004BDB3E /* Main.storyboard in Resources */,
+				8419BBB72063F9400094FAFB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
