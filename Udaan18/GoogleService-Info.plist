@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>818133388290-2l045ga4oitn2tfrmjbu8srllpm3gp87.apps.googleusercontent.com</string>
+	<string>547280792609-mh64lc2j3t45jgrgm6mcukf1gi7062s2.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.818133388290-2l045ga4oitn2tfrmjbu8srllpm3gp87</string>
+	<string>com.googleusercontent.apps.547280792609-mh64lc2j3t45jgrgm6mcukf1gi7062s2</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDBCy5xJtgVQ7mcwkDBXHqHBFTzloteKiI</string>
+	<string>AIzaSyCFNu-E8-j8C-7tNbFdZirwFhJdlhkwd_g</string>
 	<key>GCM_SENDER_ID</key>
-	<string>818133388290</string>
+	<string>547280792609</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.developer-team.udaan18</string>
 	<key>PROJECT_ID</key>
-	<string>com-udaan18</string>
+	<string>com-bvm-udaan18</string>
 	<key>STORAGE_BUCKET</key>
-	<string>com-udaan18.appspot.com</string>
+	<string>com-bvm-udaan18.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:818133388290:ios:b0b52df1deef9ac7</string>
+	<string>1:547280792609:ios:b0b52df1deef9ac7</string>
 	<key>DATABASE_URL</key>
-	<string>https://com-udaan18.firebaseio.com</string>
+	<string>https://com-bvm-udaan18.firebaseio.com</string>
 </dict>
 </plist>

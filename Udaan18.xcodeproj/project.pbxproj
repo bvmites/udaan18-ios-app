@@ -10,7 +10,7 @@
 		5611F451D94D3782324518A0 /* Pods_Udaan18.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681184C5517ACEB758312841 /* Pods_Udaan18.framework */; };
 		84031DC020599D2F00672A80 /* contactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84031DBF20599D2F00672A80 /* contactCell.swift */; };
 		841154EE20506C59002ADD02 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841154ED20506C59002ADD02 /* EventController.swift */; };
-		8419BBB72063F9400094FAFB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8419BBB62063F93F0094FAFB /* GoogleService-Info.plist */; };
+		841E24C42064EA29009D0979 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 842DB24E204567F1004BDB3E /* Info.plist */; };
 		842DB243204567F1004BDB3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DB242204567F1004BDB3E /* AppDelegate.swift */; };
 		842DB248204567F1004BDB3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DB246204567F1004BDB3E /* Main.storyboard */; };
 		842DB24A204567F1004BDB3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842DB249204567F1004BDB3E /* Assets.xcassets */; };
@@ -29,6 +29,7 @@
 		84A32DC3204DA80D006394E6 /* techCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A32DC2204DA80D006394E6 /* techCell.swift */; };
 		84A32DC5204DA822006394E6 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A32DC4204DA822006394E6 /* EventCell.swift */; };
 		84A32DCB204DAFFF006394E6 /* techListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A32DCA204DAFFF006394E6 /* techListController.swift */; };
+		84B4971B20653EEA0037E302 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B4971A20653EEA0037E302 /* GoogleService-Info.plist */; };
 		84C2B5AF2045BB0B00DC27DF /* EventDepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2B5AE2045BB0B00DC27DF /* EventDepartmentTableViewCell.swift */; };
 		84E86577205598430082F583 /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E86576205598430082F583 /* colors.swift */; };
 		84EC7B3D205CE23F002652D9 /* event-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 84EC7B3C205CE23F002652D9 /* event-data.json */; };
@@ -43,7 +44,6 @@
 		681184C5517ACEB758312841 /* Pods_Udaan18.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Udaan18.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84031DBF20599D2F00672A80 /* contactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactCell.swift; sourceTree = "<group>"; };
 		841154ED20506C59002ADD02 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
-		8419BBB62063F93F0094FAFB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		842DB23F204567F1004BDB3E /* Udaan18.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Udaan18.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842DB242204567F1004BDB3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		842DB247204567F1004BDB3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +64,7 @@
 		84A32DC2204DA80D006394E6 /* techCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = techCell.swift; sourceTree = "<group>"; };
 		84A32DC4204DA822006394E6 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; tabWidth = 4; };
 		84A32DCA204DAFFF006394E6 /* techListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = techListController.swift; sourceTree = "<group>"; };
+		84B4971A20653EEA0037E302 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84C2B5AE2045BB0B00DC27DF /* EventDepartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDepartmentTableViewCell.swift; sourceTree = "<group>"; };
 		84E86576205598430082F583 /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		84EC7B3C205CE23F002652D9 /* event-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "event-data.json"; sourceTree = "<group>"; };
@@ -185,7 +186,7 @@
 				842DB242204567F1004BDB3E /* AppDelegate.swift */,
 				842DB249204567F1004BDB3E /* Assets.xcassets */,
 				842DB24E204567F1004BDB3E /* Info.plist */,
-				8419BBB62063F93F0094FAFB /* GoogleService-Info.plist */,
+				84B4971A20653EEA0037E302 /* GoogleService-Info.plist */,
 			);
 			name = "Supporting files";
 			sourceTree = "<group>";
@@ -277,13 +278,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841E24C42064EA29009D0979 /* Info.plist in Resources */,
+				84B4971B20653EEA0037E302 /* GoogleService-Info.plist in Resources */,
 				842DB24D204567F1004BDB3E /* LaunchScreen.storyboard in Resources */,
 				849E7144204D4744002CEEB1 /* developers.json in Resources */,
 				84EC7B3D205CE23F002652D9 /* event-data.json in Resources */,
 				842DB24A204567F1004BDB3E /* Assets.xcassets in Resources */,
 				84EFFC62204BE4DD002AF71C /* team-udaan.json in Resources */,
 				842DB248204567F1004BDB3E /* Main.storyboard in Resources */,
-				8419BBB72063F9400094FAFB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,11 +300,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Udaan18/Pods-Udaan18-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

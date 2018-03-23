@@ -7,6 +7,6 @@ target 'Udaan18' do
 
   # Pods for Udaan18
 
-pod 'Firebase/Core'
-
+	pod 'Firebase/Core'
+	pod 'Firebase/Messaging'
 end
