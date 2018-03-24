@@ -11,11 +11,12 @@ import CoreImage
 
 class photoFilterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource{
     
-    var filters = ["CISepiaTone","CIExposureAdjust","CIColorCrossPolynomial","CIColorCube","CIColorCubeWithColorSpace","CIColorInvert","CIColorPosterize","CIFalseColor","CIMinimumComponent","CIPhotoEffectChrome"]
-    var filtersAttr:[Dictionary<String,Any>] = [[:],[:],[:],[:],[:],[:],[:],[:],[:],[:]]
+    var filters = ["CISepiaTone","CIExposureAdjust","CIColorCrossPolynomial","CIColorInvert","CIColorPosterize","CIFalseColor","CIMinimumComponent","CIPhotoEffectChrome"]
+    var filtersAttr:[Dictionary<String,Any>] = [[:],[kCIInputEVKey:1],["inputRedCoefficients":CIVector(values: [1,0,1,0.5,1,0,0,0.5,0.7,1], count: 10) ,"inputGreenCoefficients":CIVector(values: [0,0,1,0.5,0,0.5,0,0.5,0.3,0], count: 10),"inputBlueCoefficients":CIVector(values: [0,1,0.5,0.5,0,0,0.5,0.5,0.7,1], count: 10)],[:],[:],[:],[:],[:]]
     var images:UIImage?{
         didSet{
             image.image = images
+            CIVector(values: [1,0,1,0.5,1,0,0,0.5,0.7,1], count: 10)
         }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -43,6 +44,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         }
     }
     var filteredImage:UIImage?
+    @IBOutlet var filterCollectionView: UICollectionView!
     @IBOutlet var image: UIImageView!
     @IBOutlet var camera: UIButton!
     @IBOutlet var galery: UIButton!
@@ -181,10 +183,11 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
             print("image filtering failed")
         }*/
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print(filterCollectionView)
+            // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
