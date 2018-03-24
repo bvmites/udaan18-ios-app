@@ -48,18 +48,13 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
     @IBOutlet var image: UIImageView!
     @IBOutlet var camera: UIButton!
     @IBOutlet var galery: UIButton!
-    @IBOutlet var save: UIButton!
     @IBOutlet var upload: UIButton!
     @IBAction func cameraAction(_ sender: UIButton) {
-        /*
+        
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = .camera
         self.present(picker, animated: true, completion: nil)
- 
-        image.image = images
-        */
-        
     }
 
     @IBAction func galeryAction(_ sender: UIButton) {
@@ -72,10 +67,6 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         images = info[UIImagePickerControllerOriginalImage] as! UIImage
         dismiss(animated: true, completion: nil)
         
-    }
-    @IBAction func saveAction(_ sender: UIButton) {
-        //UIImageWriteToSavedPhotosAlbum(image.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-        CustomPhotoAlbum.shared.save(image: image.image!)
     }
     func applyFilter(index:Int,img:UIImage?)->UIImage?{
         guard let image1 = img, let cgimg = image1.cgImage else {
@@ -122,67 +113,24 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         }
     }*/
     @IBAction func uploadAction(_ sender: UIButton) {
-        /*guard let image1 = images, let cgimg = image1.cgImage else {
-            print("imageView doesn't have an image!")
-            return
-        }
-        let openGLContext = EAGLContext(api: .openGLES2)
-        let context = CIContext(eaglContext: openGLContext!)
-        
-        let coreImage = CIImage(cgImage: cgimg) //CIImage(CGImage: cgimg)
-        let exposureFilter = CIFilter(name: "CIExposureAdjust")
-        exposureFilter?.setValue(coreImage, forKey: kCIInputImageKey)
-        exposureFilter?.setValue(1, forKey: kCIInputEVKey)
- 
-        let exposureFilter = CIFilter(name: "CICircularScreen")
-        exposureFilter?.setValue(coreImage, forKey: kCIInputImageKey)
-        let width = NSNumber(value: 20.0)
-        exposureFilter?.setValue(width , forKey: kCIInputWidthKey)
-        //let center = CIVector(x: 150, y: 200)
-        //exposureFilter?.setValue(center, forKey: kCIInputCenterKey)
- 
-        
-        if let output = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
-            print(output)
-            let cgimgresult = context.createCGImage(output, from: output.extent)
-            let filteredImage =  UIImage(cgImage: cgimgresult!)
- 
- 
-            let vc = UIActivityViewController(activityItems: [filteredImage], applicationActivities: [])
-            vc.excludedActivityTypes =  [
-                UIActivityType.postToTwitter,
-                UIActivityType.postToFacebook,
-                //UIActivityType.postToWeibo,
-                //UIActivityTypeMessage,
-                //UIActivityTypeMail,
-                UIActivityType.print,
-                //UIActivityTypeCopyToPasteboard,
-                UIActivityType.assignToContact,
-                //UIActivityTypeSaveToCameraRoll,
-                UIActivityType.addToReadingList,
-                //UIActivityTypePostToFlickr,
-                UIActivityType.postToVimeo,
-                UIActivityType.postToTencentWeibo
-            ]
-        
-            present(vc,
-                    animated: true,
-                    completion: nil)
+        /*let vc = UIActivityViewController(activityItems: [filteredImage], applicationActivities: [])
+            present(vc,animated: true,completion: nil)
             vc.popoverPresentationController?.sourceView = self.view
             vc.completionWithItemsHandler = {(activity, success, items, error) in
                 print(success)
                 print(activity)
-            }
-        
-            
-            //let filteredImage = UIImage(ciImage: output)
-            image.image = filteredImage
-        }
-            
-        else {
-            print("image filtering failed")
-        }*/
+            */
+                
+                
+                let imageToShare = [image.image]
+                let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+                activityViewController.popoverPresentationController?.sourceView = self.view
+                activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+                self.present(activityViewController, animated: true, completion: nil)
     }
+    
+        
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
