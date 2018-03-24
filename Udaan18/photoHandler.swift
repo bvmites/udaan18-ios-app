@@ -38,7 +38,6 @@ class CustomPhotoAlbum: NSObject {
             completion(false)
         }
     }
-    
     private func createAlbumIfNeeded() {
         if let assetCollection = fetchAssetCollectionForAlbum() {
             // Album already exists
@@ -76,6 +75,7 @@ class CustomPhotoAlbum: NSObject {
                     let albumChangeRequest = PHAssetCollectionChangeRequest(for: self.assetCollection)
                     let enumeration: NSArray = [assetPlaceHolder!]
                     albumChangeRequest!.addAssets(enumeration)
+                    print("saved successfully")
                     
                 }, completionHandler: nil)
             }

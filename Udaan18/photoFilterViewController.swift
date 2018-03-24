@@ -9,10 +9,37 @@
 import UIKit
 import CoreImage
 
-class photoFilterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class photoFilterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource{
+    
+    var filters = ["CISepiaTone","CIExposureAdjust","CIColorCrossPolynomial","CIColorCube","CIColorCubeWithColorSpace","CIColorInvert","CIColorPosterize","CIFalseColor","CIMinimumComponent","CIPhotoEffectChrome"]
+    var filtersAttr:[Dictionary<String,Any>] = [[:],[:],[:],[:],[:],[:],[:],[:],[:],[:]]
     var images:UIImage?{
         didSet{
             image.image = images
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (filters.count+1)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filtercell", for: indexPath) as! filterCollectionViewCell
+        let imagee = UIImage(named: "filters")
+        if indexPath.row == 0{
+            cell.filterImage.image = imagee
+        }
+        else{
+            cell.filterImage.image = applyFilter(index: indexPath.row-1, img: imagee)
+        }
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("\n\n\(indexPath.row)\n\n")
+        if indexPath.row == 0{
+            image.image = images
+        }
+        else{
+            image.image = applyFilter(index: indexPath.row-1, img: images)
         }
     }
     var filteredImage:UIImage?
@@ -27,9 +54,12 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         picker.delegate = self
         picker.sourceType = .camera
         self.present(picker, animated: true, completion: nil)
-        */
+ 
         image.image = images
+        */
+        
     }
+
     @IBAction func galeryAction(_ sender: UIButton) {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -42,36 +72,38 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         
     }
     @IBAction func saveAction(_ sender: UIButton) {
-        /*guard let image1 = images, let cgimg = image1.cgImage else {
+        //UIImageWriteToSavedPhotosAlbum(image.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        CustomPhotoAlbum.shared.save(image: image.image!)
+    }
+    func applyFilter(index:Int,img:UIImage?)->UIImage?{
+        guard let image1 = img, let cgimg = image1.cgImage else {
             print("imageView doesn't have an image!")
-            return
+            return img
         }
         let openGLContext = EAGLContext(api: .openGLES2)
         let context = CIContext(eaglContext: openGLContext!)
         
+        
         let coreImage = CIImage(cgImage: cgimg) //CIImage(CGImage: cgimg)
         
-        let filter = CIFilter(name: "CISepiaTone")
-        //print("filter:-\(filter)\n")
+        let filter = CIFilter(name: filters[index])
+        filter?.setDefaults()
+        for key in filtersAttr[index].keys {
+            filter?.setValue(filtersAttr[index][key], forKey: key)
+        }
         filter?.setValue(coreImage, forKey: kCIInputImageKey)
-        //print("filter:-\(filter)\n")
-        filter?.setValue(0.5, forKey: kCIInputIntensityKey)
         
         if let output = filter?.value(forKey: kCIOutputImageKey) as? CIImage {
-            //print("filter:-\(filter)\n")
-            print(output)
+            print("applying")
             let cgimgresult = context.createCGImage(output, from: output.extent)
             filteredImage =  UIImage(cgImage: cgimgresult!)  //UIImage(CIImage: output)
-            image.image = filteredImage
+            print("filter applied")
+            return filteredImage
         }
         else {
             print("image filtering failed")
+            return img
         }
-        */
-        
-        //UIImageWriteToSavedPhotosAlbum(image.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-        CustomPhotoAlbum.shared.save(image: image.image!)
-       
         
     }
     /*
@@ -88,7 +120,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         }
     }*/
     @IBAction func uploadAction(_ sender: UIButton) {
-        guard let image1 = images, let cgimg = image1.cgImage else {
+        /*guard let image1 = images, let cgimg = image1.cgImage else {
             print("imageView doesn't have an image!")
             return
         }
@@ -100,21 +132,20 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         exposureFilter?.setValue(coreImage, forKey: kCIInputImageKey)
         exposureFilter?.setValue(1, forKey: kCIInputEVKey)
  
-        /*
         let exposureFilter = CIFilter(name: "CICircularScreen")
         exposureFilter?.setValue(coreImage, forKey: kCIInputImageKey)
         let width = NSNumber(value: 20.0)
         exposureFilter?.setValue(width , forKey: kCIInputWidthKey)
         //let center = CIVector(x: 150, y: 200)
         //exposureFilter?.setValue(center, forKey: kCIInputCenterKey)
-        */
-  
+ 
+        
         if let output = exposureFilter?.value(forKey: kCIOutputImageKey) as? CIImage {
             print(output)
             let cgimgresult = context.createCGImage(output, from: output.extent)
             let filteredImage =  UIImage(cgImage: cgimgresult!)
-           /*
-        
+ 
+ 
             let vc = UIActivityViewController(activityItems: [filteredImage], applicationActivities: [])
             vc.excludedActivityTypes =  [
                 UIActivityType.postToTwitter,
@@ -140,7 +171,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
                 print(success)
                 print(activity)
             }
-            */
+        
             
             //let filteredImage = UIImage(ciImage: output)
             image.image = filteredImage
@@ -148,7 +179,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
             
         else {
             print("image filtering failed")
-        }
+        }*/
     }
     override func viewDidLoad() {
         super.viewDidLoad()
