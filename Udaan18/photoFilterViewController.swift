@@ -10,16 +10,43 @@ import UIKit
 import CoreImage
 import CoreGraphics
 
-class photoFilterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource{
+class photoFilterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate{
     var filters = [/*"CISepiaTone","CIExposureAdjust","CIColorCrossPolynomial","CIColorInvert","CIColorPosterize","CIFalseColor","CIMinimumComponent","CIPhotoEffectChrome",*/"CISourceOverCompositing","CISourceOverCompositing"]
+    @IBOutlet var backImage: UIImageView!
     var filtersAttr:[Dictionary<String,Any>] = [/*[:],[kCIInputEVKey:1],["inputRedCoefficients":CIVector(values: [1,0,1,0.5,1,0,0,0.5,0.7,1], count: 10) ,"inputGreenCoefficients":CIVector(values: [0,0,1,0.5,0,0.5,0,0.5,0.3,0], count: 10),"inputBlueCoefficients":CIVector(values: [0,1,0.5,0.5,0,0,0.5,0.5,0.7,1], count: 10)],[:],[:],[:],[:],[:],*/["inputBackgroundImage":UIImage(named: "udaan_wing")],["inputBackgroundImage":UIImage(named: "Udaan_Filter")]]
-    var fv:UIImageView?
-    var scale = CGFloat(0.0)
-    
-    var images:UIImage?{
-        didSet{
-            image.image = images
+    var fv = UIImageView()
+    var filterimages:UIImage?{
+        get{
+            return fv.image
         }
+        set{
+            fv.image = newValue
+            fv.sizeToFit()
+            scrollview?.contentSize = fv.frame.size
+        }
+        
+    }
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return fv
+    }
+    @IBOutlet var scrollview: UIScrollView!{
+        didSet{
+            scrollview.contentSize = fv.frame.size
+            scrollview.delegate = self
+            scrollview.minimumZoomScale = 0.03
+            scrollview.maximumZoomScale = 1.5
+        }
+    }
+    var scale = CGFloat(0.0)
+    //var image = UIImageView()
+    var images:UIImage?{
+        get{
+        return backImage.image
+        }
+        set{
+        backImage.image = newValue
+        }
+        
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (filters.count+1)
@@ -41,34 +68,32 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         if indexPath.row == 0{
             
             
-            
+            /*
             scale = scale + 0.3
             
             fv?.transform = CGAffineTransform.init(scaleX: scale+0.2, y: scale+0.2)
             fv?.transform = CGAffineTransform.init(rotationAngle: scale)
+             */
             //image.image = images
         }
         else{
             //image.image = applyFilter(index: indexPath.row-1, img: images)
-            fv?.removeFromSuperview()
-            fv  = UIImageView(image: filtersAttr[indexPath.row-1]["inputBackgroundImage"] as! UIImage)
-            fv?.transform = CGAffineTransform.init(scaleX: 0.3, y: 0.3)
-            fv?.center = image.center
-            print(image.subviews)
             
-            image.addSubview(fv!)
-            print(image.subviews)
-            fv?.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            filterimages = filtersAttr[indexPath.row-1]["inputBackgroundImage"] as! UIImage
+            //fv.transform = CGAffineTransform.init(scaleX: 0.3, y: 0.3)
+            //fv.center = images.center
+            //print(images.subviews)
+            
+            
+            //print(image.subviews)
+            //fv.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             
             
         }
     }
     var filteredImage:UIImage?
     @IBOutlet var filterCollectionView: UICollectionView!
-    @IBOutlet var image: UIImageView!
-    @IBOutlet var camera: UIButton!
-    @IBOutlet var galery: UIButton!
-    @IBOutlet var upload: UIButton!
+    
     @IBAction func cameraAction(act:UIAlertAction) {
         
         let picker = UIImagePickerController()
@@ -216,13 +241,33 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         }
     }*/
     @IBAction func share(_ sender: UIBarButtonItem) {
-        UIGraphicsBeginImageContextWithOptions(image.frame.size, true, 0.0)
+        UIGraphicsBeginImageContextWithOptions(backImage.frame.size, true, 0.0)
         //view.layer.render(in: UIGraphicsGetCurrentContext()!)
-        image.layer.render(in: UIGraphicsGetCurrentContext()!)
+        /*
+        //scrollview.zoom(to: image.frame, animated: false)
+        let abc = UIScrollView(frame: scrollview.frame)
+        abc.delegate = self
+        //abc.adjustedContentInset = scrollview.adjustedContentInset
+        abc.contentInset = scrollview.contentInset
+        abc.contentSize = scrollview.contentSize
+        //abc.contentLayoutGuide = scrollview.contentLayoutGuide
+        abc.contentOffset = scrollview.contentOffset
+        //abc.frameLayoutGuide = scrollview.frameLayoutGuide
+        abc.scrollIndicatorInsets = scrollview.scrollIndicatorInsets
+        */
+        backImage.layer.render(in: UIGraphicsGetCurrentContext()!)
+        //let abc = scrollview.snapshotView(afterScreenUpdates: false)
+        scrollview.drawHierarchy(in: backImage.frame, afterScreenUpdates: true)
+        //prinabsbc)
+        //print(backImage)
+        //abc?.layer.render(in: UIGraphicsGetCurrentContext()!)
+        //scrollview.layer.render(in: UIGraphicsGetCurrentContext()!)
         let imagesss = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         //Save it to the camera roll
+        //abc.removeFromSuperview()
         
+        //view.addSubview(scrollview)
         //image.image = imagesss
         //fv?.removeFromSuperview()
         //UIImageWriteToSavedPhotosAlbum(images!, nil, nil, nil)
@@ -242,15 +287,17 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
                 print(success)
                 print(activity)
             */
-    UIGraphicsBeginImageContextWithOptions(image.frame.size, true, 0.0)
+    UIGraphicsBeginImageContextWithOptions(backImage.frame.size, true, 0.0)
         //view.layer.render(in: UIGraphicsGetCurrentContext()!)
-        image.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let abc = scrollview.copy() as! UIScrollView
+        backImage.addSubview(abc)
+        backImage.layer.render(in: UIGraphicsGetCurrentContext()!)
         let imagesss = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         //Save it to the camera roll
-        
-        image.image = imagesss
-        fv?.removeFromSuperview()
+        abc.removeFromSuperview()
+        //image.image = imagesss
+        //fv?.removeFromSuperview()
         //UIImageWriteToSavedPhotosAlbum(images!, nil, nil, nil)
         print("image saved")
                 
@@ -268,7 +315,8 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(filterCollectionView)
+        scrollview.addSubview(fv)
+        
             // Do any additional setup after loading the view.
     }
 

@@ -532,9 +532,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kBa-US-xtb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="444"/>
-                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ifd-GF-GrG">
                                 <rect key="frame" x="0.0" y="444" width="375" height="110"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -576,15 +573,25 @@
                                     <outlet property="delegate" destination="l3h-d3-5DH" id="mU7-TB-QRe"/>
                                 </connections>
                             </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kFE-Ps-PIo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="444"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAT-cR-APa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="444"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kBa-US-xtb" firstAttribute="top" secondItem="KPe-wG-khl" secondAttribute="bottom" id="6Ir-8o-p83"/>
+                            <constraint firstItem="kAT-cR-APa" firstAttribute="leading" secondItem="h2J-rh-6N4" secondAttribute="leading" id="43L-q9-1Fp"/>
+                            <constraint firstItem="kFE-Ps-PIo" firstAttribute="top" secondItem="KPe-wG-khl" secondAttribute="bottom" id="7DU-xE-nSH"/>
+                            <constraint firstItem="Ifd-GF-GrG" firstAttribute="top" secondItem="kFE-Ps-PIo" secondAttribute="bottom" id="90R-5f-SqM"/>
+                            <constraint firstItem="Ifd-GF-GrG" firstAttribute="top" secondItem="kAT-cR-APa" secondAttribute="bottom" id="9y4-2U-oLJ"/>
                             <constraint firstItem="Ifd-GF-GrG" firstAttribute="leading" secondItem="h2J-rh-6N4" secondAttribute="leading" id="H3h-Pa-4Rd"/>
-                            <constraint firstItem="kBa-US-xtb" firstAttribute="leading" secondItem="h2J-rh-6N4" secondAttribute="leading" id="KtN-6s-2so"/>
-                            <constraint firstAttribute="trailing" secondItem="kBa-US-xtb" secondAttribute="trailing" id="Z60-0c-LlZ"/>
-                            <constraint firstItem="Ifd-GF-GrG" firstAttribute="top" secondItem="kBa-US-xtb" secondAttribute="bottom" id="ed3-RP-VaS"/>
+                            <constraint firstAttribute="trailing" secondItem="kFE-Ps-PIo" secondAttribute="trailing" id="guH-er-Xe8"/>
                             <constraint firstAttribute="trailing" secondItem="Ifd-GF-GrG" secondAttribute="trailing" id="h8u-4s-ZlR"/>
+                            <constraint firstAttribute="trailing" secondItem="kAT-cR-APa" secondAttribute="trailing" id="icM-ac-92t"/>
+                            <constraint firstItem="kAT-cR-APa" firstAttribute="top" secondItem="KPe-wG-khl" secondAttribute="bottom" id="izF-UE-peI"/>
+                            <constraint firstItem="kFE-Ps-PIo" firstAttribute="leading" secondItem="h2J-rh-6N4" secondAttribute="leading" id="pwH-PB-9wL"/>
                             <constraint firstItem="Lki-ud-WtV" firstAttribute="top" secondItem="Ifd-GF-GrG" secondAttribute="bottom" id="rp9-yk-uNC"/>
                         </constraints>
                     </view>
@@ -604,13 +611,14 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
+                        <outlet property="backImage" destination="kFE-Ps-PIo" id="tE6-FE-kcQ"/>
                         <outlet property="filterCollectionView" destination="Ifd-GF-GrG" id="Ouv-UL-1Ax"/>
-                        <outlet property="image" destination="kBa-US-xtb" id="kuk-aE-Pzv"/>
+                        <outlet property="scrollview" destination="kAT-cR-APa" id="r4K-Ls-cGx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2O-r4-Axx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2319" y="642"/>
+            <point key="canvasLocation" x="-2210" y="642"/>
         </scene>
         <!--Item-->
         <scene sceneID="yg0-My-SJc">
