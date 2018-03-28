@@ -10,18 +10,163 @@ import UIKit
 import CoreImage
 import CoreGraphics
 
-class photoFilterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate{
+class photoFilterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate,UIGestureRecognizerDelegate{
     var filters = [/*"CISepiaTone","CIExposureAdjust","CIColorCrossPolynomial","CIColorInvert","CIColorPosterize","CIFalseColor","CIMinimumComponent","CIPhotoEffectChrome",*/"CISourceOverCompositing","CISourceOverCompositing"]
+    var hidden = false
     @IBOutlet var backImage: UIImageView!
-    var filtersAttr:[Dictionary<String,Any>] = [/*[:],[kCIInputEVKey:1],["inputRedCoefficients":CIVector(values: [1,0,1,0.5,1,0,0,0.5,0.7,1], count: 10) ,"inputGreenCoefficients":CIVector(values: [0,0,1,0.5,0,0.5,0,0.5,0.3,0], count: 10),"inputBlueCoefficients":CIVector(values: [0,1,0.5,0.5,0,0,0.5,0.5,0.7,1], count: 10)],[:],[:],[:],[:],[:],*/["inputBackgroundImage":UIImage(named: "udaan_wing")],["inputBackgroundImage":UIImage(named: "Udaan_Filter")]]
-    var fv = UIImageView()
+    func taped(_ sender: UITapGestureRecognizer) {
+        /* final
+        let ap = sender.location(in: backImage)
+        let or = CGPoint(x: ap.x-fv.frame.width/2, y: ap.y-fv.frame.height/2)
+        let fm = CGRect(origin: or, size: fv.frame.size)
+        fv.frame = fm
+        */
+        
+      
+            if hidden == false{
+                
+                UIView.animate(withDuration: 0.5, animations: {
+                    
+                    let sz = self.collectionView.frame.size
+                    let pn = CGPoint(x: self.collectionView.frame.minX, y: self.collectionView.frame.minY+110)
+                    self.collectionView.frame = CGRect(origin: pn, size: sz)
+                    
+                }){ completed in
+                    self.hidden = true
+                    print(completed)
+                    print(self.hidden)
+                    
+                }
+            }
+        else if hidden == true{
+                hidden = false
+                UIView.animate(withDuration: 0.5, animations: {
+                    
+                    let sz = self.collectionView.frame.size
+                    let pn = CGPoint(x: self.collectionView.frame.minX, y: self.collectionView.frame.minY-110)
+                    self.collectionView.frame = CGRect(origin: pn, size: sz)
+                }){
+                    completed in
+                    self.hidden = false
+                    print(completed)
+                    print(self.hidden)
+                }
+            }
+        
+        
+        /*
+        let or = CGPoint(x: ap.x-(fv.center.x-fv.frame.minX), y: ap.y-(fv.center.y-fv.frame.minY))
+        var t = fv.transform
+        t = t.translatedBy(x: or.x, y: or.x)
+        fv.transform = t*/
+        //fv.frame = CGRect(x: point.x-fv.frame.width/2*scales, y: point.y-fv.frame.height/2*scales, width: fv.frame.width, height: fv.frame.height)
+     
+        //fv.transform = CGAffineTransform.identity.concatenating(CGAffineTransform.init(translationX: point.x, y: point.y).concatenating(CGAffineTransform.init(scaleX: scales, y: scales).concatenating(CGAffineTransform.init(rotationAngle: rotationangle))))
+//        var t = fv.transform
+//        t = t.translatedBy(x: ap.x-fv.center.x, y: ap.y-fv.center.y)
+//        fv.transform = t
+//        print(fv.frame)
+//        print(fv.bounds)
+//        print(fv.center)
+//        print(ap)
+        
+        print("\n\ntapped\n\n")
+    }
+    //var point = CGPoint.zero
+    var scales = CGFloat(1.0)
+    func pinch(_ sender: UIPinchGestureRecognizer) {
+        scales = scales * sender.scale
+        
+        var t = fv.transform
+        t = t.scaledBy(x: sender.scale, y: sender.scale)
+        fv.transform = t
+        sender.scale = 1.0
+        //fv.transform = CGAffineTransform.identity.concatenating(CGAffineTransform.init(translationX: point.x, y: point.y).concatenating(CGAffineTransform.init(scaleX: scales, y: scales).concatenating(CGAffineTransform.init(rotationAngle: rotationangle))))
+        /*var t = fv.transform
+        t = t.scaledBy(x: sender.scale, y: sender.scale)
+        fv.transform = t
+        print("pinch:\(sender.scale)")
+        sender.scale = 1.0
+        */
+    }
+    @IBOutlet var collectionView: UICollectionView!
+    var shouldpan = false
+    func pan(_ sender: UIPanGestureRecognizer){
+        let b = sender.translation(in: backImage)
+        sender.setTranslation(CGPoint.zero, in: backImage)
+        let or = CGPoint(x: fv.frame.minX+b.x, y: fv.frame.minY+b.y)
+        //let ap = sender.location(in: backImage)
+        //let or = CGPoint(x: ap.x-fv.frame.width/2, y: ap.y-fv.frame.height/2)
+        let fm = CGRect(origin: or, size: fv.frame.size)
+        fv.frame = fm
+ 
+        
+            
+    }
+    /*
+    func swiped(_ sender: UISwipeGestureRecognizer) {
+        print(sender.direction)
+        print(collectionView.frame)
+        print(hidden)
+        if sender.direction == .down{
+            if hidden == false{
+                UIView.animate(withDuration: 0.5, animations: {
+                    let sz = self.collectionView.frame.size
+                    let pn = CGPoint(x: self.collectionView.frame.minX, y: self.collectionView.frame.minY+110)
+                    self.collectionView.frame = CGRect(origin: pn, size: sz)
+                    self.hidden = true
+                }, completion: {print($0)})
+            }
+        }
+        else if sender.direction == .up{
+            if hidden == true{
+                UIView.animate(withDuration: 0.5, animations: {
+                    let sz = self.collectionView.frame.size
+                    let pn = CGPoint(x: self.collectionView.frame.minX, y: self.collectionView.frame.minY-110)
+                    self.collectionView.frame = CGRect(origin: pn, size: sz)
+                    self.hidden = true
+                }, completion: {print($0)})
+            }
+        }
+        /*
+        //fv.frame = CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
+        //fv.transform = CGAffineTransform.init(translationX: <#T##CGFloat#>, y: <#T##CGFloat#>)
+        
+        let ap = sender.location(in: backImage)
+        let or = CGPoint(x: ap.x-fv.frame.width/2, y: ap.y-fv.frame.height/2)
+        let fm = CGRect(origin: or, size: fv.frame.size)
+        fv.frame = fm
+ 
+        print("\n\nswiping\n\n")
+            */
+    }*/
+    var rotationangle = CGFloat(0.0)
+    /*func rotate(_ sender: UIRotationGestureRecognizer) {
+        /*var t = fv.transform
+        t = t.rotated(by: sender.rotation)
+        fv.transform = t
+        print("rotating:\(sender.rotation)")
+        sender.rotation = 0.0
+        */
+        rotationangle = rotationangle + sender.rotation
+       
+        var t = fv.transform
+        t = t.rotated(by: sender.rotation)
+        fv.transform = t
+        sender.rotation = 0.0
+        
+    }*/
+    var filtersAttr:[Dictionary<String,Any>] = [/*[:],[kCIInputEVKey:1],["inputRedCoefficients":CIVector(values: [1,0,1,0.5,1,0,0,0.5,0.7,1], count: 10) ,"inputGreenCoefficients":CIVector(values: [0,0,1,0.5,0,0.5,0,0.5,0.3,0], count: 10),"inputBlueCoefficients":CIVector(values: [0,1,0.5,0.5,0,0,0.5,0.5,0.7,1], count: 10)],[:],[:],[:],[:],[:],*/["inputBackgroundImage":UIImage(named: "udaan_wing")],["inputBackgroundImage":UIImage(named: "Udaan_Filter")],["inputBackgroundImage":UIImage(named: "udaan_wing")],["inputBackgroundImage":UIImage(named: "Udaan_Filter")],["inputBackgroundImage":UIImage(named: "udaan_wing")],["inputBackgroundImage":UIImage(named: "Udaan_Filter")]]
+    //var fv = UIImageView()
+    
+    @IBOutlet var fv: UIImageView!
+    
     var filterimages:UIImage?{
         get{
             return fv.image
         }
         set{
             fv.image = newValue
-            fv.sizeToFit()
             scrollview?.contentSize = fv.frame.size
         }
         
@@ -49,23 +194,23 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (filters.count+1)
+        return (filtersAttr.count)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filtercell", for: indexPath) as! filterCollectionViewCell
-        let imagee = UIImage(named: "filters")
+        /*let imagee = UIImage(named: "filters")
         if indexPath.row == 0{
             cell.filterImage.image = imagee
         }
-        else{
-            cell.filterImage.image = filtersAttr[indexPath.row-1]["inputBackgroundImage"] as! UIImage//applyFilter(index: indexPath.row-1, img: imagee)
-        }
+        else{*/
+            cell.filterImage.image = filtersAttr[indexPath.row]["inputBackgroundImage"] as! UIImage//applyFilter(index: indexPath.row-1, img: imagee)
+        //}
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("\n\n\(indexPath.row)\n\n")
-        if indexPath.row == 0{
+        /*if indexPath.row == 0{
             
             
             /*
@@ -76,10 +221,10 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
              */
             //image.image = images
         }
-        else{
+        else{*/
             //image.image = applyFilter(index: indexPath.row-1, img: images)
             
-            filterimages = filtersAttr[indexPath.row-1]["inputBackgroundImage"] as! UIImage
+            filterimages = filtersAttr[indexPath.row]["inputBackgroundImage"] as! UIImage
             //fv.transform = CGAffineTransform.init(scaleX: 0.3, y: 0.3)
             //fv.center = images.center
             //print(images.subviews)
@@ -89,7 +234,20 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
             //fv.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             
             
+        //}
+        UIView.animate(withDuration: 0.5, animations: {
+            let sz = collectionView.frame.size
+            let pn = CGPoint(x: collectionView.frame.minX, y: collectionView.frame.minY+110)
+            collectionView.frame = CGRect(origin: pn, size: sz)
+            
+        }){
+            complete in
+            self.hidden = true
+            print(complete)
+            print(self.hidden)
         }
+        let point = CGPoint(x:backImage.center.x-fv.center.x+fv.frame.minX , y: backImage.center.y-fv.center.y+fv.frame.minY)
+        fv.frame = CGRect(origin: point, size: fv.frame.size)
     }
     var filteredImage:UIImage?
     @IBOutlet var filterCollectionView: UICollectionView!
@@ -257,7 +415,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         */
         backImage.layer.render(in: UIGraphicsGetCurrentContext()!)
         //let abc = scrollview.snapshotView(afterScreenUpdates: false)
-        scrollview.drawHierarchy(in: backImage.frame, afterScreenUpdates: true)
+        //scrollview.drawHierarchy(in: backImage.frame, afterScreenUpdates: true)
         //prinabsbc)
         //print(backImage)
         //abc?.layer.render(in: UIGraphicsGetCurrentContext()!)
@@ -315,7 +473,32 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollview.addSubview(fv)
+        fv.transform = CGAffineTransform.identity
+        let tap = UITapGestureRecognizer(target: self, action: Selector("taped:"))
+        tap.delegate = self
+        tap.numberOfTapsRequired = 1
+        tap.numberOfTouchesRequired = 1
+        backImage.addGestureRecognizer(tap)
+ 
+        let swiped = UISwipeGestureRecognizer(target: self, action: Selector("swiped:"))
+        swiped.delegate = self
+        swiped.numberOfTouchesRequired = 1
+        backImage.addGestureRecognizer(swiped)
+ 
+        let pinch = UIPinchGestureRecognizer(target: self, action: Selector("pinch:"))
+        pinch.delegate = self
+        backImage.addGestureRecognizer(pinch)
+        /*
+        let rotate = UIRotationGestureRecognizer(target: self, action: Selector("rotate:"))
+        rotate.delegate = self
+        backImage.addGestureRecognizer(rotate)
+        */
+        let pan = UIPanGestureRecognizer(target: self, action: Selector("pan:"))
+        pan.delegate = self
+        backImage.addGestureRecognizer(pan)
+        
+        backImage.addSubview(fv)
+        
         
             // Do any additional setup after loading the view.
     }
