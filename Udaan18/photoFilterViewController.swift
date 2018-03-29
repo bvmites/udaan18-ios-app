@@ -10,18 +10,10 @@ import UIKit
 import CoreImage
 import CoreGraphics
 
-class photoFilterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate,UIGestureRecognizerDelegate{
-    var filters = [/*"CISepiaTone","CIExposureAdjust","CIColorCrossPolynomial","CIColorInvert","CIColorPosterize","CIFalseColor","CIMinimumComponent","CIPhotoEffectChrome",*/"CISourceOverCompositing","CISourceOverCompositing"]
+class photoFilterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UIGestureRecognizerDelegate{
     var hidden = false
     @IBOutlet var backImage: UIImageView!
     func taped(_ sender: UITapGestureRecognizer) {
-        /* final
-        let ap = sender.location(in: backImage)
-        let or = CGPoint(x: ap.x-fv.frame.width/2, y: ap.y-fv.frame.height/2)
-        let fm = CGRect(origin: or, size: fv.frame.size)
-        fv.frame = fm
-        */
-        
       
             if hidden == false{
                 
@@ -53,26 +45,9 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
                 }
             }
         
-        
-        /*
-        let or = CGPoint(x: ap.x-(fv.center.x-fv.frame.minX), y: ap.y-(fv.center.y-fv.frame.minY))
-        var t = fv.transform
-        t = t.translatedBy(x: or.x, y: or.x)
-        fv.transform = t*/
-        //fv.frame = CGRect(x: point.x-fv.frame.width/2*scales, y: point.y-fv.frame.height/2*scales, width: fv.frame.width, height: fv.frame.height)
-     
-        //fv.transform = CGAffineTransform.identity.concatenating(CGAffineTransform.init(translationX: point.x, y: point.y).concatenating(CGAffineTransform.init(scaleX: scales, y: scales).concatenating(CGAffineTransform.init(rotationAngle: rotationangle))))
-//        var t = fv.transform
-//        t = t.translatedBy(x: ap.x-fv.center.x, y: ap.y-fv.center.y)
-//        fv.transform = t
-//        print(fv.frame)
-//        print(fv.bounds)
-//        print(fv.center)
-//        print(ap)
-        
         print("\n\ntapped\n\n")
     }
-    //var point = CGPoint.zero
+
     var scales = CGFloat(1.0)
     func pinch(_ sender: UIPinchGestureRecognizer) {
         scales = scales * sender.scale
@@ -81,13 +56,6 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         t = t.scaledBy(x: sender.scale, y: sender.scale)
         fv.transform = t
         sender.scale = 1.0
-        //fv.transform = CGAffineTransform.identity.concatenating(CGAffineTransform.init(translationX: point.x, y: point.y).concatenating(CGAffineTransform.init(scaleX: scales, y: scales).concatenating(CGAffineTransform.init(rotationAngle: rotationangle))))
-        /*var t = fv.transform
-        t = t.scaledBy(x: sender.scale, y: sender.scale)
-        fv.transform = t
-        print("pinch:\(sender.scale)")
-        sender.scale = 1.0
-        */
     }
     @IBOutlet var collectionView: UICollectionView!
     var shouldpan = false
@@ -95,8 +63,6 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         let b = sender.translation(in: backImage)
         sender.setTranslation(CGPoint.zero, in: backImage)
         let or = CGPoint(x: fv.frame.minX+b.x, y: fv.frame.minY+b.y)
-        //let ap = sender.location(in: backImage)
-        //let or = CGPoint(x: ap.x-fv.frame.width/2, y: ap.y-fv.frame.height/2)
         let fm = CGRect(origin: or, size: fv.frame.size)
         fv.frame = fm
  
@@ -140,7 +106,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         print("\n\nswiping\n\n")
             */
     }*/
-    var rotationangle = CGFloat(0.0)
+    //var rotationangle = CGFloat(0.0)
     /*func rotate(_ sender: UIRotationGestureRecognizer) {
         /*var t = fv.transform
         t = t.rotated(by: sender.rotation)
@@ -156,7 +122,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         sender.rotation = 0.0
         
     }*/
-    var filtersAttr:[Dictionary<String,Any>] = [/*[:],[kCIInputEVKey:1],["inputRedCoefficients":CIVector(values: [1,0,1,0.5,1,0,0,0.5,0.7,1], count: 10) ,"inputGreenCoefficients":CIVector(values: [0,0,1,0.5,0,0.5,0,0.5,0.3,0], count: 10),"inputBlueCoefficients":CIVector(values: [0,1,0.5,0.5,0,0,0.5,0.5,0.7,1], count: 10)],[:],[:],[:],[:],[:],*/["inputBackgroundImage":UIImage(named: "udaan_wing")],["inputBackgroundImage":UIImage(named: "Udaan_Filter")],["inputBackgroundImage":UIImage(named: "udaan_wing")],["inputBackgroundImage":UIImage(named: "Udaan_Filter")],["inputBackgroundImage":UIImage(named: "udaan_wing")],["inputBackgroundImage":UIImage(named: "Udaan_Filter")]]
+    //var filtersAttr:[Dictionary<String,Any>] = [/*[:],[kCIInputEVKey:1],["inputRedCoefficients":CIVector(values: [1,0,1,0.5,1,0,0,0.5,0.7,1], count: 10) ,"inputGreenCoefficients":CIVector(values: [0,0,1,0.5,0,0.5,0,0.5,0.3,0], count: 10),"inputBlueCoefficients":CIVector(values: [0,1,0.5,0.5,0,0,0.5,0.5,0.7,1], count: 10)],[:],[:],[:],[:],[:],*/["inputBackgroundImage":UIImage(named: "udaan_wing")],["inputBackgroundImage":UIImage(named: "Udaan_Filter")],["inputBackgroundImage":UIImage(named: "udaan_wing")],["inputBackgroundImage":UIImage(named: "Udaan_Filter")],["inputBackgroundImage":UIImage(named: "udaan_wing")],["inputBackgroundImage":UIImage(named: "Udaan_Filter")]]
     //var filtersAttr:[Dictionary<String,Any>] =
     //var fv = UIImageView()
     
@@ -168,20 +134,9 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         }
         set{
             fv.image = newValue
-            scrollview?.contentSize = fv.frame.size
+            
         }
         
-    }
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return fv
-    }
-    @IBOutlet var scrollview: UIScrollView!{
-        didSet{
-            scrollview.contentSize = fv.frame.size
-            scrollview.delegate = self
-            scrollview.minimumZoomScale = 0.03
-            scrollview.maximumZoomScale = 1.5
-        }
     }
     var scale = CGFloat(0.0)
     //var image = UIImageView()
@@ -200,44 +155,15 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "filtercell", for: indexPath) as! filterCollectionViewCell
-        /*let imagee = UIImage(named: "filters")
-        if indexPath.row == 0{
-            cell.filterImage.image = imagee
-        }
-        else{*/
-            cell.filterImage.image = UIImage(named: "filter-\(indexPath.row+1)") //filtersAttr[indexPath.row]["inputBackgroundImage"] as! UIImage//applyFilter(index: indexPath.row-1, img: imagee)
-        //}
+        
+            cell.filterImage.image = UIImage(named: "filter-\(indexPath.row+1)") //filtersAttr[indexPath.row]
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("\n\n\(indexPath.row)\n\n")
-        /*if indexPath.row == 0{
+        
             
-            
-            /*
-            scale = scale + 0.3
-            
-            fv?.transform = CGAffineTransform.init(scaleX: scale+0.2, y: scale+0.2)
-            fv?.transform = CGAffineTransform.init(rotationAngle: scale)
-             */
-            //image.image = images
-        }
-        else{*/
-            //image.image = applyFilter(index: indexPath.row-1, img: images)
-       
-            
-            filterimages = UIImage(named: "filter-\(indexPath.row+1)") //filtersAttr[indexPath.row]["inputBackgroundImage"] as! UIImage
-       
-            //fv.transform = CGAffineTransform.init(scaleX: 0.3, y: 0.3)
-            //fv.center = images.center
-            //print(images.subviews)
-            
-            
-            //print(image.subviews)
-            //fv.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-            
-            
-        //}
+            filterimages = UIImage(named: "filter-\(indexPath.row+1)") //filtersAttr[indexPath.row]
         UIView.animate(withDuration: 0.5, animations: {
             let sz = collectionView.frame.size
             let pn = CGPoint(x: collectionView.frame.minX, y: self.backImage.frame.maxY)
@@ -286,7 +212,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         dismiss(animated: true, completion: nil)
         
     }
-    func applyFilter(index:Int,img:UIImage?)->UIImage?{
+    /*func applyFilter(index:Int,img:UIImage?)->UIImage?{
         guard let image1 = img, let cgimg = image1.cgImage else {
             print("imageView doesn't have an image!")
             return img
@@ -388,7 +314,6 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         }
         
     }
-    /*
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
             // we got back an error!
@@ -440,7 +365,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
         self.present(activityViewController, animated: true, completion: nil)
     }
-    @IBAction func uploadAction(_ sender: UIButton) {
+    /*@IBAction func uploadAction(_ sender: UIButton) {
         /*let vc = UIActivityViewController(activityItems: [filteredImage], applicationActivities: [])
             present(vc,animated: true,completion: nil)
             vc.popoverPresentationController?.sourceView = self.view
@@ -469,7 +394,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
                 self.present(activityViewController, animated: true, completion: nil)
        // UIGraphicsBeginImageContext(image.frame.size)
         
-    }
+    }*/
     
         
     
