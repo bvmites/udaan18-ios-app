@@ -28,7 +28,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
                 UIView.animate(withDuration: 0.5, animations: {
                     
                     let sz = self.collectionView.frame.size
-                    let pn = CGPoint(x: self.collectionView.frame.minX, y: self.collectionView.frame.minY+110)
+                    let pn = CGPoint(x: self.collectionView.frame.minX, y: self.backImage.frame.maxY)
                     self.collectionView.frame = CGRect(origin: pn, size: sz)
                     
                 }){ completed in
@@ -39,11 +39,11 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
                 }
             }
         else if hidden == true{
-                hidden = false
+            
                 UIView.animate(withDuration: 0.5, animations: {
                     
                     let sz = self.collectionView.frame.size
-                    let pn = CGPoint(x: self.collectionView.frame.minX, y: self.collectionView.frame.minY-110)
+                    let pn = CGPoint(x: self.collectionView.frame.minX, y: self.backImage.frame.maxY-110)
                     self.collectionView.frame = CGRect(origin: pn, size: sz)
                 }){
                     completed in
@@ -157,6 +157,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         
     }*/
     var filtersAttr:[Dictionary<String,Any>] = [/*[:],[kCIInputEVKey:1],["inputRedCoefficients":CIVector(values: [1,0,1,0.5,1,0,0,0.5,0.7,1], count: 10) ,"inputGreenCoefficients":CIVector(values: [0,0,1,0.5,0,0.5,0,0.5,0.3,0], count: 10),"inputBlueCoefficients":CIVector(values: [0,1,0.5,0.5,0,0,0.5,0.5,0.7,1], count: 10)],[:],[:],[:],[:],[:],*/["inputBackgroundImage":UIImage(named: "udaan_wing")],["inputBackgroundImage":UIImage(named: "Udaan_Filter")],["inputBackgroundImage":UIImage(named: "udaan_wing")],["inputBackgroundImage":UIImage(named: "Udaan_Filter")],["inputBackgroundImage":UIImage(named: "udaan_wing")],["inputBackgroundImage":UIImage(named: "Udaan_Filter")]]
+    //var filtersAttr:[Dictionary<String,Any>] =
     //var fv = UIImageView()
     
     @IBOutlet var fv: UIImageView!
@@ -194,7 +195,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (filtersAttr.count)
+        return 11 //(filtersAttr.count)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -204,7 +205,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
             cell.filterImage.image = imagee
         }
         else{*/
-            cell.filterImage.image = filtersAttr[indexPath.row]["inputBackgroundImage"] as! UIImage//applyFilter(index: indexPath.row-1, img: imagee)
+            cell.filterImage.image = UIImage(named: "filter-\(indexPath.row+1)") //filtersAttr[indexPath.row]["inputBackgroundImage"] as! UIImage//applyFilter(index: indexPath.row-1, img: imagee)
         //}
         return cell
     }
@@ -223,8 +224,10 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         }
         else{*/
             //image.image = applyFilter(index: indexPath.row-1, img: images)
+       
             
-            filterimages = filtersAttr[indexPath.row]["inputBackgroundImage"] as! UIImage
+            filterimages = UIImage(named: "filter-\(indexPath.row+1)") //filtersAttr[indexPath.row]["inputBackgroundImage"] as! UIImage
+       
             //fv.transform = CGAffineTransform.init(scaleX: 0.3, y: 0.3)
             //fv.center = images.center
             //print(images.subviews)
@@ -237,7 +240,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
         //}
         UIView.animate(withDuration: 0.5, animations: {
             let sz = collectionView.frame.size
-            let pn = CGPoint(x: collectionView.frame.minX, y: collectionView.frame.minY+110)
+            let pn = CGPoint(x: collectionView.frame.minX, y: self.backImage.frame.maxY)
             collectionView.frame = CGRect(origin: pn, size: sz)
             
         }){

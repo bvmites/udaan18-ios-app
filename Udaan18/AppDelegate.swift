@@ -47,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
             print("---\(refreshToken)----")
             print("noty")
             print(notification)
+            //notification.userInfo[""]
         }
         print("***")
         handleFB()

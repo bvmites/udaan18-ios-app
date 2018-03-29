@@ -10,12 +10,23 @@ import UIKit
 
 class TeamTableViewController: UITableViewController {
     
+    func developer(_ sender: UIBarButtonItem) {
+     let vc = storyboard?.instantiateViewController(withIdentifier: "developer") as! developerTableViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         if fetchJson.teamUdaan.count == 0 {
             fetchJson.setTeamUdaan()
             tableView.sectionHeaderHeight = 50
         }
+        let left = UIBarButtonItem(title: "Team", style: .plain, target: nil, action: nil )
+        left.width = view.frame.width/2-40.0
+        navigationItem.leftBarButtonItem = left
+        let right = UIBarButtonItem(title: "Developer", style: .plain, target: self, action: Selector("developer:"))
+        right.width = view.frame.width/2-40.0
+        right.tintColor = UIColor.black
+        navigationItem.rightBarButtonItem = right
         tableView.autoresizesSubviews = true
         tableView.separatorColor = tableView.backgroundColor
         
@@ -26,6 +37,12 @@ class TeamTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        let right = UIBarButtonItem(title: "Developer", style: .plain, target: self, action: Selector("developer:"))
+        right.width = view.frame.width/2-40.0
+        right.tintColor = UIColor.black
+        navigationItem.rightBarButtonItem = right
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return view.bounds.width/3

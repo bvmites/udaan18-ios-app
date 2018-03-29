@@ -12,6 +12,9 @@ class developerTableViewController: UITableViewController {
    
     var developers:[developer] = []
     
+    func Team(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.autoresizesSubviews = true
@@ -19,6 +22,14 @@ class developerTableViewController: UITableViewController {
         if developers.count == 0 {
             setDevelopers()
         }
+        let left = UIBarButtonItem(title: "Team", style: .plain, target: self, action: Selector("Team:"))
+        left.width = view.frame.width/2-40.0
+        left.tintColor = UIColor.black
+        navigationItem.leftBarButtonItem = left
+        let right = UIBarButtonItem(title: "Developer", style: .plain, target: nil, action: nil)
+        right.width = view.frame.width/2-40.0
+        navigationItem.rightBarButtonItem = right
+        
        
     }
     
