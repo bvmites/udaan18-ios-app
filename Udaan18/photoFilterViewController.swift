@@ -20,7 +20,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
                 UIView.animate(withDuration: 0.5, animations: {
                     
                     let sz = self.collectionView.frame.size
-                    let pn = CGPoint(x: self.collectionView.frame.minX, y: self.backImage.frame.maxY)
+                    let pn = CGPoint(x: self.collectionView.frame.minX, y: self.view.frame.maxY-10-(self.tabBarController?.tabBar.frame.size.height)!)
                     self.collectionView.frame = CGRect(origin: pn, size: sz)
                     
                 }){ completed in
@@ -35,7 +35,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
                 UIView.animate(withDuration: 0.5, animations: {
                     
                     let sz = self.collectionView.frame.size
-                    let pn = CGPoint(x: self.collectionView.frame.minX, y: self.backImage.frame.maxY-110)
+                    let pn = CGPoint(x: self.collectionView.frame.minX, y: self.view.frame.maxY-120-(self.tabBarController?.tabBar.frame.size.height)!)
                     self.collectionView.frame = CGRect(origin: pn, size: sz)
                 }){
                     completed in
@@ -166,7 +166,7 @@ class photoFilterViewController: UIViewController,UIImagePickerControllerDelegat
             filterimages = UIImage(named: "filter-\(indexPath.row+1)") //filtersAttr[indexPath.row]
         UIView.animate(withDuration: 0.5, animations: {
             let sz = collectionView.frame.size
-            let pn = CGPoint(x: collectionView.frame.minX, y: self.backImage.frame.maxY)
+            let pn = CGPoint(x: collectionView.frame.minX, y: self.view.frame.maxY-10-(self.tabBarController?.tabBar.frame.size.height)!)
             collectionView.frame = CGRect(origin: pn, size: sz)
             
         }){

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -529,10 +530,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kFE-Ps-PIo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kFE-Ps-PIo">
+                                <rect key="frame" x="0.0" y="27" width="375" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kFE-Ps-PIo" secondAttribute="height" multiplier="3:4" id="NBU-8R-wvm"/>
+                                </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bwr-zy-80k">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -584,15 +588,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kFE-Ps-PIo" firstAttribute="top" secondItem="KPe-wG-khl" secondAttribute="bottom" id="7DU-xE-nSH"/>
                             <constraint firstItem="Ifd-GF-GrG" firstAttribute="leading" secondItem="h2J-rh-6N4" secondAttribute="leading" id="H3h-Pa-4Rd"/>
-                            <constraint firstItem="Lki-ud-WtV" firstAttribute="top" secondItem="kFE-Ps-PIo" secondAttribute="bottom" id="Jqg-XT-kwv"/>
+                            <constraint firstItem="kFE-Ps-PIo" firstAttribute="centerY" secondItem="h2J-rh-6N4" secondAttribute="centerY" id="HWZ-Bv-gWx"/>
                             <constraint firstAttribute="trailing" secondItem="kFE-Ps-PIo" secondAttribute="trailing" id="guH-er-Xe8"/>
                             <constraint firstAttribute="trailing" secondItem="Ifd-GF-GrG" secondAttribute="trailing" id="h8u-4s-ZlR"/>
                             <constraint firstItem="kFE-Ps-PIo" firstAttribute="leading" secondItem="h2J-rh-6N4" secondAttribute="leading" id="pwH-PB-9wL"/>
                             <constraint firstItem="Lki-ud-WtV" firstAttribute="top" secondItem="Ifd-GF-GrG" secondAttribute="bottom" id="rp9-yk-uNC"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Stickers" image="filterbar" selectedImage="filterbar" id="2bs-Ow-1ve"/>
                     <navigationItem key="navigationItem" title="Udaan Stickers" id="mgh-YQ-XaV">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="VUg-Jb-MsS">
