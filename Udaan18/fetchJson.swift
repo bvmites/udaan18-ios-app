@@ -91,7 +91,7 @@ class fetchJson
     
     static func setData(){
         
-        /*if let newData = dataFromApi(){
+        if let newData = dataFromApi(){
             data = jsonDataToDictionary(data: newData)
             print("from api")
         }
@@ -99,7 +99,7 @@ class fetchJson
             data = jsonDataToDictionary(data: newData)
             print("from files")
         }
-         else */if let newData = dataFromBundle(){
+         else if let newData = dataFromBundle(){
             data = jsonDataToDictionary(data: newData)
             print("from bundle")
         }
