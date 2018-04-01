@@ -119,12 +119,14 @@ class EventsController: UITableViewController {
         transition.type = kCATransitionFade
         self.navigationController?.view.layer.add(transition, forKey: nil)
         */
+        /* final review camer access
         let transition:CATransition = CATransition()
         transition.duration = 0.3
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         transition.type = kCATransitionMoveIn
         transition.subtype = kCATransitionFromTop
         self.navigationController!.view.layer.add(transition, forKey: kCATransition)
+        */
         
         navigationController?.pushViewController(vc, animated: true)
     }
